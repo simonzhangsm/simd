@@ -1,0 +1,49 @@
+
+# General
+# -------
+
+# version format
+version: 1.18.10.000.{build}
+
+# branches to build
+branches:
+  only:
+    - master
+    - dev
+
+max_jobs: 1
+
+# Environment
+# -----------
+
+image:
+- Visual Studio 2013
+- Visual Studio 2015
+- Visual Studio 2017
+
+shallow_clone: true
+
+clone_folder: c:\projects\simd
+
+# Build configuration
+# -------------------
+
+before_build:
+- cd c:\projects\simd
+- if exist build rmdir build /s /q
+- mkdir build
+- cd build
+- cmake ..
+
+build_script:
+- cd c:\projects\simd\build
+- cmake --build . --target test_insn
+- cmake --build . --target test_dispatcher
+- cmake --build . --target test_expr
+
+# Tests configuration
+# -------------------
+
+test_script:
+- cd c:\projects\simd\build
+- cmake --build .. --target check

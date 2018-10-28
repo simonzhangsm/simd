@@ -1,0 +1,347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Dynamic dispatch - simd-docs</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<meta name="generator" content="MediaWiki 1.23.15">
+
+
+
+
+
+
+<link rel="stylesheet" href="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.skinning.interface%257Cmediawiki.ui.button%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-css:7:09491d659b7f9960acfc4bbdea311b1b */</style>
+<script src="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"arch/dispatch","wgTitle":"arch/dispatch","wgCurRevisionId":1429,"wgRevisionId":1429,"wgArticleId":2,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"arch/dispatch","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"editsection":0,"showtoc":0,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-js:7:04bcd510e6b27e2a36e3a47925b35066 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-arch_dispatch skin-cppreference2 action-view vector-animateLayout cpp-navbar">
+		
+		<div id="cpp-content-base">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				<div id="mw-js-message" style="display:none;"></div>
+								<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Dynamic dispatch</span></h1>
+								<div id="bodyContent">
+										<div id="siteSub">From simd-docs</div>
+										<div id="contentSub"></div>
+															<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../index.html" title="Main Page"> simd</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../types.html" title="types"> Types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cap.html" title="cap"> Capabilities</a> </td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Operations </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../conv.html" title="conv"> Conversions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../bitwise.html" title="bitwise"> Bitwise operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../fp.html" title="fp"> Floating-point operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../int.html" title="int"> Integer operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../mem.html" title="mem"> Memory access operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../shuffle.html" title="shuffle"> Shuffle operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../misc.html" title="misc"> Miscellaneous operations</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">Instruction sets<div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="selection.html" title="arch/selection">Instruction set selection</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">Dynamic dispatch</strong>
+</td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>Using simd it's easy to produce binaries that support multiple instruction sets and automatically select the fastest available on target processor. The implementation of this consists of three parts:
+</p>
+<ul>
+<li> All functions that need to be dispatched must be put in <code>SIMD_ARCH_NAMESPACE</code>, a special namespace whose name depends on the instruction set that is being compiled for. This is required for dynamic dispatcher to function and also helps to avoid ODR violations. For each function, the <code>SIMD_MAKE_DISPATCHER</code> macro must be invoked in namespace scope just outside the <code>SIMD_ARCH_NAMESPACE</code> namespace the actual function is in.
+</li>
+</ul>
+<ul>
+<li> Production of several object files each of which contain compiled code for different target instruction set. The target instruction set is selected by predefining appropriate macros as described <a href="selection.html" title="arch/selection">here</a>.
+</li>
+</ul>
+<ul>
+<li> Production of auxiliary dispatcher code that, on runtime, queries the system about the available instruction sets and based on that information selects the fastest implementation. In simd, the code is added to one of the mentioned object files by compiling it with additional predefined flags that tell the library that dispatcher code is needed and which instruction sets the user wants to support.
+</li>
+</ul>
+<p>The additional predefined flags for dispatcher support are the following:
+</p>
+<ul>
+<li> <code><b>SIMD_EMIT_DISPATCHER</b></code> - defining it tells the library that this object file should contain implementations of dispatcher functionality.
+</li>
+</ul>
+<ul>
+<li> <code><b>SIMD_USER_ARCH_INFO</b></code> - tells the dispatcher how to acquire the information about the supported instruction sets. The macro must result in an expression that evaluates to a value of <span class="t-c"><span class="mw-geshi cpp source-cpp">simd<span class="sy4">::</span><span class="me2">Arch</span></span></span> type.
+</li>
+</ul>
+<ul>
+<li> <code><b>SIMD_DISPATCH_ARCH0</b></code>, <code><b>SIMD_DISPATCH_ARCH1</b></code>, <code><b>SIMD_DISPATCH_ARCH2</b></code>, ...: these tell the library for which instruction sets the user wants to dispatch. Each of these macros needs to be defined to a comma separated list of <code>SIMD_ARCH_*</code> values corresponding to the enabled instruction sets.
+</li>
+</ul>
+<div id="toc" class="toc">
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="dispatch.html#SIMDP_MAKE_DISPATCHER_macro"><span class="tocnumber">1</span> <span class="toctext">SIMDP_MAKE_DISPATCHER macro</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="dispatch.html#SIMD_INSTANTIATE_DISPATCHER_macro"><span class="tocnumber">2</span> <span class="toctext">SIMD_INSTANTIATE_DISPATCHER macro</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="dispatch.html#Example"><span class="tocnumber">3</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="dispatch.html#CMake"><span class="tocnumber">4</span> <span class="toctext">CMake</span></a></li>
+</ul>
+</div>
+
+<h3>
+<span class="mw-headline" id="SIMDP_MAKE_DISPATCHER_macro"><code>SIMDP_MAKE_DISPATCHER</code> macro</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=arch/dispatch&amp;action=edit&amp;section=1" title="Edit section: SIMDP MAKE DISPATCHER macro">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<p>The <code>SIMD_MAKE_DISPATCHER</code> macro builds a dispatcher for a specific non-member function. The same macro is used for functions with or without return value, with different parameter counts and for template functions.
+</p>
+<p>The function accepts a sequence of 3 or 5 parenthesized token groups. Each group conveys the following information:
+</p>
+<ul>
+<li> (optional) the full template prefix, e.g. <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">class</span> T<span class="sy1">&gt;</span><span class="br0">)</span></span></span>.
+</li>
+</ul>
+<ul>
+<li> (optional) the template argument list enclosed in brackets, e.g. <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span><span class="sy1">&lt;</span>T,U<span class="sy1">&gt;</span><span class="br0">)</span></span></span>.
+</li>
+</ul>
+<ul>
+<li> the return type, e.g. <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span></span></span>, or <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span><span class="kw4">float</span><span class="br0">)</span></span></span>.
+</li>
+</ul>
+<ul>
+<li> the function name, e.g. <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span>my_function<span class="br0">)</span></span></span>
+</li>
+</ul>
+<ul>
+<li> comma-separated list of function arguments. Each argument is specified as a parenthesized type name and argument name which follows immediately. For example <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span><span class="br0">(</span><span class="kw4">float</span><span class="br0">)</span> x, <span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span> y, <span class="br0">(</span>std<span class="sy4">::</span><span class="me2">pair</span><span class="sy1">&lt;</span><span class="kw4">int</span>, <span class="kw4">int</span><span class="sy1">&gt;</span><span class="br0">)</span> z<span class="br0">)</span></span></span>.
+</li>
+</ul>
+<p>The following examples show several ways to invoke the <span class="t-c"><span class="mw-geshi cpp source-cpp">SIMD_MAKE_DISPATCHER</span></span> macro:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp source-cpp"><pre class="de1">SIMD_MAKE_DISPATCHER<span class="br0">(</span><span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span><span class="br0">(</span>my_function1<span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+SIMD_MAKE_DISPATCHER<span class="br0">(</span><span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span><span class="br0">(</span>my_function1<span class="br0">)</span><span class="br0">(</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span> x, <span class="br0">(</span><span class="kw4">float</span><span class="br0">)</span>z<span class="br0">)</span><span class="br0">)</span>
+SIMD_MAKE_DISPATCHER<span class="br0">(</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="br0">(</span>my_function1<span class="br0">)</span><span class="br0">(</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span> x, <span class="br0">(</span><span class="kw4">float</span><span class="br0">)</span>z<span class="br0">)</span><span class="br0">)</span>
+SIMD_MAKE_DISPATCHER<span class="br0">(</span><span class="br0">(</span><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">class</span> A, <span class="kw2">class</span> B<span class="sy1">&gt;</span><span class="br0">)</span><span class="br0">(</span><span class="sy1">&lt;</span>A,B<span class="sy1">&gt;</span><span class="br0">)</span><span class="br0">(</span>A<span class="br0">)</span><span class="br0">(</span>my_function1<span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+SIMD_MAKE_DISPATCHER<span class="br0">(</span><span class="br0">(</span><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw2">class</span> A, <span class="kw2">class</span> B<span class="sy1">&gt;</span><span class="br0">)</span><span class="br0">(</span><span class="sy1">&lt;</span>A,B<span class="sy1">&gt;</span><span class="br0">)</span><span class="br0">(</span>A<span class="br0">)</span><span class="br0">(</span>my_function1<span class="br0">)</span><span class="br0">(</span><span class="br0">(</span>B<span class="br0">)</span> x, <span class="br0">(</span>B<span class="br0">)</span>z<span class="br0">)</span><span class="br0">)</span></pre></div></div>
+<p><span class="t-c"><span class="mw-geshi cpp source-cpp">SIMD_ARCH_NAMESPACE<span class="sy4">::</span><span class="me2">NAME</span></span></span> (where <code>NAME</code> refers to the name of the function supplied to the <span class="t-c"><span class="mw-geshi cpp source-cpp">SIMD_MAKE_DISPATCHER</span></span> macro) must refer to the function to be disptached relative to the namespace in which the <span class="t-c"><span class="mw-geshi cpp source-cpp">SIMD_MAKE_DISPATCHER</span></span> macro is used in. That is, the macro must be used in a namespace one level up than the dispatched function, and that namespace must be <span class="t-c"><span class="mw-geshi cpp source-cpp">SIMD_ARCH_NAMESPACE</span></span>.
+</p>
+<p>The return and parameter types must be exactly the same as those of the function to be dispatched. The dispatched function may be overloaded.
+</p>
+<p>When dispatching function templates, each used template must be explicitly dispatched in all architecture-specific compilation units. For example, when using <span class="t-c"><span class="mw-geshi cpp source-cpp">simd_multiarch</span></span> (see [cmake/SimdMultiarch.cmake <a rel="nofollow" class="external free" href="https://github.com/p12tic/simd/blob/master/cmake/SimdMultiarch.cmake">https://github.com/p12tic/simd/blob/master/cmake/SimdMultiarch.cmake</a>]), these instantiations must be defined in <code>SRC_FILE</code> source file.
+</p>
+<p>The macro defines a function with the same signature as the dispatched function in the namespace the macro is used. The body of that function implements the dispatch mechanism.
+</p>
+<p>The dispatch functions check the enabled instruction set and select the best function on first call. The initialization does not introduce race conditions when done concurrently.
+</p>
+<p>The generated dispatching code links to all versions of the dispatched function statically, so techniques to prevent linkers from stripping unreferenced object files are not needed.
+</p>
+<h3>
+<span class="mw-headline" id="SIMD_INSTANTIATE_DISPATCHER_macro"><code>SIMD_INSTANTIATE_DISPATCHER</code> macro</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=arch/dispatch&amp;action=edit&amp;section=2" title="Edit section: SIMD INSTANTIATE DISPATCHER macro">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<p>The <code>SIMD_INSTANTIATE_DISPATCHER</code> macro defines a one or more template instantiations for a dispatcher. Accepts one or more parenthesized token groups separated by commas defining one or more full template instantiations. For example:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp source-cpp"><pre class="de1">SIMD_INSTANTIATE_DISPATCHER<span class="br0">(</span><span class="br0">(</span><span class="kw2">template</span> <span class="kw4">void</span> foo<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="br0">(</span><span class="kw4">int</span> x<span class="br0">)</span><span class="br0">)</span></pre></div></div>
+<p>or
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp source-cpp"><pre class="de1">SIMD_INSTANTIATE_DISPATCHER<span class="br0">(</span>
+    <span class="br0">(</span><span class="kw2">template</span> <span class="kw4">void</span> foo<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="br0">(</span><span class="kw4">int</span> x<span class="br0">)</span><span class="br0">)</span>,
+    <span class="br0">(</span><span class="kw2">template</span> <span class="kw4">void</span> foo<span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="br0">(</span><span class="kw4">char</span> x<span class="br0">)</span><span class="br0">)</span>
+<span class="br0">)</span></pre></div></div>
+<p>The macro forces instantiation of the dispatch function defined by the <span class="t-c"><span class="mw-geshi cpp source-cpp">SIMD_MAKE_DISPATCHER</span></span> macro and also of the functions referenced by the dispatcher function. The latter is necessary because the dispatcher is compiled into a only single object file out of the set of multiversioned
+object files. The referenced functions will be instantiated in all of them.
+</p>
+<h3>
+<span class="mw-headline" id="Example">Example</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=arch/dispatch&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<p><code><b>test.h</b></code>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> print_arch<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p><code><b>test.cc</b></code>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include "test.h"</span>
+<span class="co2">#include &lt;simd/simd.h&gt;</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;simd/dispatch/get_arch_gcc_builtin_cpu_supports.h&gt;</span>
+<span class="co2">#define SIMD_USER_ARCH_INFO ::simd::get_arch_gcc_builtin_cpu_supports()</span>
+ 
+<span class="kw2">namespace</span> SIMD_ARCH_NAMESPACE <span class="br0">{</span>
+ 
+<span class="kw4">void</span> print_arch<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    std<span class="sy4">::</span><span class="kw3">cout</span> <span class="sy1">&lt;&lt;</span> <span class="kw2">static_cast</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span><span class="sy1">&gt;</span><span class="br0">(</span>simd<span class="sy4">::</span><span class="me2">this_compile_arch</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="br0">}</span> <span class="co1">// namespace SIMD_ARCH_NAMESPACE</span>
+ 
+SIMD_MAKE_DISPATCHER<span class="br0">(</span><span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span><span class="br0">(</span>print_arch<span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p><code><b>main.cc</b></code>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include "test.h"</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    print_arch<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><code><b>Makefile</b></code>
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp source-cpp"><pre class="de1">CXXFLAGS<span class="sy1">=</span><span class="st0">""</span>
+ 
+test<span class="sy4">:</span> main.<span class="me1">o</span> test_null.<span class="me1">o</span> test_sse2.<span class="me1">o</span> test_sse3.<span class="me1">o</span> test_sse4_1.<span class="me1">o</span> test_sse4_2.<span class="me1">o</span> \
+      test_avx.<span class="me1">o</span> test_avx2.<span class="me1">o</span>
+    g<span class="sy2">++</span> $<span class="sy3">^</span> <span class="sy2">-</span>o test
+ 
+main.<span class="me1">o</span><span class="sy4">:</span> main.<span class="me1">cc</span>
+    g<span class="sy2">++</span> main.<span class="me1">cc</span> $<span class="br0">(</span>CXXFLAGS<span class="br0">)</span> <span class="sy2">-</span>c <span class="sy2">-</span>o main.<span class="me1">o</span>
+ 
+test_null.<span class="me1">o</span><span class="sy4">:</span> test.<span class="me1">cc</span>
+    g<span class="sy2">++</span> test.<span class="me1">cc</span> <span class="sy2">-</span>c $<span class="br0">(</span>CXXFLAGS<span class="br0">)</span> <span class="sy2">-</span>o test_null.<span class="me1">o</span>
+ 
+test_sse2.<span class="me1">o</span><span class="sy4">:</span> test.<span class="me1">cc</span>
+    g<span class="sy2">++</span> test.<span class="me1">cc</span> <span class="sy2">-</span>c $<span class="br0">(</span>CXXFLAGS<span class="br0">)</span> <span class="sy2">-</span>DSIMD_EMIT_DISPATCHER <span class="sy2">-</span>msse2 \
+        <span class="sy2">-</span>DSIMD_DISPATCH_ARCH0<span class="sy1">=</span>SIMD_ARCH_NONE_NULL  \
+        <span class="sy2">-</span>DSIMD_DISPATCH_ARCH1<span class="sy1">=</span>SIMD_ARCH_X86_SSE2   \
+        <span class="sy2">-</span>DSIMD_DISPATCH_ARCH2<span class="sy1">=</span>SIMD_ARCH_X86_SSE3   \
+        <span class="sy2">-</span>DSIMD_DISPATCH_ARCH3<span class="sy1">=</span>SIMD_ARCH_X86_SSE4_1 \
+        <span class="sy2">-</span>DSIMD_DISPATCH_ARCH4<span class="sy1">=</span>SIMD_ARCH_X86_SSE4_2 \
+        <span class="sy2">-</span>DSIMD_DISPATCH_ARCH5<span class="sy1">=</span>SIMD_ARCH_X86_AVX    \
+        <span class="sy2">-</span>DSIMD_DISPATCH_ARCH6<span class="sy1">=</span>SIMD_ARCH_X86_AVX2   \
+        <span class="sy2">-</span>o test_sse2.<span class="me1">o</span>
+ 
+test_sse3.<span class="me1">o</span><span class="sy4">:</span> test.<span class="me1">cc</span>
+    g<span class="sy2">++</span> test.<span class="me1">cc</span> <span class="sy2">-</span>c $<span class="br0">(</span>CXXFLAGS<span class="br0">)</span> <span class="sy2">-</span>DSIMD_ARCH_X86_SSE3 <span class="sy2">-</span>msse3 <span class="sy2">-</span>o test_sse3.<span class="me1">o</span>
+ 
+test_sse4_1.<span class="me1">o</span><span class="sy4">:</span> test.<span class="me1">cc</span>
+    g<span class="sy2">++</span> test.<span class="me1">cc</span> <span class="sy2">-</span>c $<span class="br0">(</span>CXXFLAGS<span class="br0">)</span> <span class="sy2">-</span>DSIMD_ARCH_X86_SSE4_1 <span class="sy2">-</span>msse4.1 <span class="sy2">-</span>o test_sse4_1.<span class="me1">o</span>
+    
+test_sse4_2.<span class="me1">o</span><span class="sy4">:</span> test.<span class="me1">cc</span>
+    g<span class="sy2">++</span> test.<span class="me1">cc</span> <span class="sy2">-</span>c $<span class="br0">(</span>CXXFLAGS<span class="br0">)</span> <span class="sy2">-</span>DSIMD_ARCH_X86_SSE4_2 <span class="sy2">-</span>msse4.2 <span class="sy2">-</span>o test_sse4_2.<span class="me1">o</span>
+    
+test_avx.<span class="me1">o</span><span class="sy4">:</span> test.<span class="me1">cc</span>
+    g<span class="sy2">++</span> test.<span class="me1">cc</span> <span class="sy2">-</span>c $<span class="br0">(</span>CXXFLAGS<span class="br0">)</span> <span class="sy2">-</span>DSIMD_ARCH_X86_AVX <span class="sy2">-</span>mavx <span class="sy2">-</span>o test_avx.<span class="me1">o</span>
+
+test_avx2.<span class="me1">o</span><span class="sy4">:</span> test.<span class="me1">cc</span>
+    g<span class="sy2">++</span> test.<span class="me1">cc</span> <span class="sy2">-</span>c $<span class="br0">(</span>CXXFLAGS<span class="br0">)</span> <span class="sy2">-</span>DSIMD_ARCH_X86_AVX2 <span class="sy2">-</span>mavx2 <span class="sy2">-</span>o test_avx2.<span class="me1">o</span>
+</pre></div></div>
+
+<h3>
+<span class="mw-headline" id="CMake">CMake</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=arch/dispatch&amp;action=edit&amp;section=4" title="Edit section: CMake">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<p>For CMake users, <code>cmake/SimdMultiarch.cmake</code> contains several useful
+functions:
+</p>
+<ul>
+<li> <span class="t-c"><span class="mw-geshi cpp source-cpp">simd_get_compilable_archs</span></span>: checks what architectures are supported by the compiler.
+</li>
+<li> <span class="t-c"><span class="mw-geshi cpp source-cpp">simd_get_runnable_archs</span></span>: checks what architectures are supported by both the compiler and the current processor.
+</li>
+<li> <span class="t-c"><span class="mw-geshi cpp source-cpp">simd_multiversion</span></span>: given a list of architectures (possibly generated by <code>simd_get_compilable_archs</code> or <code>simd_get_runnable_archs</code>), automatically configures compilation of additional object files. The user only needs to add the returned list of source files to <span class="t-c"><span class="mw-geshi cpp source-cpp">add_library</span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">add_executable</span></span>.
+</li>
+</ul>
+<p>The above example may be build with <code>CMakeLists.txt</code> as simple as follows:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp source-cpp"><pre class="de1">cmake_minimum_required<span class="br0">(</span>VERSION 2.8.0<span class="br0">)</span>
+project<span class="br0">(</span>test<span class="br0">)</span>
+ 
+include<span class="br0">(</span>SimdMultiarch<span class="br0">)</span>
+ 
+simd_get_runnable_archs<span class="br0">(</span>RUNNABLE_ARCHS<span class="br0">)</span>
+simd_multiarch<span class="br0">(</span>GEN_ARCH_FILES test.<span class="me1">cc</span> $<span class="br0">{</span>RUNNABLE_ARCHS<span class="br0">}</span><span class="br0">)</span>
+add_executable<span class="br0">(</span>test main.<span class="me1">cc</span> $<span class="br0">{</span>GEN_ARCH_FILES<span class="br0">}</span><span class="br0">)</span>
+set_target_properties<span class="br0">(</span>test PROPERTIES COMPILE_FLAGS <span class="st0">"-std=c++11"</span><span class="br0">)</span></pre></div></div>
+
+
+
+
+</div>										
+															<div id="catlinks" class="catlinks catlinks-allhidden"></div>															<div class="visualClear"></div>
+									</div>
+			</div>
+		</div>
+		
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script src="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+
+	</body>
+
+</html>

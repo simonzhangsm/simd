@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+#/**************************************************************************
+# * BIGMATH INSIGHT CONFIDENTIAL                                           *
+# *                                                                        *
+# * Copyright (C) 2016 BIGMATH CORPORATTION,  All Rights Reserved.         *
+# *                                                                        *
+# * These source codes are subject to the terms and conditions defined     *
+# * in 'LICENSE', which is part of this source code package. Write to      *
+# * LICENSE@BIGMATH.COM for more authorization requirements, or obtain     *
+# * an entire copy of license agreement at http://bigmath.com/license.     *
+# *                                                                        *
+# *************************************************************************/
+
+for dir in $@ 
+do
+   for sufix in c cpp h hpp java
+   do
+	find ${dir} -name "*.$sufix" | xargs clang-format -i -style=file
+   done
+done

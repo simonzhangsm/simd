@@ -1,0 +1,2980 @@
+/**********************************************************************
+ * BIGMATH INSIGHT CONFIDENTIAL
+ *
+ * Copyright (C) 2016-2018 BIGMATH CORPORATION, All Rights Reserved.
+ *
+ * @Author: Simon Zhang on 19 Oct 2018
+ * @EMail: simon.zhangsm@hotmail.com
+ * @Version: $SIMD_LIB_VERSION
+ *
+ * These source codes are subject to the terms and conditions defined
+ * in 'LICENSE', which is part of this source code package. Write to
+ * LICENSE@BIGMATH.COM for more authorization requirements, or obtain
+ * an entire copy of license agreement at http://bigmath.com/license.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY
+ * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * **********************************************************************/
+
+
+// This file is generated automatically. See tools/gen_dispatcher_collect_macros.py
+
+#ifndef DISPATCH_COLLECT_MACROS_GENERATED_H
+#define DISPATCH_COLLECT_MACROS_GENERATED_H
+
+#ifndef SIMD_H
+#error "This file must be included through simd.h"
+#endif
+
+// We rely on setup_arch.h being included before this file to undefine
+// all SIMD_ARCH_* macros
+#include <bigmath/simd/setup_arch.h>
+
+#if SIMD_EMIT_DISPATCHER
+#include <bigmath/simd/detail/preprocessor/punctuation/remove_parens.hpp>
+
+#define SIMD_DISPATCH_MAX_ARCHS 15
+
+
+#ifdef SIMD_DISPATCH_ARCH0
+#define SIMD_ARCH_LIST SIMD_DISPATCH_ARCH0
+#include <bigmath/simd/detail/preprocess_single_arch.h>
+
+// Use the results of preprocess_single_arch.h to define
+// SIMD_DISPATCH_0_NAMESPACE
+
+#if SIMD_ARCH_NS_USE_NULL
+#define SIMD_DISPATCH_0_NS_ID_NULL SIMD_INSN_ID_NULL
+#else
+#define SIMD_DISPATCH_0_NS_ID_NULL
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE2
+#define SIMD_DISPATCH_0_NS_ID_SSE2 SIMD_INSN_ID_SSE2
+#else
+#define SIMD_DISPATCH_0_NS_ID_SSE2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE3
+#define SIMD_DISPATCH_0_NS_ID_SSE3 SIMD_INSN_ID_SSE3
+#else
+#define SIMD_DISPATCH_0_NS_ID_SSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSSE3
+#define SIMD_DISPATCH_0_NS_ID_SSSE3 SIMD_INSN_ID_SSSE3
+#else
+#define SIMD_DISPATCH_0_NS_ID_SSSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_1
+#define SIMD_DISPATCH_0_NS_ID_SSE4_1 SIMD_INSN_ID_SSE4_1
+#else
+#define SIMD_DISPATCH_0_NS_ID_SSE4_1
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_2
+#define SIMD_DISPATCH_0_NS_ID_SSE4_2 SIMD_INSN_ID_SSE4_2
+#else
+#define SIMD_DISPATCH_0_NS_ID_SSE4_2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4A
+#define SIMD_DISPATCH_0_NS_ID_SSE4A SIMD_INSN_ID_SSE4A
+#else
+#define SIMD_DISPATCH_0_NS_ID_SSE4A
+#endif
+
+#if SIMD_ARCH_NS_USE_POPCNT_INSN
+#define SIMD_DISPATCH_0_NS_ID_POPCNT_INSN SIMD_INSN_ID_POPCNT_INSN
+#else
+#define SIMD_DISPATCH_0_NS_ID_POPCNT_INSN
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX
+#define SIMD_DISPATCH_0_NS_ID_AVX SIMD_INSN_ID_AVX
+#else
+#define SIMD_DISPATCH_0_NS_ID_AVX
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX2
+#define SIMD_DISPATCH_0_NS_ID_AVX2 SIMD_INSN_ID_AVX2
+#else
+#define SIMD_DISPATCH_0_NS_ID_AVX2
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA3
+#define SIMD_DISPATCH_0_NS_ID_FMA3 SIMD_INSN_ID_FMA3
+#else
+#define SIMD_DISPATCH_0_NS_ID_FMA3
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA4
+#define SIMD_DISPATCH_0_NS_ID_FMA4 SIMD_INSN_ID_FMA4
+#else
+#define SIMD_DISPATCH_0_NS_ID_FMA4
+#endif
+
+#if SIMD_ARCH_NS_USE_XOP
+#define SIMD_DISPATCH_0_NS_ID_XOP SIMD_INSN_ID_XOP
+#else
+#define SIMD_DISPATCH_0_NS_ID_XOP
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512F
+#define SIMD_DISPATCH_0_NS_ID_AVX512F SIMD_INSN_ID_AVX512F
+#else
+#define SIMD_DISPATCH_0_NS_ID_AVX512F
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512BW
+#define SIMD_DISPATCH_0_NS_ID_AVX512BW SIMD_INSN_ID_AVX512BW
+#else
+#define SIMD_DISPATCH_0_NS_ID_AVX512BW
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512DQ
+#define SIMD_DISPATCH_0_NS_ID_AVX512DQ SIMD_INSN_ID_AVX512DQ
+#else
+#define SIMD_DISPATCH_0_NS_ID_AVX512DQ
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512VL
+#define SIMD_DISPATCH_0_NS_ID_AVX512VL SIMD_INSN_ID_AVX512VL
+#else
+#define SIMD_DISPATCH_0_NS_ID_AVX512VL
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON
+#define SIMD_DISPATCH_0_NS_ID_NEON SIMD_INSN_ID_NEON
+#else
+#define SIMD_DISPATCH_0_NS_ID_NEON
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON_FLT_SP
+#define SIMD_DISPATCH_0_NS_ID_NEON_FLT_SP SIMD_INSN_ID_NEON_FLT_SP
+#else
+#define SIMD_DISPATCH_0_NS_ID_NEON_FLT_SP
+#endif
+
+#if SIMD_ARCH_NS_USE_MSA
+#define SIMD_DISPATCH_0_NS_ID_MSA SIMD_INSN_ID_MSA
+#else
+#define SIMD_DISPATCH_0_NS_ID_MSA
+#endif
+
+#if SIMD_ARCH_NS_USE_ALTIVEC
+#define SIMD_DISPATCH_0_NS_ID_ALTIVEC SIMD_INSN_ID_ALTIVEC
+#else
+#define SIMD_DISPATCH_0_NS_ID_ALTIVEC
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_206
+#define SIMD_DISPATCH_0_NS_ID_VSX_206 SIMD_INSN_ID_VSX_206
+#else
+#define SIMD_DISPATCH_0_NS_ID_VSX_206
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_207
+#define SIMD_DISPATCH_0_NS_ID_VSX_207 SIMD_INSN_ID_VSX_207
+#else
+#define SIMD_DISPATCH_0_NS_ID_VSX_207
+#endif
+
+#define SIMD_DISPATCH_0_NAMESPACE                   \
+    SIMD_PASTE24(arch,                              \
+                 SIMD_DISPATCH_0_NS_ID_NULL,        \
+                 SIMD_DISPATCH_0_NS_ID_SSE2,        \
+                 SIMD_DISPATCH_0_NS_ID_SSE3,        \
+                 SIMD_DISPATCH_0_NS_ID_SSSE3,       \
+                 SIMD_DISPATCH_0_NS_ID_SSE4_1,      \
+                 SIMD_DISPATCH_0_NS_ID_SSE4_2,      \
+                 SIMD_DISPATCH_0_NS_ID_SSE4A,       \
+                 SIMD_DISPATCH_0_NS_ID_POPCNT_INSN, \
+                 SIMD_DISPATCH_0_NS_ID_AVX,         \
+                 SIMD_DISPATCH_0_NS_ID_AVX2,        \
+                 SIMD_DISPATCH_0_NS_ID_AVX512F,     \
+                 SIMD_DISPATCH_0_NS_ID_AVX512BW,    \
+                 SIMD_DISPATCH_0_NS_ID_AVX512DQ,    \
+                 SIMD_DISPATCH_0_NS_ID_AVX512VL,    \
+                 SIMD_DISPATCH_0_NS_ID_FMA3,        \
+                 SIMD_DISPATCH_0_NS_ID_FMA4,        \
+                 SIMD_DISPATCH_0_NS_ID_XOP,         \
+                 SIMD_DISPATCH_0_NS_ID_NEON,        \
+                 SIMD_DISPATCH_0_NS_ID_NEON_FLT_SP, \
+                 SIMD_DISPATCH_0_NS_ID_MSA,         \
+                 SIMD_DISPATCH_0_NS_ID_ALTIVEC,     \
+                 SIMD_DISPATCH_0_NS_ID_VSX_206,     \
+                 SIMD_DISPATCH_0_NS_ID_VSX_207)
+
+#define SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE SIMD_DISPATCH_0_NAMESPACE
+#define SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH 1
+#include <bigmath/simd/dispatch/preprocess_single_compile_arch.h>
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE
+
+#define SIMD_DISPATCH_0_FN_REGISTER(ARRAY, NAME, FUN_TYPE)                                    \
+    { /* the following will fail if the overload is not available */                          \
+        FUN_TYPE fun_ptr = &SIMD_DISPATCH_0_NAMESPACE::SIMD_REMOVE_PARENS(NAME);              \
+        ARRAY[0 - 1] = ::simd::SIMD_DISPATCH_0_NAMESPACE::detail::create_fn_version(fun_ptr); \
+    }
+
+#define SIMD_DISPATCH_0_FN_DECLARE(SIGNATURE) \
+    namespace SIMD_DISPATCH_0_NAMESPACE {     \
+        SIMD_REMOVE_PARENS(SIGNATURE);        \
+    }
+#undef SIMD_ARCH_LIST
+#else
+#define SIMD_DISPATCH_0_FN_REGISTER(ARRAY, NAME, FUN_TYPE)
+#define SIMD_DISPATCH_0_FN_DECLARE(SIGNATURE)
+#endif
+
+#ifdef SIMD_DISPATCH_ARCH1
+#define SIMD_ARCH_LIST SIMD_DISPATCH_ARCH1
+#include <bigmath/simd/detail/preprocess_single_arch.h>
+
+// Use the results of preprocess_single_arch.h to define
+// SIMD_DISPATCH_1_NAMESPACE
+
+#if SIMD_ARCH_NS_USE_NULL
+#define SIMD_DISPATCH_1_NS_ID_NULL SIMD_INSN_ID_NULL
+#else
+#define SIMD_DISPATCH_1_NS_ID_NULL
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE2
+#define SIMD_DISPATCH_1_NS_ID_SSE2 SIMD_INSN_ID_SSE2
+#else
+#define SIMD_DISPATCH_1_NS_ID_SSE2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE3
+#define SIMD_DISPATCH_1_NS_ID_SSE3 SIMD_INSN_ID_SSE3
+#else
+#define SIMD_DISPATCH_1_NS_ID_SSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSSE3
+#define SIMD_DISPATCH_1_NS_ID_SSSE3 SIMD_INSN_ID_SSSE3
+#else
+#define SIMD_DISPATCH_1_NS_ID_SSSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_1
+#define SIMD_DISPATCH_1_NS_ID_SSE4_1 SIMD_INSN_ID_SSE4_1
+#else
+#define SIMD_DISPATCH_1_NS_ID_SSE4_1
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_2
+#define SIMD_DISPATCH_1_NS_ID_SSE4_2 SIMD_INSN_ID_SSE4_2
+#else
+#define SIMD_DISPATCH_1_NS_ID_SSE4_2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4A
+#define SIMD_DISPATCH_1_NS_ID_SSE4A SIMD_INSN_ID_SSE4A
+#else
+#define SIMD_DISPATCH_1_NS_ID_SSE4A
+#endif
+
+#if SIMD_ARCH_NS_USE_POPCNT_INSN
+#define SIMD_DISPATCH_1_NS_ID_POPCNT_INSN SIMD_INSN_ID_POPCNT_INSN
+#else
+#define SIMD_DISPATCH_1_NS_ID_POPCNT_INSN
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX
+#define SIMD_DISPATCH_1_NS_ID_AVX SIMD_INSN_ID_AVX
+#else
+#define SIMD_DISPATCH_1_NS_ID_AVX
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX2
+#define SIMD_DISPATCH_1_NS_ID_AVX2 SIMD_INSN_ID_AVX2
+#else
+#define SIMD_DISPATCH_1_NS_ID_AVX2
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA3
+#define SIMD_DISPATCH_1_NS_ID_FMA3 SIMD_INSN_ID_FMA3
+#else
+#define SIMD_DISPATCH_1_NS_ID_FMA3
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA4
+#define SIMD_DISPATCH_1_NS_ID_FMA4 SIMD_INSN_ID_FMA4
+#else
+#define SIMD_DISPATCH_1_NS_ID_FMA4
+#endif
+
+#if SIMD_ARCH_NS_USE_XOP
+#define SIMD_DISPATCH_1_NS_ID_XOP SIMD_INSN_ID_XOP
+#else
+#define SIMD_DISPATCH_1_NS_ID_XOP
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512F
+#define SIMD_DISPATCH_1_NS_ID_AVX512F SIMD_INSN_ID_AVX512F
+#else
+#define SIMD_DISPATCH_1_NS_ID_AVX512F
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512BW
+#define SIMD_DISPATCH_1_NS_ID_AVX512BW SIMD_INSN_ID_AVX512BW
+#else
+#define SIMD_DISPATCH_1_NS_ID_AVX512BW
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512DQ
+#define SIMD_DISPATCH_1_NS_ID_AVX512DQ SIMD_INSN_ID_AVX512DQ
+#else
+#define SIMD_DISPATCH_1_NS_ID_AVX512DQ
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512VL
+#define SIMD_DISPATCH_1_NS_ID_AVX512VL SIMD_INSN_ID_AVX512VL
+#else
+#define SIMD_DISPATCH_1_NS_ID_AVX512VL
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON
+#define SIMD_DISPATCH_1_NS_ID_NEON SIMD_INSN_ID_NEON
+#else
+#define SIMD_DISPATCH_1_NS_ID_NEON
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON_FLT_SP
+#define SIMD_DISPATCH_1_NS_ID_NEON_FLT_SP SIMD_INSN_ID_NEON_FLT_SP
+#else
+#define SIMD_DISPATCH_1_NS_ID_NEON_FLT_SP
+#endif
+
+#if SIMD_ARCH_NS_USE_MSA
+#define SIMD_DISPATCH_1_NS_ID_MSA SIMD_INSN_ID_MSA
+#else
+#define SIMD_DISPATCH_1_NS_ID_MSA
+#endif
+
+#if SIMD_ARCH_NS_USE_ALTIVEC
+#define SIMD_DISPATCH_1_NS_ID_ALTIVEC SIMD_INSN_ID_ALTIVEC
+#else
+#define SIMD_DISPATCH_1_NS_ID_ALTIVEC
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_206
+#define SIMD_DISPATCH_1_NS_ID_VSX_206 SIMD_INSN_ID_VSX_206
+#else
+#define SIMD_DISPATCH_1_NS_ID_VSX_206
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_207
+#define SIMD_DISPATCH_1_NS_ID_VSX_207 SIMD_INSN_ID_VSX_207
+#else
+#define SIMD_DISPATCH_1_NS_ID_VSX_207
+#endif
+
+#define SIMD_DISPATCH_1_NAMESPACE                   \
+    SIMD_PASTE24(arch,                              \
+                 SIMD_DISPATCH_1_NS_ID_NULL,        \
+                 SIMD_DISPATCH_1_NS_ID_SSE2,        \
+                 SIMD_DISPATCH_1_NS_ID_SSE3,        \
+                 SIMD_DISPATCH_1_NS_ID_SSSE3,       \
+                 SIMD_DISPATCH_1_NS_ID_SSE4_1,      \
+                 SIMD_DISPATCH_1_NS_ID_SSE4_2,      \
+                 SIMD_DISPATCH_1_NS_ID_SSE4A,       \
+                 SIMD_DISPATCH_1_NS_ID_POPCNT_INSN, \
+                 SIMD_DISPATCH_1_NS_ID_AVX,         \
+                 SIMD_DISPATCH_1_NS_ID_AVX2,        \
+                 SIMD_DISPATCH_1_NS_ID_AVX512F,     \
+                 SIMD_DISPATCH_1_NS_ID_AVX512BW,    \
+                 SIMD_DISPATCH_1_NS_ID_AVX512DQ,    \
+                 SIMD_DISPATCH_1_NS_ID_AVX512VL,    \
+                 SIMD_DISPATCH_1_NS_ID_FMA3,        \
+                 SIMD_DISPATCH_1_NS_ID_FMA4,        \
+                 SIMD_DISPATCH_1_NS_ID_XOP,         \
+                 SIMD_DISPATCH_1_NS_ID_NEON,        \
+                 SIMD_DISPATCH_1_NS_ID_NEON_FLT_SP, \
+                 SIMD_DISPATCH_1_NS_ID_MSA,         \
+                 SIMD_DISPATCH_1_NS_ID_ALTIVEC,     \
+                 SIMD_DISPATCH_1_NS_ID_VSX_206,     \
+                 SIMD_DISPATCH_1_NS_ID_VSX_207)
+
+#define SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE SIMD_DISPATCH_1_NAMESPACE
+#define SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH 1
+#include <bigmath/simd/dispatch/preprocess_single_compile_arch.h>
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE
+
+#define SIMD_DISPATCH_1_FN_REGISTER(ARRAY, NAME, FUN_TYPE)                                    \
+    { /* the following will fail if the overload is not available */                          \
+        FUN_TYPE fun_ptr = &SIMD_DISPATCH_1_NAMESPACE::SIMD_REMOVE_PARENS(NAME);              \
+        ARRAY[1 - 1] = ::simd::SIMD_DISPATCH_1_NAMESPACE::detail::create_fn_version(fun_ptr); \
+    }
+
+#define SIMD_DISPATCH_1_FN_DECLARE(SIGNATURE) \
+    namespace SIMD_DISPATCH_1_NAMESPACE {     \
+        SIMD_REMOVE_PARENS(SIGNATURE);        \
+    }
+#undef SIMD_ARCH_LIST
+#else
+#define SIMD_DISPATCH_1_FN_REGISTER(ARRAY, NAME, FUN_TYPE)
+#define SIMD_DISPATCH_1_FN_DECLARE(SIGNATURE)
+#endif
+
+#ifdef SIMD_DISPATCH_ARCH2
+#define SIMD_ARCH_LIST SIMD_DISPATCH_ARCH2
+#include <bigmath/simd/detail/preprocess_single_arch.h>
+
+// Use the results of preprocess_single_arch.h to define
+// SIMD_DISPATCH_2_NAMESPACE
+
+#if SIMD_ARCH_NS_USE_NULL
+#define SIMD_DISPATCH_2_NS_ID_NULL SIMD_INSN_ID_NULL
+#else
+#define SIMD_DISPATCH_2_NS_ID_NULL
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE2
+#define SIMD_DISPATCH_2_NS_ID_SSE2 SIMD_INSN_ID_SSE2
+#else
+#define SIMD_DISPATCH_2_NS_ID_SSE2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE3
+#define SIMD_DISPATCH_2_NS_ID_SSE3 SIMD_INSN_ID_SSE3
+#else
+#define SIMD_DISPATCH_2_NS_ID_SSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSSE3
+#define SIMD_DISPATCH_2_NS_ID_SSSE3 SIMD_INSN_ID_SSSE3
+#else
+#define SIMD_DISPATCH_2_NS_ID_SSSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_1
+#define SIMD_DISPATCH_2_NS_ID_SSE4_1 SIMD_INSN_ID_SSE4_1
+#else
+#define SIMD_DISPATCH_2_NS_ID_SSE4_1
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_2
+#define SIMD_DISPATCH_2_NS_ID_SSE4_2 SIMD_INSN_ID_SSE4_2
+#else
+#define SIMD_DISPATCH_2_NS_ID_SSE4_2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4A
+#define SIMD_DISPATCH_2_NS_ID_SSE4A SIMD_INSN_ID_SSE4A
+#else
+#define SIMD_DISPATCH_2_NS_ID_SSE4A
+#endif
+
+#if SIMD_ARCH_NS_USE_POPCNT_INSN
+#define SIMD_DISPATCH_2_NS_ID_POPCNT_INSN SIMD_INSN_ID_POPCNT_INSN
+#else
+#define SIMD_DISPATCH_2_NS_ID_POPCNT_INSN
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX
+#define SIMD_DISPATCH_2_NS_ID_AVX SIMD_INSN_ID_AVX
+#else
+#define SIMD_DISPATCH_2_NS_ID_AVX
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX2
+#define SIMD_DISPATCH_2_NS_ID_AVX2 SIMD_INSN_ID_AVX2
+#else
+#define SIMD_DISPATCH_2_NS_ID_AVX2
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA3
+#define SIMD_DISPATCH_2_NS_ID_FMA3 SIMD_INSN_ID_FMA3
+#else
+#define SIMD_DISPATCH_2_NS_ID_FMA3
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA4
+#define SIMD_DISPATCH_2_NS_ID_FMA4 SIMD_INSN_ID_FMA4
+#else
+#define SIMD_DISPATCH_2_NS_ID_FMA4
+#endif
+
+#if SIMD_ARCH_NS_USE_XOP
+#define SIMD_DISPATCH_2_NS_ID_XOP SIMD_INSN_ID_XOP
+#else
+#define SIMD_DISPATCH_2_NS_ID_XOP
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512F
+#define SIMD_DISPATCH_2_NS_ID_AVX512F SIMD_INSN_ID_AVX512F
+#else
+#define SIMD_DISPATCH_2_NS_ID_AVX512F
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512BW
+#define SIMD_DISPATCH_2_NS_ID_AVX512BW SIMD_INSN_ID_AVX512BW
+#else
+#define SIMD_DISPATCH_2_NS_ID_AVX512BW
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512DQ
+#define SIMD_DISPATCH_2_NS_ID_AVX512DQ SIMD_INSN_ID_AVX512DQ
+#else
+#define SIMD_DISPATCH_2_NS_ID_AVX512DQ
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512VL
+#define SIMD_DISPATCH_2_NS_ID_AVX512VL SIMD_INSN_ID_AVX512VL
+#else
+#define SIMD_DISPATCH_2_NS_ID_AVX512VL
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON
+#define SIMD_DISPATCH_2_NS_ID_NEON SIMD_INSN_ID_NEON
+#else
+#define SIMD_DISPATCH_2_NS_ID_NEON
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON_FLT_SP
+#define SIMD_DISPATCH_2_NS_ID_NEON_FLT_SP SIMD_INSN_ID_NEON_FLT_SP
+#else
+#define SIMD_DISPATCH_2_NS_ID_NEON_FLT_SP
+#endif
+
+#if SIMD_ARCH_NS_USE_MSA
+#define SIMD_DISPATCH_2_NS_ID_MSA SIMD_INSN_ID_MSA
+#else
+#define SIMD_DISPATCH_2_NS_ID_MSA
+#endif
+
+#if SIMD_ARCH_NS_USE_ALTIVEC
+#define SIMD_DISPATCH_2_NS_ID_ALTIVEC SIMD_INSN_ID_ALTIVEC
+#else
+#define SIMD_DISPATCH_2_NS_ID_ALTIVEC
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_206
+#define SIMD_DISPATCH_2_NS_ID_VSX_206 SIMD_INSN_ID_VSX_206
+#else
+#define SIMD_DISPATCH_2_NS_ID_VSX_206
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_207
+#define SIMD_DISPATCH_2_NS_ID_VSX_207 SIMD_INSN_ID_VSX_207
+#else
+#define SIMD_DISPATCH_2_NS_ID_VSX_207
+#endif
+
+#define SIMD_DISPATCH_2_NAMESPACE                   \
+    SIMD_PASTE24(arch,                              \
+                 SIMD_DISPATCH_2_NS_ID_NULL,        \
+                 SIMD_DISPATCH_2_NS_ID_SSE2,        \
+                 SIMD_DISPATCH_2_NS_ID_SSE3,        \
+                 SIMD_DISPATCH_2_NS_ID_SSSE3,       \
+                 SIMD_DISPATCH_2_NS_ID_SSE4_1,      \
+                 SIMD_DISPATCH_2_NS_ID_SSE4_2,      \
+                 SIMD_DISPATCH_2_NS_ID_SSE4A,       \
+                 SIMD_DISPATCH_2_NS_ID_POPCNT_INSN, \
+                 SIMD_DISPATCH_2_NS_ID_AVX,         \
+                 SIMD_DISPATCH_2_NS_ID_AVX2,        \
+                 SIMD_DISPATCH_2_NS_ID_AVX512F,     \
+                 SIMD_DISPATCH_2_NS_ID_AVX512BW,    \
+                 SIMD_DISPATCH_2_NS_ID_AVX512DQ,    \
+                 SIMD_DISPATCH_2_NS_ID_AVX512VL,    \
+                 SIMD_DISPATCH_2_NS_ID_FMA3,        \
+                 SIMD_DISPATCH_2_NS_ID_FMA4,        \
+                 SIMD_DISPATCH_2_NS_ID_XOP,         \
+                 SIMD_DISPATCH_2_NS_ID_NEON,        \
+                 SIMD_DISPATCH_2_NS_ID_NEON_FLT_SP, \
+                 SIMD_DISPATCH_2_NS_ID_MSA,         \
+                 SIMD_DISPATCH_2_NS_ID_ALTIVEC,     \
+                 SIMD_DISPATCH_2_NS_ID_VSX_206,     \
+                 SIMD_DISPATCH_2_NS_ID_VSX_207)
+
+#define SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE SIMD_DISPATCH_2_NAMESPACE
+#define SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH 1
+#include <bigmath/simd/dispatch/preprocess_single_compile_arch.h>
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE
+
+#define SIMD_DISPATCH_2_FN_REGISTER(ARRAY, NAME, FUN_TYPE)                                    \
+    { /* the following will fail if the overload is not available */                          \
+        FUN_TYPE fun_ptr = &SIMD_DISPATCH_2_NAMESPACE::SIMD_REMOVE_PARENS(NAME);              \
+        ARRAY[2 - 1] = ::simd::SIMD_DISPATCH_2_NAMESPACE::detail::create_fn_version(fun_ptr); \
+    }
+
+#define SIMD_DISPATCH_2_FN_DECLARE(SIGNATURE) \
+    namespace SIMD_DISPATCH_2_NAMESPACE {     \
+        SIMD_REMOVE_PARENS(SIGNATURE);        \
+    }
+#undef SIMD_ARCH_LIST
+#else
+#define SIMD_DISPATCH_2_FN_REGISTER(ARRAY, NAME, FUN_TYPE)
+#define SIMD_DISPATCH_2_FN_DECLARE(SIGNATURE)
+#endif
+
+#ifdef SIMD_DISPATCH_ARCH3
+#define SIMD_ARCH_LIST SIMD_DISPATCH_ARCH3
+#include <bigmath/simd/detail/preprocess_single_arch.h>
+
+// Use the results of preprocess_single_arch.h to define
+// SIMD_DISPATCH_3_NAMESPACE
+
+#if SIMD_ARCH_NS_USE_NULL
+#define SIMD_DISPATCH_3_NS_ID_NULL SIMD_INSN_ID_NULL
+#else
+#define SIMD_DISPATCH_3_NS_ID_NULL
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE2
+#define SIMD_DISPATCH_3_NS_ID_SSE2 SIMD_INSN_ID_SSE2
+#else
+#define SIMD_DISPATCH_3_NS_ID_SSE2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE3
+#define SIMD_DISPATCH_3_NS_ID_SSE3 SIMD_INSN_ID_SSE3
+#else
+#define SIMD_DISPATCH_3_NS_ID_SSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSSE3
+#define SIMD_DISPATCH_3_NS_ID_SSSE3 SIMD_INSN_ID_SSSE3
+#else
+#define SIMD_DISPATCH_3_NS_ID_SSSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_1
+#define SIMD_DISPATCH_3_NS_ID_SSE4_1 SIMD_INSN_ID_SSE4_1
+#else
+#define SIMD_DISPATCH_3_NS_ID_SSE4_1
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_2
+#define SIMD_DISPATCH_3_NS_ID_SSE4_2 SIMD_INSN_ID_SSE4_2
+#else
+#define SIMD_DISPATCH_3_NS_ID_SSE4_2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4A
+#define SIMD_DISPATCH_3_NS_ID_SSE4A SIMD_INSN_ID_SSE4A
+#else
+#define SIMD_DISPATCH_3_NS_ID_SSE4A
+#endif
+
+#if SIMD_ARCH_NS_USE_POPCNT_INSN
+#define SIMD_DISPATCH_3_NS_ID_POPCNT_INSN SIMD_INSN_ID_POPCNT_INSN
+#else
+#define SIMD_DISPATCH_3_NS_ID_POPCNT_INSN
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX
+#define SIMD_DISPATCH_3_NS_ID_AVX SIMD_INSN_ID_AVX
+#else
+#define SIMD_DISPATCH_3_NS_ID_AVX
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX2
+#define SIMD_DISPATCH_3_NS_ID_AVX2 SIMD_INSN_ID_AVX2
+#else
+#define SIMD_DISPATCH_3_NS_ID_AVX2
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA3
+#define SIMD_DISPATCH_3_NS_ID_FMA3 SIMD_INSN_ID_FMA3
+#else
+#define SIMD_DISPATCH_3_NS_ID_FMA3
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA4
+#define SIMD_DISPATCH_3_NS_ID_FMA4 SIMD_INSN_ID_FMA4
+#else
+#define SIMD_DISPATCH_3_NS_ID_FMA4
+#endif
+
+#if SIMD_ARCH_NS_USE_XOP
+#define SIMD_DISPATCH_3_NS_ID_XOP SIMD_INSN_ID_XOP
+#else
+#define SIMD_DISPATCH_3_NS_ID_XOP
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512F
+#define SIMD_DISPATCH_3_NS_ID_AVX512F SIMD_INSN_ID_AVX512F
+#else
+#define SIMD_DISPATCH_3_NS_ID_AVX512F
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512BW
+#define SIMD_DISPATCH_3_NS_ID_AVX512BW SIMD_INSN_ID_AVX512BW
+#else
+#define SIMD_DISPATCH_3_NS_ID_AVX512BW
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512DQ
+#define SIMD_DISPATCH_3_NS_ID_AVX512DQ SIMD_INSN_ID_AVX512DQ
+#else
+#define SIMD_DISPATCH_3_NS_ID_AVX512DQ
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512VL
+#define SIMD_DISPATCH_3_NS_ID_AVX512VL SIMD_INSN_ID_AVX512VL
+#else
+#define SIMD_DISPATCH_3_NS_ID_AVX512VL
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON
+#define SIMD_DISPATCH_3_NS_ID_NEON SIMD_INSN_ID_NEON
+#else
+#define SIMD_DISPATCH_3_NS_ID_NEON
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON_FLT_SP
+#define SIMD_DISPATCH_3_NS_ID_NEON_FLT_SP SIMD_INSN_ID_NEON_FLT_SP
+#else
+#define SIMD_DISPATCH_3_NS_ID_NEON_FLT_SP
+#endif
+
+#if SIMD_ARCH_NS_USE_MSA
+#define SIMD_DISPATCH_3_NS_ID_MSA SIMD_INSN_ID_MSA
+#else
+#define SIMD_DISPATCH_3_NS_ID_MSA
+#endif
+
+#if SIMD_ARCH_NS_USE_ALTIVEC
+#define SIMD_DISPATCH_3_NS_ID_ALTIVEC SIMD_INSN_ID_ALTIVEC
+#else
+#define SIMD_DISPATCH_3_NS_ID_ALTIVEC
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_206
+#define SIMD_DISPATCH_3_NS_ID_VSX_206 SIMD_INSN_ID_VSX_206
+#else
+#define SIMD_DISPATCH_3_NS_ID_VSX_206
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_207
+#define SIMD_DISPATCH_3_NS_ID_VSX_207 SIMD_INSN_ID_VSX_207
+#else
+#define SIMD_DISPATCH_3_NS_ID_VSX_207
+#endif
+
+#define SIMD_DISPATCH_3_NAMESPACE                   \
+    SIMD_PASTE24(arch,                              \
+                 SIMD_DISPATCH_3_NS_ID_NULL,        \
+                 SIMD_DISPATCH_3_NS_ID_SSE2,        \
+                 SIMD_DISPATCH_3_NS_ID_SSE3,        \
+                 SIMD_DISPATCH_3_NS_ID_SSSE3,       \
+                 SIMD_DISPATCH_3_NS_ID_SSE4_1,      \
+                 SIMD_DISPATCH_3_NS_ID_SSE4_2,      \
+                 SIMD_DISPATCH_3_NS_ID_SSE4A,       \
+                 SIMD_DISPATCH_3_NS_ID_POPCNT_INSN, \
+                 SIMD_DISPATCH_3_NS_ID_AVX,         \
+                 SIMD_DISPATCH_3_NS_ID_AVX2,        \
+                 SIMD_DISPATCH_3_NS_ID_AVX512F,     \
+                 SIMD_DISPATCH_3_NS_ID_AVX512BW,    \
+                 SIMD_DISPATCH_3_NS_ID_AVX512DQ,    \
+                 SIMD_DISPATCH_3_NS_ID_AVX512VL,    \
+                 SIMD_DISPATCH_3_NS_ID_FMA3,        \
+                 SIMD_DISPATCH_3_NS_ID_FMA4,        \
+                 SIMD_DISPATCH_3_NS_ID_XOP,         \
+                 SIMD_DISPATCH_3_NS_ID_NEON,        \
+                 SIMD_DISPATCH_3_NS_ID_NEON_FLT_SP, \
+                 SIMD_DISPATCH_3_NS_ID_MSA,         \
+                 SIMD_DISPATCH_3_NS_ID_ALTIVEC,     \
+                 SIMD_DISPATCH_3_NS_ID_VSX_206,     \
+                 SIMD_DISPATCH_3_NS_ID_VSX_207)
+
+#define SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE SIMD_DISPATCH_3_NAMESPACE
+#define SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH 1
+#include <bigmath/simd/dispatch/preprocess_single_compile_arch.h>
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE
+
+#define SIMD_DISPATCH_3_FN_REGISTER(ARRAY, NAME, FUN_TYPE)                                    \
+    { /* the following will fail if the overload is not available */                          \
+        FUN_TYPE fun_ptr = &SIMD_DISPATCH_3_NAMESPACE::SIMD_REMOVE_PARENS(NAME);              \
+        ARRAY[3 - 1] = ::simd::SIMD_DISPATCH_3_NAMESPACE::detail::create_fn_version(fun_ptr); \
+    }
+
+#define SIMD_DISPATCH_3_FN_DECLARE(SIGNATURE) \
+    namespace SIMD_DISPATCH_3_NAMESPACE {     \
+        SIMD_REMOVE_PARENS(SIGNATURE);        \
+    }
+#undef SIMD_ARCH_LIST
+#else
+#define SIMD_DISPATCH_3_FN_REGISTER(ARRAY, NAME, FUN_TYPE)
+#define SIMD_DISPATCH_3_FN_DECLARE(SIGNATURE)
+#endif
+
+#ifdef SIMD_DISPATCH_ARCH4
+#define SIMD_ARCH_LIST SIMD_DISPATCH_ARCH4
+#include <bigmath/simd/detail/preprocess_single_arch.h>
+
+// Use the results of preprocess_single_arch.h to define
+// SIMD_DISPATCH_4_NAMESPACE
+
+#if SIMD_ARCH_NS_USE_NULL
+#define SIMD_DISPATCH_4_NS_ID_NULL SIMD_INSN_ID_NULL
+#else
+#define SIMD_DISPATCH_4_NS_ID_NULL
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE2
+#define SIMD_DISPATCH_4_NS_ID_SSE2 SIMD_INSN_ID_SSE2
+#else
+#define SIMD_DISPATCH_4_NS_ID_SSE2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE3
+#define SIMD_DISPATCH_4_NS_ID_SSE3 SIMD_INSN_ID_SSE3
+#else
+#define SIMD_DISPATCH_4_NS_ID_SSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSSE3
+#define SIMD_DISPATCH_4_NS_ID_SSSE3 SIMD_INSN_ID_SSSE3
+#else
+#define SIMD_DISPATCH_4_NS_ID_SSSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_1
+#define SIMD_DISPATCH_4_NS_ID_SSE4_1 SIMD_INSN_ID_SSE4_1
+#else
+#define SIMD_DISPATCH_4_NS_ID_SSE4_1
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_2
+#define SIMD_DISPATCH_4_NS_ID_SSE4_2 SIMD_INSN_ID_SSE4_2
+#else
+#define SIMD_DISPATCH_4_NS_ID_SSE4_2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4A
+#define SIMD_DISPATCH_4_NS_ID_SSE4A SIMD_INSN_ID_SSE4A
+#else
+#define SIMD_DISPATCH_4_NS_ID_SSE4A
+#endif
+
+#if SIMD_ARCH_NS_USE_POPCNT_INSN
+#define SIMD_DISPATCH_4_NS_ID_POPCNT_INSN SIMD_INSN_ID_POPCNT_INSN
+#else
+#define SIMD_DISPATCH_4_NS_ID_POPCNT_INSN
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX
+#define SIMD_DISPATCH_4_NS_ID_AVX SIMD_INSN_ID_AVX
+#else
+#define SIMD_DISPATCH_4_NS_ID_AVX
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX2
+#define SIMD_DISPATCH_4_NS_ID_AVX2 SIMD_INSN_ID_AVX2
+#else
+#define SIMD_DISPATCH_4_NS_ID_AVX2
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA3
+#define SIMD_DISPATCH_4_NS_ID_FMA3 SIMD_INSN_ID_FMA3
+#else
+#define SIMD_DISPATCH_4_NS_ID_FMA3
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA4
+#define SIMD_DISPATCH_4_NS_ID_FMA4 SIMD_INSN_ID_FMA4
+#else
+#define SIMD_DISPATCH_4_NS_ID_FMA4
+#endif
+
+#if SIMD_ARCH_NS_USE_XOP
+#define SIMD_DISPATCH_4_NS_ID_XOP SIMD_INSN_ID_XOP
+#else
+#define SIMD_DISPATCH_4_NS_ID_XOP
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512F
+#define SIMD_DISPATCH_4_NS_ID_AVX512F SIMD_INSN_ID_AVX512F
+#else
+#define SIMD_DISPATCH_4_NS_ID_AVX512F
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512BW
+#define SIMD_DISPATCH_4_NS_ID_AVX512BW SIMD_INSN_ID_AVX512BW
+#else
+#define SIMD_DISPATCH_4_NS_ID_AVX512BW
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512DQ
+#define SIMD_DISPATCH_4_NS_ID_AVX512DQ SIMD_INSN_ID_AVX512DQ
+#else
+#define SIMD_DISPATCH_4_NS_ID_AVX512DQ
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512VL
+#define SIMD_DISPATCH_4_NS_ID_AVX512VL SIMD_INSN_ID_AVX512VL
+#else
+#define SIMD_DISPATCH_4_NS_ID_AVX512VL
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON
+#define SIMD_DISPATCH_4_NS_ID_NEON SIMD_INSN_ID_NEON
+#else
+#define SIMD_DISPATCH_4_NS_ID_NEON
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON_FLT_SP
+#define SIMD_DISPATCH_4_NS_ID_NEON_FLT_SP SIMD_INSN_ID_NEON_FLT_SP
+#else
+#define SIMD_DISPATCH_4_NS_ID_NEON_FLT_SP
+#endif
+
+#if SIMD_ARCH_NS_USE_MSA
+#define SIMD_DISPATCH_4_NS_ID_MSA SIMD_INSN_ID_MSA
+#else
+#define SIMD_DISPATCH_4_NS_ID_MSA
+#endif
+
+#if SIMD_ARCH_NS_USE_ALTIVEC
+#define SIMD_DISPATCH_4_NS_ID_ALTIVEC SIMD_INSN_ID_ALTIVEC
+#else
+#define SIMD_DISPATCH_4_NS_ID_ALTIVEC
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_206
+#define SIMD_DISPATCH_4_NS_ID_VSX_206 SIMD_INSN_ID_VSX_206
+#else
+#define SIMD_DISPATCH_4_NS_ID_VSX_206
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_207
+#define SIMD_DISPATCH_4_NS_ID_VSX_207 SIMD_INSN_ID_VSX_207
+#else
+#define SIMD_DISPATCH_4_NS_ID_VSX_207
+#endif
+
+#define SIMD_DISPATCH_4_NAMESPACE                   \
+    SIMD_PASTE24(arch,                              \
+                 SIMD_DISPATCH_4_NS_ID_NULL,        \
+                 SIMD_DISPATCH_4_NS_ID_SSE2,        \
+                 SIMD_DISPATCH_4_NS_ID_SSE3,        \
+                 SIMD_DISPATCH_4_NS_ID_SSSE3,       \
+                 SIMD_DISPATCH_4_NS_ID_SSE4_1,      \
+                 SIMD_DISPATCH_4_NS_ID_SSE4_2,      \
+                 SIMD_DISPATCH_4_NS_ID_SSE4A,       \
+                 SIMD_DISPATCH_4_NS_ID_POPCNT_INSN, \
+                 SIMD_DISPATCH_4_NS_ID_AVX,         \
+                 SIMD_DISPATCH_4_NS_ID_AVX2,        \
+                 SIMD_DISPATCH_4_NS_ID_AVX512F,     \
+                 SIMD_DISPATCH_4_NS_ID_AVX512BW,    \
+                 SIMD_DISPATCH_4_NS_ID_AVX512DQ,    \
+                 SIMD_DISPATCH_4_NS_ID_AVX512VL,    \
+                 SIMD_DISPATCH_4_NS_ID_FMA3,        \
+                 SIMD_DISPATCH_4_NS_ID_FMA4,        \
+                 SIMD_DISPATCH_4_NS_ID_XOP,         \
+                 SIMD_DISPATCH_4_NS_ID_NEON,        \
+                 SIMD_DISPATCH_4_NS_ID_NEON_FLT_SP, \
+                 SIMD_DISPATCH_4_NS_ID_MSA,         \
+                 SIMD_DISPATCH_4_NS_ID_ALTIVEC,     \
+                 SIMD_DISPATCH_4_NS_ID_VSX_206,     \
+                 SIMD_DISPATCH_4_NS_ID_VSX_207)
+
+#define SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE SIMD_DISPATCH_4_NAMESPACE
+#define SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH 1
+#include <bigmath/simd/dispatch/preprocess_single_compile_arch.h>
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE
+
+#define SIMD_DISPATCH_4_FN_REGISTER(ARRAY, NAME, FUN_TYPE)                                    \
+    { /* the following will fail if the overload is not available */                          \
+        FUN_TYPE fun_ptr = &SIMD_DISPATCH_4_NAMESPACE::SIMD_REMOVE_PARENS(NAME);              \
+        ARRAY[4 - 1] = ::simd::SIMD_DISPATCH_4_NAMESPACE::detail::create_fn_version(fun_ptr); \
+    }
+
+#define SIMD_DISPATCH_4_FN_DECLARE(SIGNATURE) \
+    namespace SIMD_DISPATCH_4_NAMESPACE {     \
+        SIMD_REMOVE_PARENS(SIGNATURE);        \
+    }
+#undef SIMD_ARCH_LIST
+#else
+#define SIMD_DISPATCH_4_FN_REGISTER(ARRAY, NAME, FUN_TYPE)
+#define SIMD_DISPATCH_4_FN_DECLARE(SIGNATURE)
+#endif
+
+#ifdef SIMD_DISPATCH_ARCH5
+#define SIMD_ARCH_LIST SIMD_DISPATCH_ARCH5
+#include <bigmath/simd/detail/preprocess_single_arch.h>
+
+// Use the results of preprocess_single_arch.h to define
+// SIMD_DISPATCH_5_NAMESPACE
+
+#if SIMD_ARCH_NS_USE_NULL
+#define SIMD_DISPATCH_5_NS_ID_NULL SIMD_INSN_ID_NULL
+#else
+#define SIMD_DISPATCH_5_NS_ID_NULL
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE2
+#define SIMD_DISPATCH_5_NS_ID_SSE2 SIMD_INSN_ID_SSE2
+#else
+#define SIMD_DISPATCH_5_NS_ID_SSE2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE3
+#define SIMD_DISPATCH_5_NS_ID_SSE3 SIMD_INSN_ID_SSE3
+#else
+#define SIMD_DISPATCH_5_NS_ID_SSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSSE3
+#define SIMD_DISPATCH_5_NS_ID_SSSE3 SIMD_INSN_ID_SSSE3
+#else
+#define SIMD_DISPATCH_5_NS_ID_SSSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_1
+#define SIMD_DISPATCH_5_NS_ID_SSE4_1 SIMD_INSN_ID_SSE4_1
+#else
+#define SIMD_DISPATCH_5_NS_ID_SSE4_1
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_2
+#define SIMD_DISPATCH_5_NS_ID_SSE4_2 SIMD_INSN_ID_SSE4_2
+#else
+#define SIMD_DISPATCH_5_NS_ID_SSE4_2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4A
+#define SIMD_DISPATCH_5_NS_ID_SSE4A SIMD_INSN_ID_SSE4A
+#else
+#define SIMD_DISPATCH_5_NS_ID_SSE4A
+#endif
+
+#if SIMD_ARCH_NS_USE_POPCNT_INSN
+#define SIMD_DISPATCH_5_NS_ID_POPCNT_INSN SIMD_INSN_ID_POPCNT_INSN
+#else
+#define SIMD_DISPATCH_5_NS_ID_POPCNT_INSN
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX
+#define SIMD_DISPATCH_5_NS_ID_AVX SIMD_INSN_ID_AVX
+#else
+#define SIMD_DISPATCH_5_NS_ID_AVX
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX2
+#define SIMD_DISPATCH_5_NS_ID_AVX2 SIMD_INSN_ID_AVX2
+#else
+#define SIMD_DISPATCH_5_NS_ID_AVX2
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA3
+#define SIMD_DISPATCH_5_NS_ID_FMA3 SIMD_INSN_ID_FMA3
+#else
+#define SIMD_DISPATCH_5_NS_ID_FMA3
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA4
+#define SIMD_DISPATCH_5_NS_ID_FMA4 SIMD_INSN_ID_FMA4
+#else
+#define SIMD_DISPATCH_5_NS_ID_FMA4
+#endif
+
+#if SIMD_ARCH_NS_USE_XOP
+#define SIMD_DISPATCH_5_NS_ID_XOP SIMD_INSN_ID_XOP
+#else
+#define SIMD_DISPATCH_5_NS_ID_XOP
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512F
+#define SIMD_DISPATCH_5_NS_ID_AVX512F SIMD_INSN_ID_AVX512F
+#else
+#define SIMD_DISPATCH_5_NS_ID_AVX512F
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512BW
+#define SIMD_DISPATCH_5_NS_ID_AVX512BW SIMD_INSN_ID_AVX512BW
+#else
+#define SIMD_DISPATCH_5_NS_ID_AVX512BW
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512DQ
+#define SIMD_DISPATCH_5_NS_ID_AVX512DQ SIMD_INSN_ID_AVX512DQ
+#else
+#define SIMD_DISPATCH_5_NS_ID_AVX512DQ
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512VL
+#define SIMD_DISPATCH_5_NS_ID_AVX512VL SIMD_INSN_ID_AVX512VL
+#else
+#define SIMD_DISPATCH_5_NS_ID_AVX512VL
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON
+#define SIMD_DISPATCH_5_NS_ID_NEON SIMD_INSN_ID_NEON
+#else
+#define SIMD_DISPATCH_5_NS_ID_NEON
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON_FLT_SP
+#define SIMD_DISPATCH_5_NS_ID_NEON_FLT_SP SIMD_INSN_ID_NEON_FLT_SP
+#else
+#define SIMD_DISPATCH_5_NS_ID_NEON_FLT_SP
+#endif
+
+#if SIMD_ARCH_NS_USE_MSA
+#define SIMD_DISPATCH_5_NS_ID_MSA SIMD_INSN_ID_MSA
+#else
+#define SIMD_DISPATCH_5_NS_ID_MSA
+#endif
+
+#if SIMD_ARCH_NS_USE_ALTIVEC
+#define SIMD_DISPATCH_5_NS_ID_ALTIVEC SIMD_INSN_ID_ALTIVEC
+#else
+#define SIMD_DISPATCH_5_NS_ID_ALTIVEC
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_206
+#define SIMD_DISPATCH_5_NS_ID_VSX_206 SIMD_INSN_ID_VSX_206
+#else
+#define SIMD_DISPATCH_5_NS_ID_VSX_206
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_207
+#define SIMD_DISPATCH_5_NS_ID_VSX_207 SIMD_INSN_ID_VSX_207
+#else
+#define SIMD_DISPATCH_5_NS_ID_VSX_207
+#endif
+
+#define SIMD_DISPATCH_5_NAMESPACE                   \
+    SIMD_PASTE24(arch,                              \
+                 SIMD_DISPATCH_5_NS_ID_NULL,        \
+                 SIMD_DISPATCH_5_NS_ID_SSE2,        \
+                 SIMD_DISPATCH_5_NS_ID_SSE3,        \
+                 SIMD_DISPATCH_5_NS_ID_SSSE3,       \
+                 SIMD_DISPATCH_5_NS_ID_SSE4_1,      \
+                 SIMD_DISPATCH_5_NS_ID_SSE4_2,      \
+                 SIMD_DISPATCH_5_NS_ID_SSE4A,       \
+                 SIMD_DISPATCH_5_NS_ID_POPCNT_INSN, \
+                 SIMD_DISPATCH_5_NS_ID_AVX,         \
+                 SIMD_DISPATCH_5_NS_ID_AVX2,        \
+                 SIMD_DISPATCH_5_NS_ID_AVX512F,     \
+                 SIMD_DISPATCH_5_NS_ID_AVX512BW,    \
+                 SIMD_DISPATCH_5_NS_ID_AVX512DQ,    \
+                 SIMD_DISPATCH_5_NS_ID_AVX512VL,    \
+                 SIMD_DISPATCH_5_NS_ID_FMA3,        \
+                 SIMD_DISPATCH_5_NS_ID_FMA4,        \
+                 SIMD_DISPATCH_5_NS_ID_XOP,         \
+                 SIMD_DISPATCH_5_NS_ID_NEON,        \
+                 SIMD_DISPATCH_5_NS_ID_NEON_FLT_SP, \
+                 SIMD_DISPATCH_5_NS_ID_MSA,         \
+                 SIMD_DISPATCH_5_NS_ID_ALTIVEC,     \
+                 SIMD_DISPATCH_5_NS_ID_VSX_206,     \
+                 SIMD_DISPATCH_5_NS_ID_VSX_207)
+
+#define SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE SIMD_DISPATCH_5_NAMESPACE
+#define SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH 1
+#include <bigmath/simd/dispatch/preprocess_single_compile_arch.h>
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE
+
+#define SIMD_DISPATCH_5_FN_REGISTER(ARRAY, NAME, FUN_TYPE)                                    \
+    { /* the following will fail if the overload is not available */                          \
+        FUN_TYPE fun_ptr = &SIMD_DISPATCH_5_NAMESPACE::SIMD_REMOVE_PARENS(NAME);              \
+        ARRAY[5 - 1] = ::simd::SIMD_DISPATCH_5_NAMESPACE::detail::create_fn_version(fun_ptr); \
+    }
+
+#define SIMD_DISPATCH_5_FN_DECLARE(SIGNATURE) \
+    namespace SIMD_DISPATCH_5_NAMESPACE {     \
+        SIMD_REMOVE_PARENS(SIGNATURE);        \
+    }
+#undef SIMD_ARCH_LIST
+#else
+#define SIMD_DISPATCH_5_FN_REGISTER(ARRAY, NAME, FUN_TYPE)
+#define SIMD_DISPATCH_5_FN_DECLARE(SIGNATURE)
+#endif
+
+#ifdef SIMD_DISPATCH_ARCH6
+#define SIMD_ARCH_LIST SIMD_DISPATCH_ARCH6
+#include <bigmath/simd/detail/preprocess_single_arch.h>
+
+// Use the results of preprocess_single_arch.h to define
+// SIMD_DISPATCH_6_NAMESPACE
+
+#if SIMD_ARCH_NS_USE_NULL
+#define SIMD_DISPATCH_6_NS_ID_NULL SIMD_INSN_ID_NULL
+#else
+#define SIMD_DISPATCH_6_NS_ID_NULL
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE2
+#define SIMD_DISPATCH_6_NS_ID_SSE2 SIMD_INSN_ID_SSE2
+#else
+#define SIMD_DISPATCH_6_NS_ID_SSE2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE3
+#define SIMD_DISPATCH_6_NS_ID_SSE3 SIMD_INSN_ID_SSE3
+#else
+#define SIMD_DISPATCH_6_NS_ID_SSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSSE3
+#define SIMD_DISPATCH_6_NS_ID_SSSE3 SIMD_INSN_ID_SSSE3
+#else
+#define SIMD_DISPATCH_6_NS_ID_SSSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_1
+#define SIMD_DISPATCH_6_NS_ID_SSE4_1 SIMD_INSN_ID_SSE4_1
+#else
+#define SIMD_DISPATCH_6_NS_ID_SSE4_1
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_2
+#define SIMD_DISPATCH_6_NS_ID_SSE4_2 SIMD_INSN_ID_SSE4_2
+#else
+#define SIMD_DISPATCH_6_NS_ID_SSE4_2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4A
+#define SIMD_DISPATCH_6_NS_ID_SSE4A SIMD_INSN_ID_SSE4A
+#else
+#define SIMD_DISPATCH_6_NS_ID_SSE4A
+#endif
+
+#if SIMD_ARCH_NS_USE_POPCNT_INSN
+#define SIMD_DISPATCH_6_NS_ID_POPCNT_INSN SIMD_INSN_ID_POPCNT_INSN
+#else
+#define SIMD_DISPATCH_6_NS_ID_POPCNT_INSN
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX
+#define SIMD_DISPATCH_6_NS_ID_AVX SIMD_INSN_ID_AVX
+#else
+#define SIMD_DISPATCH_6_NS_ID_AVX
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX2
+#define SIMD_DISPATCH_6_NS_ID_AVX2 SIMD_INSN_ID_AVX2
+#else
+#define SIMD_DISPATCH_6_NS_ID_AVX2
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA3
+#define SIMD_DISPATCH_6_NS_ID_FMA3 SIMD_INSN_ID_FMA3
+#else
+#define SIMD_DISPATCH_6_NS_ID_FMA3
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA4
+#define SIMD_DISPATCH_6_NS_ID_FMA4 SIMD_INSN_ID_FMA4
+#else
+#define SIMD_DISPATCH_6_NS_ID_FMA4
+#endif
+
+#if SIMD_ARCH_NS_USE_XOP
+#define SIMD_DISPATCH_6_NS_ID_XOP SIMD_INSN_ID_XOP
+#else
+#define SIMD_DISPATCH_6_NS_ID_XOP
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512F
+#define SIMD_DISPATCH_6_NS_ID_AVX512F SIMD_INSN_ID_AVX512F
+#else
+#define SIMD_DISPATCH_6_NS_ID_AVX512F
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512BW
+#define SIMD_DISPATCH_6_NS_ID_AVX512BW SIMD_INSN_ID_AVX512BW
+#else
+#define SIMD_DISPATCH_6_NS_ID_AVX512BW
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512DQ
+#define SIMD_DISPATCH_6_NS_ID_AVX512DQ SIMD_INSN_ID_AVX512DQ
+#else
+#define SIMD_DISPATCH_6_NS_ID_AVX512DQ
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512VL
+#define SIMD_DISPATCH_6_NS_ID_AVX512VL SIMD_INSN_ID_AVX512VL
+#else
+#define SIMD_DISPATCH_6_NS_ID_AVX512VL
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON
+#define SIMD_DISPATCH_6_NS_ID_NEON SIMD_INSN_ID_NEON
+#else
+#define SIMD_DISPATCH_6_NS_ID_NEON
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON_FLT_SP
+#define SIMD_DISPATCH_6_NS_ID_NEON_FLT_SP SIMD_INSN_ID_NEON_FLT_SP
+#else
+#define SIMD_DISPATCH_6_NS_ID_NEON_FLT_SP
+#endif
+
+#if SIMD_ARCH_NS_USE_MSA
+#define SIMD_DISPATCH_6_NS_ID_MSA SIMD_INSN_ID_MSA
+#else
+#define SIMD_DISPATCH_6_NS_ID_MSA
+#endif
+
+#if SIMD_ARCH_NS_USE_ALTIVEC
+#define SIMD_DISPATCH_6_NS_ID_ALTIVEC SIMD_INSN_ID_ALTIVEC
+#else
+#define SIMD_DISPATCH_6_NS_ID_ALTIVEC
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_206
+#define SIMD_DISPATCH_6_NS_ID_VSX_206 SIMD_INSN_ID_VSX_206
+#else
+#define SIMD_DISPATCH_6_NS_ID_VSX_206
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_207
+#define SIMD_DISPATCH_6_NS_ID_VSX_207 SIMD_INSN_ID_VSX_207
+#else
+#define SIMD_DISPATCH_6_NS_ID_VSX_207
+#endif
+
+#define SIMD_DISPATCH_6_NAMESPACE                   \
+    SIMD_PASTE24(arch,                              \
+                 SIMD_DISPATCH_6_NS_ID_NULL,        \
+                 SIMD_DISPATCH_6_NS_ID_SSE2,        \
+                 SIMD_DISPATCH_6_NS_ID_SSE3,        \
+                 SIMD_DISPATCH_6_NS_ID_SSSE3,       \
+                 SIMD_DISPATCH_6_NS_ID_SSE4_1,      \
+                 SIMD_DISPATCH_6_NS_ID_SSE4_2,      \
+                 SIMD_DISPATCH_6_NS_ID_SSE4A,       \
+                 SIMD_DISPATCH_6_NS_ID_POPCNT_INSN, \
+                 SIMD_DISPATCH_6_NS_ID_AVX,         \
+                 SIMD_DISPATCH_6_NS_ID_AVX2,        \
+                 SIMD_DISPATCH_6_NS_ID_AVX512F,     \
+                 SIMD_DISPATCH_6_NS_ID_AVX512BW,    \
+                 SIMD_DISPATCH_6_NS_ID_AVX512DQ,    \
+                 SIMD_DISPATCH_6_NS_ID_AVX512VL,    \
+                 SIMD_DISPATCH_6_NS_ID_FMA3,        \
+                 SIMD_DISPATCH_6_NS_ID_FMA4,        \
+                 SIMD_DISPATCH_6_NS_ID_XOP,         \
+                 SIMD_DISPATCH_6_NS_ID_NEON,        \
+                 SIMD_DISPATCH_6_NS_ID_NEON_FLT_SP, \
+                 SIMD_DISPATCH_6_NS_ID_MSA,         \
+                 SIMD_DISPATCH_6_NS_ID_ALTIVEC,     \
+                 SIMD_DISPATCH_6_NS_ID_VSX_206,     \
+                 SIMD_DISPATCH_6_NS_ID_VSX_207)
+
+#define SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE SIMD_DISPATCH_6_NAMESPACE
+#define SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH 1
+#include <bigmath/simd/dispatch/preprocess_single_compile_arch.h>
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE
+
+#define SIMD_DISPATCH_6_FN_REGISTER(ARRAY, NAME, FUN_TYPE)                                    \
+    { /* the following will fail if the overload is not available */                          \
+        FUN_TYPE fun_ptr = &SIMD_DISPATCH_6_NAMESPACE::SIMD_REMOVE_PARENS(NAME);              \
+        ARRAY[6 - 1] = ::simd::SIMD_DISPATCH_6_NAMESPACE::detail::create_fn_version(fun_ptr); \
+    }
+
+#define SIMD_DISPATCH_6_FN_DECLARE(SIGNATURE) \
+    namespace SIMD_DISPATCH_6_NAMESPACE {     \
+        SIMD_REMOVE_PARENS(SIGNATURE);        \
+    }
+#undef SIMD_ARCH_LIST
+#else
+#define SIMD_DISPATCH_6_FN_REGISTER(ARRAY, NAME, FUN_TYPE)
+#define SIMD_DISPATCH_6_FN_DECLARE(SIGNATURE)
+#endif
+
+#ifdef SIMD_DISPATCH_ARCH7
+#define SIMD_ARCH_LIST SIMD_DISPATCH_ARCH7
+#include <bigmath/simd/detail/preprocess_single_arch.h>
+
+// Use the results of preprocess_single_arch.h to define
+// SIMD_DISPATCH_7_NAMESPACE
+
+#if SIMD_ARCH_NS_USE_NULL
+#define SIMD_DISPATCH_7_NS_ID_NULL SIMD_INSN_ID_NULL
+#else
+#define SIMD_DISPATCH_7_NS_ID_NULL
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE2
+#define SIMD_DISPATCH_7_NS_ID_SSE2 SIMD_INSN_ID_SSE2
+#else
+#define SIMD_DISPATCH_7_NS_ID_SSE2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE3
+#define SIMD_DISPATCH_7_NS_ID_SSE3 SIMD_INSN_ID_SSE3
+#else
+#define SIMD_DISPATCH_7_NS_ID_SSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSSE3
+#define SIMD_DISPATCH_7_NS_ID_SSSE3 SIMD_INSN_ID_SSSE3
+#else
+#define SIMD_DISPATCH_7_NS_ID_SSSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_1
+#define SIMD_DISPATCH_7_NS_ID_SSE4_1 SIMD_INSN_ID_SSE4_1
+#else
+#define SIMD_DISPATCH_7_NS_ID_SSE4_1
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_2
+#define SIMD_DISPATCH_7_NS_ID_SSE4_2 SIMD_INSN_ID_SSE4_2
+#else
+#define SIMD_DISPATCH_7_NS_ID_SSE4_2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4A
+#define SIMD_DISPATCH_7_NS_ID_SSE4A SIMD_INSN_ID_SSE4A
+#else
+#define SIMD_DISPATCH_7_NS_ID_SSE4A
+#endif
+
+#if SIMD_ARCH_NS_USE_POPCNT_INSN
+#define SIMD_DISPATCH_7_NS_ID_POPCNT_INSN SIMD_INSN_ID_POPCNT_INSN
+#else
+#define SIMD_DISPATCH_7_NS_ID_POPCNT_INSN
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX
+#define SIMD_DISPATCH_7_NS_ID_AVX SIMD_INSN_ID_AVX
+#else
+#define SIMD_DISPATCH_7_NS_ID_AVX
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX2
+#define SIMD_DISPATCH_7_NS_ID_AVX2 SIMD_INSN_ID_AVX2
+#else
+#define SIMD_DISPATCH_7_NS_ID_AVX2
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA3
+#define SIMD_DISPATCH_7_NS_ID_FMA3 SIMD_INSN_ID_FMA3
+#else
+#define SIMD_DISPATCH_7_NS_ID_FMA3
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA4
+#define SIMD_DISPATCH_7_NS_ID_FMA4 SIMD_INSN_ID_FMA4
+#else
+#define SIMD_DISPATCH_7_NS_ID_FMA4
+#endif
+
+#if SIMD_ARCH_NS_USE_XOP
+#define SIMD_DISPATCH_7_NS_ID_XOP SIMD_INSN_ID_XOP
+#else
+#define SIMD_DISPATCH_7_NS_ID_XOP
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512F
+#define SIMD_DISPATCH_7_NS_ID_AVX512F SIMD_INSN_ID_AVX512F
+#else
+#define SIMD_DISPATCH_7_NS_ID_AVX512F
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512BW
+#define SIMD_DISPATCH_7_NS_ID_AVX512BW SIMD_INSN_ID_AVX512BW
+#else
+#define SIMD_DISPATCH_7_NS_ID_AVX512BW
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512DQ
+#define SIMD_DISPATCH_7_NS_ID_AVX512DQ SIMD_INSN_ID_AVX512DQ
+#else
+#define SIMD_DISPATCH_7_NS_ID_AVX512DQ
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512VL
+#define SIMD_DISPATCH_7_NS_ID_AVX512VL SIMD_INSN_ID_AVX512VL
+#else
+#define SIMD_DISPATCH_7_NS_ID_AVX512VL
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON
+#define SIMD_DISPATCH_7_NS_ID_NEON SIMD_INSN_ID_NEON
+#else
+#define SIMD_DISPATCH_7_NS_ID_NEON
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON_FLT_SP
+#define SIMD_DISPATCH_7_NS_ID_NEON_FLT_SP SIMD_INSN_ID_NEON_FLT_SP
+#else
+#define SIMD_DISPATCH_7_NS_ID_NEON_FLT_SP
+#endif
+
+#if SIMD_ARCH_NS_USE_MSA
+#define SIMD_DISPATCH_7_NS_ID_MSA SIMD_INSN_ID_MSA
+#else
+#define SIMD_DISPATCH_7_NS_ID_MSA
+#endif
+
+#if SIMD_ARCH_NS_USE_ALTIVEC
+#define SIMD_DISPATCH_7_NS_ID_ALTIVEC SIMD_INSN_ID_ALTIVEC
+#else
+#define SIMD_DISPATCH_7_NS_ID_ALTIVEC
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_206
+#define SIMD_DISPATCH_7_NS_ID_VSX_206 SIMD_INSN_ID_VSX_206
+#else
+#define SIMD_DISPATCH_7_NS_ID_VSX_206
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_207
+#define SIMD_DISPATCH_7_NS_ID_VSX_207 SIMD_INSN_ID_VSX_207
+#else
+#define SIMD_DISPATCH_7_NS_ID_VSX_207
+#endif
+
+#define SIMD_DISPATCH_7_NAMESPACE                   \
+    SIMD_PASTE24(arch,                              \
+                 SIMD_DISPATCH_7_NS_ID_NULL,        \
+                 SIMD_DISPATCH_7_NS_ID_SSE2,        \
+                 SIMD_DISPATCH_7_NS_ID_SSE3,        \
+                 SIMD_DISPATCH_7_NS_ID_SSSE3,       \
+                 SIMD_DISPATCH_7_NS_ID_SSE4_1,      \
+                 SIMD_DISPATCH_7_NS_ID_SSE4_2,      \
+                 SIMD_DISPATCH_7_NS_ID_SSE4A,       \
+                 SIMD_DISPATCH_7_NS_ID_POPCNT_INSN, \
+                 SIMD_DISPATCH_7_NS_ID_AVX,         \
+                 SIMD_DISPATCH_7_NS_ID_AVX2,        \
+                 SIMD_DISPATCH_7_NS_ID_AVX512F,     \
+                 SIMD_DISPATCH_7_NS_ID_AVX512BW,    \
+                 SIMD_DISPATCH_7_NS_ID_AVX512DQ,    \
+                 SIMD_DISPATCH_7_NS_ID_AVX512VL,    \
+                 SIMD_DISPATCH_7_NS_ID_FMA3,        \
+                 SIMD_DISPATCH_7_NS_ID_FMA4,        \
+                 SIMD_DISPATCH_7_NS_ID_XOP,         \
+                 SIMD_DISPATCH_7_NS_ID_NEON,        \
+                 SIMD_DISPATCH_7_NS_ID_NEON_FLT_SP, \
+                 SIMD_DISPATCH_7_NS_ID_MSA,         \
+                 SIMD_DISPATCH_7_NS_ID_ALTIVEC,     \
+                 SIMD_DISPATCH_7_NS_ID_VSX_206,     \
+                 SIMD_DISPATCH_7_NS_ID_VSX_207)
+
+#define SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE SIMD_DISPATCH_7_NAMESPACE
+#define SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH 1
+#include <bigmath/simd/dispatch/preprocess_single_compile_arch.h>
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE
+
+#define SIMD_DISPATCH_7_FN_REGISTER(ARRAY, NAME, FUN_TYPE)                                    \
+    { /* the following will fail if the overload is not available */                          \
+        FUN_TYPE fun_ptr = &SIMD_DISPATCH_7_NAMESPACE::SIMD_REMOVE_PARENS(NAME);              \
+        ARRAY[7 - 1] = ::simd::SIMD_DISPATCH_7_NAMESPACE::detail::create_fn_version(fun_ptr); \
+    }
+
+#define SIMD_DISPATCH_7_FN_DECLARE(SIGNATURE) \
+    namespace SIMD_DISPATCH_7_NAMESPACE {     \
+        SIMD_REMOVE_PARENS(SIGNATURE);        \
+    }
+#undef SIMD_ARCH_LIST
+#else
+#define SIMD_DISPATCH_7_FN_REGISTER(ARRAY, NAME, FUN_TYPE)
+#define SIMD_DISPATCH_7_FN_DECLARE(SIGNATURE)
+#endif
+
+#ifdef SIMD_DISPATCH_ARCH8
+#define SIMD_ARCH_LIST SIMD_DISPATCH_ARCH8
+#include <bigmath/simd/detail/preprocess_single_arch.h>
+
+// Use the results of preprocess_single_arch.h to define
+// SIMD_DISPATCH_8_NAMESPACE
+
+#if SIMD_ARCH_NS_USE_NULL
+#define SIMD_DISPATCH_8_NS_ID_NULL SIMD_INSN_ID_NULL
+#else
+#define SIMD_DISPATCH_8_NS_ID_NULL
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE2
+#define SIMD_DISPATCH_8_NS_ID_SSE2 SIMD_INSN_ID_SSE2
+#else
+#define SIMD_DISPATCH_8_NS_ID_SSE2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE3
+#define SIMD_DISPATCH_8_NS_ID_SSE3 SIMD_INSN_ID_SSE3
+#else
+#define SIMD_DISPATCH_8_NS_ID_SSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSSE3
+#define SIMD_DISPATCH_8_NS_ID_SSSE3 SIMD_INSN_ID_SSSE3
+#else
+#define SIMD_DISPATCH_8_NS_ID_SSSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_1
+#define SIMD_DISPATCH_8_NS_ID_SSE4_1 SIMD_INSN_ID_SSE4_1
+#else
+#define SIMD_DISPATCH_8_NS_ID_SSE4_1
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_2
+#define SIMD_DISPATCH_8_NS_ID_SSE4_2 SIMD_INSN_ID_SSE4_2
+#else
+#define SIMD_DISPATCH_8_NS_ID_SSE4_2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4A
+#define SIMD_DISPATCH_8_NS_ID_SSE4A SIMD_INSN_ID_SSE4A
+#else
+#define SIMD_DISPATCH_8_NS_ID_SSE4A
+#endif
+
+#if SIMD_ARCH_NS_USE_POPCNT_INSN
+#define SIMD_DISPATCH_8_NS_ID_POPCNT_INSN SIMD_INSN_ID_POPCNT_INSN
+#else
+#define SIMD_DISPATCH_8_NS_ID_POPCNT_INSN
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX
+#define SIMD_DISPATCH_8_NS_ID_AVX SIMD_INSN_ID_AVX
+#else
+#define SIMD_DISPATCH_8_NS_ID_AVX
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX2
+#define SIMD_DISPATCH_8_NS_ID_AVX2 SIMD_INSN_ID_AVX2
+#else
+#define SIMD_DISPATCH_8_NS_ID_AVX2
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA3
+#define SIMD_DISPATCH_8_NS_ID_FMA3 SIMD_INSN_ID_FMA3
+#else
+#define SIMD_DISPATCH_8_NS_ID_FMA3
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA4
+#define SIMD_DISPATCH_8_NS_ID_FMA4 SIMD_INSN_ID_FMA4
+#else
+#define SIMD_DISPATCH_8_NS_ID_FMA4
+#endif
+
+#if SIMD_ARCH_NS_USE_XOP
+#define SIMD_DISPATCH_8_NS_ID_XOP SIMD_INSN_ID_XOP
+#else
+#define SIMD_DISPATCH_8_NS_ID_XOP
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512F
+#define SIMD_DISPATCH_8_NS_ID_AVX512F SIMD_INSN_ID_AVX512F
+#else
+#define SIMD_DISPATCH_8_NS_ID_AVX512F
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512BW
+#define SIMD_DISPATCH_8_NS_ID_AVX512BW SIMD_INSN_ID_AVX512BW
+#else
+#define SIMD_DISPATCH_8_NS_ID_AVX512BW
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512DQ
+#define SIMD_DISPATCH_8_NS_ID_AVX512DQ SIMD_INSN_ID_AVX512DQ
+#else
+#define SIMD_DISPATCH_8_NS_ID_AVX512DQ
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512VL
+#define SIMD_DISPATCH_8_NS_ID_AVX512VL SIMD_INSN_ID_AVX512VL
+#else
+#define SIMD_DISPATCH_8_NS_ID_AVX512VL
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON
+#define SIMD_DISPATCH_8_NS_ID_NEON SIMD_INSN_ID_NEON
+#else
+#define SIMD_DISPATCH_8_NS_ID_NEON
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON_FLT_SP
+#define SIMD_DISPATCH_8_NS_ID_NEON_FLT_SP SIMD_INSN_ID_NEON_FLT_SP
+#else
+#define SIMD_DISPATCH_8_NS_ID_NEON_FLT_SP
+#endif
+
+#if SIMD_ARCH_NS_USE_MSA
+#define SIMD_DISPATCH_8_NS_ID_MSA SIMD_INSN_ID_MSA
+#else
+#define SIMD_DISPATCH_8_NS_ID_MSA
+#endif
+
+#if SIMD_ARCH_NS_USE_ALTIVEC
+#define SIMD_DISPATCH_8_NS_ID_ALTIVEC SIMD_INSN_ID_ALTIVEC
+#else
+#define SIMD_DISPATCH_8_NS_ID_ALTIVEC
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_206
+#define SIMD_DISPATCH_8_NS_ID_VSX_206 SIMD_INSN_ID_VSX_206
+#else
+#define SIMD_DISPATCH_8_NS_ID_VSX_206
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_207
+#define SIMD_DISPATCH_8_NS_ID_VSX_207 SIMD_INSN_ID_VSX_207
+#else
+#define SIMD_DISPATCH_8_NS_ID_VSX_207
+#endif
+
+#define SIMD_DISPATCH_8_NAMESPACE                   \
+    SIMD_PASTE24(arch,                              \
+                 SIMD_DISPATCH_8_NS_ID_NULL,        \
+                 SIMD_DISPATCH_8_NS_ID_SSE2,        \
+                 SIMD_DISPATCH_8_NS_ID_SSE3,        \
+                 SIMD_DISPATCH_8_NS_ID_SSSE3,       \
+                 SIMD_DISPATCH_8_NS_ID_SSE4_1,      \
+                 SIMD_DISPATCH_8_NS_ID_SSE4_2,      \
+                 SIMD_DISPATCH_8_NS_ID_SSE4A,       \
+                 SIMD_DISPATCH_8_NS_ID_POPCNT_INSN, \
+                 SIMD_DISPATCH_8_NS_ID_AVX,         \
+                 SIMD_DISPATCH_8_NS_ID_AVX2,        \
+                 SIMD_DISPATCH_8_NS_ID_AVX512F,     \
+                 SIMD_DISPATCH_8_NS_ID_AVX512BW,    \
+                 SIMD_DISPATCH_8_NS_ID_AVX512DQ,    \
+                 SIMD_DISPATCH_8_NS_ID_AVX512VL,    \
+                 SIMD_DISPATCH_8_NS_ID_FMA3,        \
+                 SIMD_DISPATCH_8_NS_ID_FMA4,        \
+                 SIMD_DISPATCH_8_NS_ID_XOP,         \
+                 SIMD_DISPATCH_8_NS_ID_NEON,        \
+                 SIMD_DISPATCH_8_NS_ID_NEON_FLT_SP, \
+                 SIMD_DISPATCH_8_NS_ID_MSA,         \
+                 SIMD_DISPATCH_8_NS_ID_ALTIVEC,     \
+                 SIMD_DISPATCH_8_NS_ID_VSX_206,     \
+                 SIMD_DISPATCH_8_NS_ID_VSX_207)
+
+#define SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE SIMD_DISPATCH_8_NAMESPACE
+#define SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH 1
+#include <bigmath/simd/dispatch/preprocess_single_compile_arch.h>
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE
+
+#define SIMD_DISPATCH_8_FN_REGISTER(ARRAY, NAME, FUN_TYPE)                                    \
+    { /* the following will fail if the overload is not available */                          \
+        FUN_TYPE fun_ptr = &SIMD_DISPATCH_8_NAMESPACE::SIMD_REMOVE_PARENS(NAME);              \
+        ARRAY[8 - 1] = ::simd::SIMD_DISPATCH_8_NAMESPACE::detail::create_fn_version(fun_ptr); \
+    }
+
+#define SIMD_DISPATCH_8_FN_DECLARE(SIGNATURE) \
+    namespace SIMD_DISPATCH_8_NAMESPACE {     \
+        SIMD_REMOVE_PARENS(SIGNATURE);        \
+    }
+#undef SIMD_ARCH_LIST
+#else
+#define SIMD_DISPATCH_8_FN_REGISTER(ARRAY, NAME, FUN_TYPE)
+#define SIMD_DISPATCH_8_FN_DECLARE(SIGNATURE)
+#endif
+
+#ifdef SIMD_DISPATCH_ARCH9
+#define SIMD_ARCH_LIST SIMD_DISPATCH_ARCH9
+#include <bigmath/simd/detail/preprocess_single_arch.h>
+
+// Use the results of preprocess_single_arch.h to define
+// SIMD_DISPATCH_9_NAMESPACE
+
+#if SIMD_ARCH_NS_USE_NULL
+#define SIMD_DISPATCH_9_NS_ID_NULL SIMD_INSN_ID_NULL
+#else
+#define SIMD_DISPATCH_9_NS_ID_NULL
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE2
+#define SIMD_DISPATCH_9_NS_ID_SSE2 SIMD_INSN_ID_SSE2
+#else
+#define SIMD_DISPATCH_9_NS_ID_SSE2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE3
+#define SIMD_DISPATCH_9_NS_ID_SSE3 SIMD_INSN_ID_SSE3
+#else
+#define SIMD_DISPATCH_9_NS_ID_SSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSSE3
+#define SIMD_DISPATCH_9_NS_ID_SSSE3 SIMD_INSN_ID_SSSE3
+#else
+#define SIMD_DISPATCH_9_NS_ID_SSSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_1
+#define SIMD_DISPATCH_9_NS_ID_SSE4_1 SIMD_INSN_ID_SSE4_1
+#else
+#define SIMD_DISPATCH_9_NS_ID_SSE4_1
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_2
+#define SIMD_DISPATCH_9_NS_ID_SSE4_2 SIMD_INSN_ID_SSE4_2
+#else
+#define SIMD_DISPATCH_9_NS_ID_SSE4_2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4A
+#define SIMD_DISPATCH_9_NS_ID_SSE4A SIMD_INSN_ID_SSE4A
+#else
+#define SIMD_DISPATCH_9_NS_ID_SSE4A
+#endif
+
+#if SIMD_ARCH_NS_USE_POPCNT_INSN
+#define SIMD_DISPATCH_9_NS_ID_POPCNT_INSN SIMD_INSN_ID_POPCNT_INSN
+#else
+#define SIMD_DISPATCH_9_NS_ID_POPCNT_INSN
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX
+#define SIMD_DISPATCH_9_NS_ID_AVX SIMD_INSN_ID_AVX
+#else
+#define SIMD_DISPATCH_9_NS_ID_AVX
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX2
+#define SIMD_DISPATCH_9_NS_ID_AVX2 SIMD_INSN_ID_AVX2
+#else
+#define SIMD_DISPATCH_9_NS_ID_AVX2
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA3
+#define SIMD_DISPATCH_9_NS_ID_FMA3 SIMD_INSN_ID_FMA3
+#else
+#define SIMD_DISPATCH_9_NS_ID_FMA3
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA4
+#define SIMD_DISPATCH_9_NS_ID_FMA4 SIMD_INSN_ID_FMA4
+#else
+#define SIMD_DISPATCH_9_NS_ID_FMA4
+#endif
+
+#if SIMD_ARCH_NS_USE_XOP
+#define SIMD_DISPATCH_9_NS_ID_XOP SIMD_INSN_ID_XOP
+#else
+#define SIMD_DISPATCH_9_NS_ID_XOP
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512F
+#define SIMD_DISPATCH_9_NS_ID_AVX512F SIMD_INSN_ID_AVX512F
+#else
+#define SIMD_DISPATCH_9_NS_ID_AVX512F
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512BW
+#define SIMD_DISPATCH_9_NS_ID_AVX512BW SIMD_INSN_ID_AVX512BW
+#else
+#define SIMD_DISPATCH_9_NS_ID_AVX512BW
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512DQ
+#define SIMD_DISPATCH_9_NS_ID_AVX512DQ SIMD_INSN_ID_AVX512DQ
+#else
+#define SIMD_DISPATCH_9_NS_ID_AVX512DQ
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512VL
+#define SIMD_DISPATCH_9_NS_ID_AVX512VL SIMD_INSN_ID_AVX512VL
+#else
+#define SIMD_DISPATCH_9_NS_ID_AVX512VL
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON
+#define SIMD_DISPATCH_9_NS_ID_NEON SIMD_INSN_ID_NEON
+#else
+#define SIMD_DISPATCH_9_NS_ID_NEON
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON_FLT_SP
+#define SIMD_DISPATCH_9_NS_ID_NEON_FLT_SP SIMD_INSN_ID_NEON_FLT_SP
+#else
+#define SIMD_DISPATCH_9_NS_ID_NEON_FLT_SP
+#endif
+
+#if SIMD_ARCH_NS_USE_MSA
+#define SIMD_DISPATCH_9_NS_ID_MSA SIMD_INSN_ID_MSA
+#else
+#define SIMD_DISPATCH_9_NS_ID_MSA
+#endif
+
+#if SIMD_ARCH_NS_USE_ALTIVEC
+#define SIMD_DISPATCH_9_NS_ID_ALTIVEC SIMD_INSN_ID_ALTIVEC
+#else
+#define SIMD_DISPATCH_9_NS_ID_ALTIVEC
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_206
+#define SIMD_DISPATCH_9_NS_ID_VSX_206 SIMD_INSN_ID_VSX_206
+#else
+#define SIMD_DISPATCH_9_NS_ID_VSX_206
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_207
+#define SIMD_DISPATCH_9_NS_ID_VSX_207 SIMD_INSN_ID_VSX_207
+#else
+#define SIMD_DISPATCH_9_NS_ID_VSX_207
+#endif
+
+#define SIMD_DISPATCH_9_NAMESPACE                   \
+    SIMD_PASTE24(arch,                              \
+                 SIMD_DISPATCH_9_NS_ID_NULL,        \
+                 SIMD_DISPATCH_9_NS_ID_SSE2,        \
+                 SIMD_DISPATCH_9_NS_ID_SSE3,        \
+                 SIMD_DISPATCH_9_NS_ID_SSSE3,       \
+                 SIMD_DISPATCH_9_NS_ID_SSE4_1,      \
+                 SIMD_DISPATCH_9_NS_ID_SSE4_2,      \
+                 SIMD_DISPATCH_9_NS_ID_SSE4A,       \
+                 SIMD_DISPATCH_9_NS_ID_POPCNT_INSN, \
+                 SIMD_DISPATCH_9_NS_ID_AVX,         \
+                 SIMD_DISPATCH_9_NS_ID_AVX2,        \
+                 SIMD_DISPATCH_9_NS_ID_AVX512F,     \
+                 SIMD_DISPATCH_9_NS_ID_AVX512BW,    \
+                 SIMD_DISPATCH_9_NS_ID_AVX512DQ,    \
+                 SIMD_DISPATCH_9_NS_ID_AVX512VL,    \
+                 SIMD_DISPATCH_9_NS_ID_FMA3,        \
+                 SIMD_DISPATCH_9_NS_ID_FMA4,        \
+                 SIMD_DISPATCH_9_NS_ID_XOP,         \
+                 SIMD_DISPATCH_9_NS_ID_NEON,        \
+                 SIMD_DISPATCH_9_NS_ID_NEON_FLT_SP, \
+                 SIMD_DISPATCH_9_NS_ID_MSA,         \
+                 SIMD_DISPATCH_9_NS_ID_ALTIVEC,     \
+                 SIMD_DISPATCH_9_NS_ID_VSX_206,     \
+                 SIMD_DISPATCH_9_NS_ID_VSX_207)
+
+#define SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE SIMD_DISPATCH_9_NAMESPACE
+#define SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH 1
+#include <bigmath/simd/dispatch/preprocess_single_compile_arch.h>
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE
+
+#define SIMD_DISPATCH_9_FN_REGISTER(ARRAY, NAME, FUN_TYPE)                                    \
+    { /* the following will fail if the overload is not available */                          \
+        FUN_TYPE fun_ptr = &SIMD_DISPATCH_9_NAMESPACE::SIMD_REMOVE_PARENS(NAME);              \
+        ARRAY[9 - 1] = ::simd::SIMD_DISPATCH_9_NAMESPACE::detail::create_fn_version(fun_ptr); \
+    }
+
+#define SIMD_DISPATCH_9_FN_DECLARE(SIGNATURE) \
+    namespace SIMD_DISPATCH_9_NAMESPACE {     \
+        SIMD_REMOVE_PARENS(SIGNATURE);        \
+    }
+#undef SIMD_ARCH_LIST
+#else
+#define SIMD_DISPATCH_9_FN_REGISTER(ARRAY, NAME, FUN_TYPE)
+#define SIMD_DISPATCH_9_FN_DECLARE(SIGNATURE)
+#endif
+
+#ifdef SIMD_DISPATCH_ARCH10
+#define SIMD_ARCH_LIST SIMD_DISPATCH_ARCH10
+#include <bigmath/simd/detail/preprocess_single_arch.h>
+
+// Use the results of preprocess_single_arch.h to define
+// SIMD_DISPATCH_10_NAMESPACE
+
+#if SIMD_ARCH_NS_USE_NULL
+#define SIMD_DISPATCH_10_NS_ID_NULL SIMD_INSN_ID_NULL
+#else
+#define SIMD_DISPATCH_10_NS_ID_NULL
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE2
+#define SIMD_DISPATCH_10_NS_ID_SSE2 SIMD_INSN_ID_SSE2
+#else
+#define SIMD_DISPATCH_10_NS_ID_SSE2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE3
+#define SIMD_DISPATCH_10_NS_ID_SSE3 SIMD_INSN_ID_SSE3
+#else
+#define SIMD_DISPATCH_10_NS_ID_SSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSSE3
+#define SIMD_DISPATCH_10_NS_ID_SSSE3 SIMD_INSN_ID_SSSE3
+#else
+#define SIMD_DISPATCH_10_NS_ID_SSSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_1
+#define SIMD_DISPATCH_10_NS_ID_SSE4_1 SIMD_INSN_ID_SSE4_1
+#else
+#define SIMD_DISPATCH_10_NS_ID_SSE4_1
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_2
+#define SIMD_DISPATCH_10_NS_ID_SSE4_2 SIMD_INSN_ID_SSE4_2
+#else
+#define SIMD_DISPATCH_10_NS_ID_SSE4_2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4A
+#define SIMD_DISPATCH_10_NS_ID_SSE4A SIMD_INSN_ID_SSE4A
+#else
+#define SIMD_DISPATCH_10_NS_ID_SSE4A
+#endif
+
+#if SIMD_ARCH_NS_USE_POPCNT_INSN
+#define SIMD_DISPATCH_10_NS_ID_POPCNT_INSN SIMD_INSN_ID_POPCNT_INSN
+#else
+#define SIMD_DISPATCH_10_NS_ID_POPCNT_INSN
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX
+#define SIMD_DISPATCH_10_NS_ID_AVX SIMD_INSN_ID_AVX
+#else
+#define SIMD_DISPATCH_10_NS_ID_AVX
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX2
+#define SIMD_DISPATCH_10_NS_ID_AVX2 SIMD_INSN_ID_AVX2
+#else
+#define SIMD_DISPATCH_10_NS_ID_AVX2
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA3
+#define SIMD_DISPATCH_10_NS_ID_FMA3 SIMD_INSN_ID_FMA3
+#else
+#define SIMD_DISPATCH_10_NS_ID_FMA3
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA4
+#define SIMD_DISPATCH_10_NS_ID_FMA4 SIMD_INSN_ID_FMA4
+#else
+#define SIMD_DISPATCH_10_NS_ID_FMA4
+#endif
+
+#if SIMD_ARCH_NS_USE_XOP
+#define SIMD_DISPATCH_10_NS_ID_XOP SIMD_INSN_ID_XOP
+#else
+#define SIMD_DISPATCH_10_NS_ID_XOP
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512F
+#define SIMD_DISPATCH_10_NS_ID_AVX512F SIMD_INSN_ID_AVX512F
+#else
+#define SIMD_DISPATCH_10_NS_ID_AVX512F
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512BW
+#define SIMD_DISPATCH_10_NS_ID_AVX512BW SIMD_INSN_ID_AVX512BW
+#else
+#define SIMD_DISPATCH_10_NS_ID_AVX512BW
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512DQ
+#define SIMD_DISPATCH_10_NS_ID_AVX512DQ SIMD_INSN_ID_AVX512DQ
+#else
+#define SIMD_DISPATCH_10_NS_ID_AVX512DQ
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512VL
+#define SIMD_DISPATCH_10_NS_ID_AVX512VL SIMD_INSN_ID_AVX512VL
+#else
+#define SIMD_DISPATCH_10_NS_ID_AVX512VL
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON
+#define SIMD_DISPATCH_10_NS_ID_NEON SIMD_INSN_ID_NEON
+#else
+#define SIMD_DISPATCH_10_NS_ID_NEON
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON_FLT_SP
+#define SIMD_DISPATCH_10_NS_ID_NEON_FLT_SP SIMD_INSN_ID_NEON_FLT_SP
+#else
+#define SIMD_DISPATCH_10_NS_ID_NEON_FLT_SP
+#endif
+
+#if SIMD_ARCH_NS_USE_MSA
+#define SIMD_DISPATCH_10_NS_ID_MSA SIMD_INSN_ID_MSA
+#else
+#define SIMD_DISPATCH_10_NS_ID_MSA
+#endif
+
+#if SIMD_ARCH_NS_USE_ALTIVEC
+#define SIMD_DISPATCH_10_NS_ID_ALTIVEC SIMD_INSN_ID_ALTIVEC
+#else
+#define SIMD_DISPATCH_10_NS_ID_ALTIVEC
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_206
+#define SIMD_DISPATCH_10_NS_ID_VSX_206 SIMD_INSN_ID_VSX_206
+#else
+#define SIMD_DISPATCH_10_NS_ID_VSX_206
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_207
+#define SIMD_DISPATCH_10_NS_ID_VSX_207 SIMD_INSN_ID_VSX_207
+#else
+#define SIMD_DISPATCH_10_NS_ID_VSX_207
+#endif
+
+#define SIMD_DISPATCH_10_NAMESPACE                   \
+    SIMD_PASTE24(arch,                               \
+                 SIMD_DISPATCH_10_NS_ID_NULL,        \
+                 SIMD_DISPATCH_10_NS_ID_SSE2,        \
+                 SIMD_DISPATCH_10_NS_ID_SSE3,        \
+                 SIMD_DISPATCH_10_NS_ID_SSSE3,       \
+                 SIMD_DISPATCH_10_NS_ID_SSE4_1,      \
+                 SIMD_DISPATCH_10_NS_ID_SSE4_2,      \
+                 SIMD_DISPATCH_10_NS_ID_SSE4A,       \
+                 SIMD_DISPATCH_10_NS_ID_POPCNT_INSN, \
+                 SIMD_DISPATCH_10_NS_ID_AVX,         \
+                 SIMD_DISPATCH_10_NS_ID_AVX2,        \
+                 SIMD_DISPATCH_10_NS_ID_AVX512F,     \
+                 SIMD_DISPATCH_10_NS_ID_AVX512BW,    \
+                 SIMD_DISPATCH_10_NS_ID_AVX512DQ,    \
+                 SIMD_DISPATCH_10_NS_ID_AVX512VL,    \
+                 SIMD_DISPATCH_10_NS_ID_FMA3,        \
+                 SIMD_DISPATCH_10_NS_ID_FMA4,        \
+                 SIMD_DISPATCH_10_NS_ID_XOP,         \
+                 SIMD_DISPATCH_10_NS_ID_NEON,        \
+                 SIMD_DISPATCH_10_NS_ID_NEON_FLT_SP, \
+                 SIMD_DISPATCH_10_NS_ID_MSA,         \
+                 SIMD_DISPATCH_10_NS_ID_ALTIVEC,     \
+                 SIMD_DISPATCH_10_NS_ID_VSX_206,     \
+                 SIMD_DISPATCH_10_NS_ID_VSX_207)
+
+#define SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE SIMD_DISPATCH_10_NAMESPACE
+#define SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH 1
+#include <bigmath/simd/dispatch/preprocess_single_compile_arch.h>
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE
+
+#define SIMD_DISPATCH_10_FN_REGISTER(ARRAY, NAME, FUN_TYPE)                                     \
+    { /* the following will fail if the overload is not available */                            \
+        FUN_TYPE fun_ptr = &SIMD_DISPATCH_10_NAMESPACE::SIMD_REMOVE_PARENS(NAME);               \
+        ARRAY[10 - 1] = ::simd::SIMD_DISPATCH_10_NAMESPACE::detail::create_fn_version(fun_ptr); \
+    }
+
+#define SIMD_DISPATCH_10_FN_DECLARE(SIGNATURE) \
+    namespace SIMD_DISPATCH_10_NAMESPACE {     \
+        SIMD_REMOVE_PARENS(SIGNATURE);         \
+    }
+#undef SIMD_ARCH_LIST
+#else
+#define SIMD_DISPATCH_10_FN_REGISTER(ARRAY, NAME, FUN_TYPE)
+#define SIMD_DISPATCH_10_FN_DECLARE(SIGNATURE)
+#endif
+
+#ifdef SIMD_DISPATCH_ARCH11
+#define SIMD_ARCH_LIST SIMD_DISPATCH_ARCH11
+#include <bigmath/simd/detail/preprocess_single_arch.h>
+
+// Use the results of preprocess_single_arch.h to define
+// SIMD_DISPATCH_11_NAMESPACE
+
+#if SIMD_ARCH_NS_USE_NULL
+#define SIMD_DISPATCH_11_NS_ID_NULL SIMD_INSN_ID_NULL
+#else
+#define SIMD_DISPATCH_11_NS_ID_NULL
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE2
+#define SIMD_DISPATCH_11_NS_ID_SSE2 SIMD_INSN_ID_SSE2
+#else
+#define SIMD_DISPATCH_11_NS_ID_SSE2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE3
+#define SIMD_DISPATCH_11_NS_ID_SSE3 SIMD_INSN_ID_SSE3
+#else
+#define SIMD_DISPATCH_11_NS_ID_SSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSSE3
+#define SIMD_DISPATCH_11_NS_ID_SSSE3 SIMD_INSN_ID_SSSE3
+#else
+#define SIMD_DISPATCH_11_NS_ID_SSSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_1
+#define SIMD_DISPATCH_11_NS_ID_SSE4_1 SIMD_INSN_ID_SSE4_1
+#else
+#define SIMD_DISPATCH_11_NS_ID_SSE4_1
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_2
+#define SIMD_DISPATCH_11_NS_ID_SSE4_2 SIMD_INSN_ID_SSE4_2
+#else
+#define SIMD_DISPATCH_11_NS_ID_SSE4_2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4A
+#define SIMD_DISPATCH_11_NS_ID_SSE4A SIMD_INSN_ID_SSE4A
+#else
+#define SIMD_DISPATCH_11_NS_ID_SSE4A
+#endif
+
+#if SIMD_ARCH_NS_USE_POPCNT_INSN
+#define SIMD_DISPATCH_11_NS_ID_POPCNT_INSN SIMD_INSN_ID_POPCNT_INSN
+#else
+#define SIMD_DISPATCH_11_NS_ID_POPCNT_INSN
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX
+#define SIMD_DISPATCH_11_NS_ID_AVX SIMD_INSN_ID_AVX
+#else
+#define SIMD_DISPATCH_11_NS_ID_AVX
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX2
+#define SIMD_DISPATCH_11_NS_ID_AVX2 SIMD_INSN_ID_AVX2
+#else
+#define SIMD_DISPATCH_11_NS_ID_AVX2
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA3
+#define SIMD_DISPATCH_11_NS_ID_FMA3 SIMD_INSN_ID_FMA3
+#else
+#define SIMD_DISPATCH_11_NS_ID_FMA3
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA4
+#define SIMD_DISPATCH_11_NS_ID_FMA4 SIMD_INSN_ID_FMA4
+#else
+#define SIMD_DISPATCH_11_NS_ID_FMA4
+#endif
+
+#if SIMD_ARCH_NS_USE_XOP
+#define SIMD_DISPATCH_11_NS_ID_XOP SIMD_INSN_ID_XOP
+#else
+#define SIMD_DISPATCH_11_NS_ID_XOP
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512F
+#define SIMD_DISPATCH_11_NS_ID_AVX512F SIMD_INSN_ID_AVX512F
+#else
+#define SIMD_DISPATCH_11_NS_ID_AVX512F
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512BW
+#define SIMD_DISPATCH_11_NS_ID_AVX512BW SIMD_INSN_ID_AVX512BW
+#else
+#define SIMD_DISPATCH_11_NS_ID_AVX512BW
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512DQ
+#define SIMD_DISPATCH_11_NS_ID_AVX512DQ SIMD_INSN_ID_AVX512DQ
+#else
+#define SIMD_DISPATCH_11_NS_ID_AVX512DQ
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512VL
+#define SIMD_DISPATCH_11_NS_ID_AVX512VL SIMD_INSN_ID_AVX512VL
+#else
+#define SIMD_DISPATCH_11_NS_ID_AVX512VL
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON
+#define SIMD_DISPATCH_11_NS_ID_NEON SIMD_INSN_ID_NEON
+#else
+#define SIMD_DISPATCH_11_NS_ID_NEON
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON_FLT_SP
+#define SIMD_DISPATCH_11_NS_ID_NEON_FLT_SP SIMD_INSN_ID_NEON_FLT_SP
+#else
+#define SIMD_DISPATCH_11_NS_ID_NEON_FLT_SP
+#endif
+
+#if SIMD_ARCH_NS_USE_MSA
+#define SIMD_DISPATCH_11_NS_ID_MSA SIMD_INSN_ID_MSA
+#else
+#define SIMD_DISPATCH_11_NS_ID_MSA
+#endif
+
+#if SIMD_ARCH_NS_USE_ALTIVEC
+#define SIMD_DISPATCH_11_NS_ID_ALTIVEC SIMD_INSN_ID_ALTIVEC
+#else
+#define SIMD_DISPATCH_11_NS_ID_ALTIVEC
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_206
+#define SIMD_DISPATCH_11_NS_ID_VSX_206 SIMD_INSN_ID_VSX_206
+#else
+#define SIMD_DISPATCH_11_NS_ID_VSX_206
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_207
+#define SIMD_DISPATCH_11_NS_ID_VSX_207 SIMD_INSN_ID_VSX_207
+#else
+#define SIMD_DISPATCH_11_NS_ID_VSX_207
+#endif
+
+#define SIMD_DISPATCH_11_NAMESPACE                   \
+    SIMD_PASTE24(arch,                               \
+                 SIMD_DISPATCH_11_NS_ID_NULL,        \
+                 SIMD_DISPATCH_11_NS_ID_SSE2,        \
+                 SIMD_DISPATCH_11_NS_ID_SSE3,        \
+                 SIMD_DISPATCH_11_NS_ID_SSSE3,       \
+                 SIMD_DISPATCH_11_NS_ID_SSE4_1,      \
+                 SIMD_DISPATCH_11_NS_ID_SSE4_2,      \
+                 SIMD_DISPATCH_11_NS_ID_SSE4A,       \
+                 SIMD_DISPATCH_11_NS_ID_POPCNT_INSN, \
+                 SIMD_DISPATCH_11_NS_ID_AVX,         \
+                 SIMD_DISPATCH_11_NS_ID_AVX2,        \
+                 SIMD_DISPATCH_11_NS_ID_AVX512F,     \
+                 SIMD_DISPATCH_11_NS_ID_AVX512BW,    \
+                 SIMD_DISPATCH_11_NS_ID_AVX512DQ,    \
+                 SIMD_DISPATCH_11_NS_ID_AVX512VL,    \
+                 SIMD_DISPATCH_11_NS_ID_FMA3,        \
+                 SIMD_DISPATCH_11_NS_ID_FMA4,        \
+                 SIMD_DISPATCH_11_NS_ID_XOP,         \
+                 SIMD_DISPATCH_11_NS_ID_NEON,        \
+                 SIMD_DISPATCH_11_NS_ID_NEON_FLT_SP, \
+                 SIMD_DISPATCH_11_NS_ID_MSA,         \
+                 SIMD_DISPATCH_11_NS_ID_ALTIVEC,     \
+                 SIMD_DISPATCH_11_NS_ID_VSX_206,     \
+                 SIMD_DISPATCH_11_NS_ID_VSX_207)
+
+#define SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE SIMD_DISPATCH_11_NAMESPACE
+#define SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH 1
+#include <bigmath/simd/dispatch/preprocess_single_compile_arch.h>
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE
+
+#define SIMD_DISPATCH_11_FN_REGISTER(ARRAY, NAME, FUN_TYPE)                                     \
+    { /* the following will fail if the overload is not available */                            \
+        FUN_TYPE fun_ptr = &SIMD_DISPATCH_11_NAMESPACE::SIMD_REMOVE_PARENS(NAME);               \
+        ARRAY[11 - 1] = ::simd::SIMD_DISPATCH_11_NAMESPACE::detail::create_fn_version(fun_ptr); \
+    }
+
+#define SIMD_DISPATCH_11_FN_DECLARE(SIGNATURE) \
+    namespace SIMD_DISPATCH_11_NAMESPACE {     \
+        SIMD_REMOVE_PARENS(SIGNATURE);         \
+    }
+#undef SIMD_ARCH_LIST
+#else
+#define SIMD_DISPATCH_11_FN_REGISTER(ARRAY, NAME, FUN_TYPE)
+#define SIMD_DISPATCH_11_FN_DECLARE(SIGNATURE)
+#endif
+
+#ifdef SIMD_DISPATCH_ARCH12
+#define SIMD_ARCH_LIST SIMD_DISPATCH_ARCH12
+#include <bigmath/simd/detail/preprocess_single_arch.h>
+
+// Use the results of preprocess_single_arch.h to define
+// SIMD_DISPATCH_12_NAMESPACE
+
+#if SIMD_ARCH_NS_USE_NULL
+#define SIMD_DISPATCH_12_NS_ID_NULL SIMD_INSN_ID_NULL
+#else
+#define SIMD_DISPATCH_12_NS_ID_NULL
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE2
+#define SIMD_DISPATCH_12_NS_ID_SSE2 SIMD_INSN_ID_SSE2
+#else
+#define SIMD_DISPATCH_12_NS_ID_SSE2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE3
+#define SIMD_DISPATCH_12_NS_ID_SSE3 SIMD_INSN_ID_SSE3
+#else
+#define SIMD_DISPATCH_12_NS_ID_SSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSSE3
+#define SIMD_DISPATCH_12_NS_ID_SSSE3 SIMD_INSN_ID_SSSE3
+#else
+#define SIMD_DISPATCH_12_NS_ID_SSSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_1
+#define SIMD_DISPATCH_12_NS_ID_SSE4_1 SIMD_INSN_ID_SSE4_1
+#else
+#define SIMD_DISPATCH_12_NS_ID_SSE4_1
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_2
+#define SIMD_DISPATCH_12_NS_ID_SSE4_2 SIMD_INSN_ID_SSE4_2
+#else
+#define SIMD_DISPATCH_12_NS_ID_SSE4_2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4A
+#define SIMD_DISPATCH_12_NS_ID_SSE4A SIMD_INSN_ID_SSE4A
+#else
+#define SIMD_DISPATCH_12_NS_ID_SSE4A
+#endif
+
+#if SIMD_ARCH_NS_USE_POPCNT_INSN
+#define SIMD_DISPATCH_12_NS_ID_POPCNT_INSN SIMD_INSN_ID_POPCNT_INSN
+#else
+#define SIMD_DISPATCH_12_NS_ID_POPCNT_INSN
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX
+#define SIMD_DISPATCH_12_NS_ID_AVX SIMD_INSN_ID_AVX
+#else
+#define SIMD_DISPATCH_12_NS_ID_AVX
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX2
+#define SIMD_DISPATCH_12_NS_ID_AVX2 SIMD_INSN_ID_AVX2
+#else
+#define SIMD_DISPATCH_12_NS_ID_AVX2
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA3
+#define SIMD_DISPATCH_12_NS_ID_FMA3 SIMD_INSN_ID_FMA3
+#else
+#define SIMD_DISPATCH_12_NS_ID_FMA3
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA4
+#define SIMD_DISPATCH_12_NS_ID_FMA4 SIMD_INSN_ID_FMA4
+#else
+#define SIMD_DISPATCH_12_NS_ID_FMA4
+#endif
+
+#if SIMD_ARCH_NS_USE_XOP
+#define SIMD_DISPATCH_12_NS_ID_XOP SIMD_INSN_ID_XOP
+#else
+#define SIMD_DISPATCH_12_NS_ID_XOP
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512F
+#define SIMD_DISPATCH_12_NS_ID_AVX512F SIMD_INSN_ID_AVX512F
+#else
+#define SIMD_DISPATCH_12_NS_ID_AVX512F
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512BW
+#define SIMD_DISPATCH_12_NS_ID_AVX512BW SIMD_INSN_ID_AVX512BW
+#else
+#define SIMD_DISPATCH_12_NS_ID_AVX512BW
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512DQ
+#define SIMD_DISPATCH_12_NS_ID_AVX512DQ SIMD_INSN_ID_AVX512DQ
+#else
+#define SIMD_DISPATCH_12_NS_ID_AVX512DQ
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512VL
+#define SIMD_DISPATCH_12_NS_ID_AVX512VL SIMD_INSN_ID_AVX512VL
+#else
+#define SIMD_DISPATCH_12_NS_ID_AVX512VL
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON
+#define SIMD_DISPATCH_12_NS_ID_NEON SIMD_INSN_ID_NEON
+#else
+#define SIMD_DISPATCH_12_NS_ID_NEON
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON_FLT_SP
+#define SIMD_DISPATCH_12_NS_ID_NEON_FLT_SP SIMD_INSN_ID_NEON_FLT_SP
+#else
+#define SIMD_DISPATCH_12_NS_ID_NEON_FLT_SP
+#endif
+
+#if SIMD_ARCH_NS_USE_MSA
+#define SIMD_DISPATCH_12_NS_ID_MSA SIMD_INSN_ID_MSA
+#else
+#define SIMD_DISPATCH_12_NS_ID_MSA
+#endif
+
+#if SIMD_ARCH_NS_USE_ALTIVEC
+#define SIMD_DISPATCH_12_NS_ID_ALTIVEC SIMD_INSN_ID_ALTIVEC
+#else
+#define SIMD_DISPATCH_12_NS_ID_ALTIVEC
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_206
+#define SIMD_DISPATCH_12_NS_ID_VSX_206 SIMD_INSN_ID_VSX_206
+#else
+#define SIMD_DISPATCH_12_NS_ID_VSX_206
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_207
+#define SIMD_DISPATCH_12_NS_ID_VSX_207 SIMD_INSN_ID_VSX_207
+#else
+#define SIMD_DISPATCH_12_NS_ID_VSX_207
+#endif
+
+#define SIMD_DISPATCH_12_NAMESPACE                   \
+    SIMD_PASTE24(arch,                               \
+                 SIMD_DISPATCH_12_NS_ID_NULL,        \
+                 SIMD_DISPATCH_12_NS_ID_SSE2,        \
+                 SIMD_DISPATCH_12_NS_ID_SSE3,        \
+                 SIMD_DISPATCH_12_NS_ID_SSSE3,       \
+                 SIMD_DISPATCH_12_NS_ID_SSE4_1,      \
+                 SIMD_DISPATCH_12_NS_ID_SSE4_2,      \
+                 SIMD_DISPATCH_12_NS_ID_SSE4A,       \
+                 SIMD_DISPATCH_12_NS_ID_POPCNT_INSN, \
+                 SIMD_DISPATCH_12_NS_ID_AVX,         \
+                 SIMD_DISPATCH_12_NS_ID_AVX2,        \
+                 SIMD_DISPATCH_12_NS_ID_AVX512F,     \
+                 SIMD_DISPATCH_12_NS_ID_AVX512BW,    \
+                 SIMD_DISPATCH_12_NS_ID_AVX512DQ,    \
+                 SIMD_DISPATCH_12_NS_ID_AVX512VL,    \
+                 SIMD_DISPATCH_12_NS_ID_FMA3,        \
+                 SIMD_DISPATCH_12_NS_ID_FMA4,        \
+                 SIMD_DISPATCH_12_NS_ID_XOP,         \
+                 SIMD_DISPATCH_12_NS_ID_NEON,        \
+                 SIMD_DISPATCH_12_NS_ID_NEON_FLT_SP, \
+                 SIMD_DISPATCH_12_NS_ID_MSA,         \
+                 SIMD_DISPATCH_12_NS_ID_ALTIVEC,     \
+                 SIMD_DISPATCH_12_NS_ID_VSX_206,     \
+                 SIMD_DISPATCH_12_NS_ID_VSX_207)
+
+#define SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE SIMD_DISPATCH_12_NAMESPACE
+#define SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH 1
+#include <bigmath/simd/dispatch/preprocess_single_compile_arch.h>
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE
+
+#define SIMD_DISPATCH_12_FN_REGISTER(ARRAY, NAME, FUN_TYPE)                                     \
+    { /* the following will fail if the overload is not available */                            \
+        FUN_TYPE fun_ptr = &SIMD_DISPATCH_12_NAMESPACE::SIMD_REMOVE_PARENS(NAME);               \
+        ARRAY[12 - 1] = ::simd::SIMD_DISPATCH_12_NAMESPACE::detail::create_fn_version(fun_ptr); \
+    }
+
+#define SIMD_DISPATCH_12_FN_DECLARE(SIGNATURE) \
+    namespace SIMD_DISPATCH_12_NAMESPACE {     \
+        SIMD_REMOVE_PARENS(SIGNATURE);         \
+    }
+#undef SIMD_ARCH_LIST
+#else
+#define SIMD_DISPATCH_12_FN_REGISTER(ARRAY, NAME, FUN_TYPE)
+#define SIMD_DISPATCH_12_FN_DECLARE(SIGNATURE)
+#endif
+
+#ifdef SIMD_DISPATCH_ARCH13
+#define SIMD_ARCH_LIST SIMD_DISPATCH_ARCH13
+#include <bigmath/simd/detail/preprocess_single_arch.h>
+
+// Use the results of preprocess_single_arch.h to define
+// SIMD_DISPATCH_13_NAMESPACE
+
+#if SIMD_ARCH_NS_USE_NULL
+#define SIMD_DISPATCH_13_NS_ID_NULL SIMD_INSN_ID_NULL
+#else
+#define SIMD_DISPATCH_13_NS_ID_NULL
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE2
+#define SIMD_DISPATCH_13_NS_ID_SSE2 SIMD_INSN_ID_SSE2
+#else
+#define SIMD_DISPATCH_13_NS_ID_SSE2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE3
+#define SIMD_DISPATCH_13_NS_ID_SSE3 SIMD_INSN_ID_SSE3
+#else
+#define SIMD_DISPATCH_13_NS_ID_SSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSSE3
+#define SIMD_DISPATCH_13_NS_ID_SSSE3 SIMD_INSN_ID_SSSE3
+#else
+#define SIMD_DISPATCH_13_NS_ID_SSSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_1
+#define SIMD_DISPATCH_13_NS_ID_SSE4_1 SIMD_INSN_ID_SSE4_1
+#else
+#define SIMD_DISPATCH_13_NS_ID_SSE4_1
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_2
+#define SIMD_DISPATCH_13_NS_ID_SSE4_2 SIMD_INSN_ID_SSE4_2
+#else
+#define SIMD_DISPATCH_13_NS_ID_SSE4_2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4A
+#define SIMD_DISPATCH_13_NS_ID_SSE4A SIMD_INSN_ID_SSE4A
+#else
+#define SIMD_DISPATCH_13_NS_ID_SSE4A
+#endif
+
+#if SIMD_ARCH_NS_USE_POPCNT_INSN
+#define SIMD_DISPATCH_13_NS_ID_POPCNT_INSN SIMD_INSN_ID_POPCNT_INSN
+#else
+#define SIMD_DISPATCH_13_NS_ID_POPCNT_INSN
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX
+#define SIMD_DISPATCH_13_NS_ID_AVX SIMD_INSN_ID_AVX
+#else
+#define SIMD_DISPATCH_13_NS_ID_AVX
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX2
+#define SIMD_DISPATCH_13_NS_ID_AVX2 SIMD_INSN_ID_AVX2
+#else
+#define SIMD_DISPATCH_13_NS_ID_AVX2
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA3
+#define SIMD_DISPATCH_13_NS_ID_FMA3 SIMD_INSN_ID_FMA3
+#else
+#define SIMD_DISPATCH_13_NS_ID_FMA3
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA4
+#define SIMD_DISPATCH_13_NS_ID_FMA4 SIMD_INSN_ID_FMA4
+#else
+#define SIMD_DISPATCH_13_NS_ID_FMA4
+#endif
+
+#if SIMD_ARCH_NS_USE_XOP
+#define SIMD_DISPATCH_13_NS_ID_XOP SIMD_INSN_ID_XOP
+#else
+#define SIMD_DISPATCH_13_NS_ID_XOP
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512F
+#define SIMD_DISPATCH_13_NS_ID_AVX512F SIMD_INSN_ID_AVX512F
+#else
+#define SIMD_DISPATCH_13_NS_ID_AVX512F
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512BW
+#define SIMD_DISPATCH_13_NS_ID_AVX512BW SIMD_INSN_ID_AVX512BW
+#else
+#define SIMD_DISPATCH_13_NS_ID_AVX512BW
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512DQ
+#define SIMD_DISPATCH_13_NS_ID_AVX512DQ SIMD_INSN_ID_AVX512DQ
+#else
+#define SIMD_DISPATCH_13_NS_ID_AVX512DQ
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512VL
+#define SIMD_DISPATCH_13_NS_ID_AVX512VL SIMD_INSN_ID_AVX512VL
+#else
+#define SIMD_DISPATCH_13_NS_ID_AVX512VL
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON
+#define SIMD_DISPATCH_13_NS_ID_NEON SIMD_INSN_ID_NEON
+#else
+#define SIMD_DISPATCH_13_NS_ID_NEON
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON_FLT_SP
+#define SIMD_DISPATCH_13_NS_ID_NEON_FLT_SP SIMD_INSN_ID_NEON_FLT_SP
+#else
+#define SIMD_DISPATCH_13_NS_ID_NEON_FLT_SP
+#endif
+
+#if SIMD_ARCH_NS_USE_MSA
+#define SIMD_DISPATCH_13_NS_ID_MSA SIMD_INSN_ID_MSA
+#else
+#define SIMD_DISPATCH_13_NS_ID_MSA
+#endif
+
+#if SIMD_ARCH_NS_USE_ALTIVEC
+#define SIMD_DISPATCH_13_NS_ID_ALTIVEC SIMD_INSN_ID_ALTIVEC
+#else
+#define SIMD_DISPATCH_13_NS_ID_ALTIVEC
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_206
+#define SIMD_DISPATCH_13_NS_ID_VSX_206 SIMD_INSN_ID_VSX_206
+#else
+#define SIMD_DISPATCH_13_NS_ID_VSX_206
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_207
+#define SIMD_DISPATCH_13_NS_ID_VSX_207 SIMD_INSN_ID_VSX_207
+#else
+#define SIMD_DISPATCH_13_NS_ID_VSX_207
+#endif
+
+#define SIMD_DISPATCH_13_NAMESPACE                   \
+    SIMD_PASTE24(arch,                               \
+                 SIMD_DISPATCH_13_NS_ID_NULL,        \
+                 SIMD_DISPATCH_13_NS_ID_SSE2,        \
+                 SIMD_DISPATCH_13_NS_ID_SSE3,        \
+                 SIMD_DISPATCH_13_NS_ID_SSSE3,       \
+                 SIMD_DISPATCH_13_NS_ID_SSE4_1,      \
+                 SIMD_DISPATCH_13_NS_ID_SSE4_2,      \
+                 SIMD_DISPATCH_13_NS_ID_SSE4A,       \
+                 SIMD_DISPATCH_13_NS_ID_POPCNT_INSN, \
+                 SIMD_DISPATCH_13_NS_ID_AVX,         \
+                 SIMD_DISPATCH_13_NS_ID_AVX2,        \
+                 SIMD_DISPATCH_13_NS_ID_AVX512F,     \
+                 SIMD_DISPATCH_13_NS_ID_AVX512BW,    \
+                 SIMD_DISPATCH_13_NS_ID_AVX512DQ,    \
+                 SIMD_DISPATCH_13_NS_ID_AVX512VL,    \
+                 SIMD_DISPATCH_13_NS_ID_FMA3,        \
+                 SIMD_DISPATCH_13_NS_ID_FMA4,        \
+                 SIMD_DISPATCH_13_NS_ID_XOP,         \
+                 SIMD_DISPATCH_13_NS_ID_NEON,        \
+                 SIMD_DISPATCH_13_NS_ID_NEON_FLT_SP, \
+                 SIMD_DISPATCH_13_NS_ID_MSA,         \
+                 SIMD_DISPATCH_13_NS_ID_ALTIVEC,     \
+                 SIMD_DISPATCH_13_NS_ID_VSX_206,     \
+                 SIMD_DISPATCH_13_NS_ID_VSX_207)
+
+#define SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE SIMD_DISPATCH_13_NAMESPACE
+#define SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH 1
+#include <bigmath/simd/dispatch/preprocess_single_compile_arch.h>
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE
+
+#define SIMD_DISPATCH_13_FN_REGISTER(ARRAY, NAME, FUN_TYPE)                                     \
+    { /* the following will fail if the overload is not available */                            \
+        FUN_TYPE fun_ptr = &SIMD_DISPATCH_13_NAMESPACE::SIMD_REMOVE_PARENS(NAME);               \
+        ARRAY[13 - 1] = ::simd::SIMD_DISPATCH_13_NAMESPACE::detail::create_fn_version(fun_ptr); \
+    }
+
+#define SIMD_DISPATCH_13_FN_DECLARE(SIGNATURE) \
+    namespace SIMD_DISPATCH_13_NAMESPACE {     \
+        SIMD_REMOVE_PARENS(SIGNATURE);         \
+    }
+#undef SIMD_ARCH_LIST
+#else
+#define SIMD_DISPATCH_13_FN_REGISTER(ARRAY, NAME, FUN_TYPE)
+#define SIMD_DISPATCH_13_FN_DECLARE(SIGNATURE)
+#endif
+
+#ifdef SIMD_DISPATCH_ARCH14
+#define SIMD_ARCH_LIST SIMD_DISPATCH_ARCH14
+#include <bigmath/simd/detail/preprocess_single_arch.h>
+
+// Use the results of preprocess_single_arch.h to define
+// SIMD_DISPATCH_14_NAMESPACE
+
+#if SIMD_ARCH_NS_USE_NULL
+#define SIMD_DISPATCH_14_NS_ID_NULL SIMD_INSN_ID_NULL
+#else
+#define SIMD_DISPATCH_14_NS_ID_NULL
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE2
+#define SIMD_DISPATCH_14_NS_ID_SSE2 SIMD_INSN_ID_SSE2
+#else
+#define SIMD_DISPATCH_14_NS_ID_SSE2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE3
+#define SIMD_DISPATCH_14_NS_ID_SSE3 SIMD_INSN_ID_SSE3
+#else
+#define SIMD_DISPATCH_14_NS_ID_SSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSSE3
+#define SIMD_DISPATCH_14_NS_ID_SSSE3 SIMD_INSN_ID_SSSE3
+#else
+#define SIMD_DISPATCH_14_NS_ID_SSSE3
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_1
+#define SIMD_DISPATCH_14_NS_ID_SSE4_1 SIMD_INSN_ID_SSE4_1
+#else
+#define SIMD_DISPATCH_14_NS_ID_SSE4_1
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4_2
+#define SIMD_DISPATCH_14_NS_ID_SSE4_2 SIMD_INSN_ID_SSE4_2
+#else
+#define SIMD_DISPATCH_14_NS_ID_SSE4_2
+#endif
+
+#if SIMD_ARCH_NS_USE_SSE4A
+#define SIMD_DISPATCH_14_NS_ID_SSE4A SIMD_INSN_ID_SSE4A
+#else
+#define SIMD_DISPATCH_14_NS_ID_SSE4A
+#endif
+
+#if SIMD_ARCH_NS_USE_POPCNT_INSN
+#define SIMD_DISPATCH_14_NS_ID_POPCNT_INSN SIMD_INSN_ID_POPCNT_INSN
+#else
+#define SIMD_DISPATCH_14_NS_ID_POPCNT_INSN
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX
+#define SIMD_DISPATCH_14_NS_ID_AVX SIMD_INSN_ID_AVX
+#else
+#define SIMD_DISPATCH_14_NS_ID_AVX
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX2
+#define SIMD_DISPATCH_14_NS_ID_AVX2 SIMD_INSN_ID_AVX2
+#else
+#define SIMD_DISPATCH_14_NS_ID_AVX2
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA3
+#define SIMD_DISPATCH_14_NS_ID_FMA3 SIMD_INSN_ID_FMA3
+#else
+#define SIMD_DISPATCH_14_NS_ID_FMA3
+#endif
+
+#if SIMD_ARCH_NS_USE_FMA4
+#define SIMD_DISPATCH_14_NS_ID_FMA4 SIMD_INSN_ID_FMA4
+#else
+#define SIMD_DISPATCH_14_NS_ID_FMA4
+#endif
+
+#if SIMD_ARCH_NS_USE_XOP
+#define SIMD_DISPATCH_14_NS_ID_XOP SIMD_INSN_ID_XOP
+#else
+#define SIMD_DISPATCH_14_NS_ID_XOP
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512F
+#define SIMD_DISPATCH_14_NS_ID_AVX512F SIMD_INSN_ID_AVX512F
+#else
+#define SIMD_DISPATCH_14_NS_ID_AVX512F
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512BW
+#define SIMD_DISPATCH_14_NS_ID_AVX512BW SIMD_INSN_ID_AVX512BW
+#else
+#define SIMD_DISPATCH_14_NS_ID_AVX512BW
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512DQ
+#define SIMD_DISPATCH_14_NS_ID_AVX512DQ SIMD_INSN_ID_AVX512DQ
+#else
+#define SIMD_DISPATCH_14_NS_ID_AVX512DQ
+#endif
+
+#if SIMD_ARCH_NS_USE_AVX512VL
+#define SIMD_DISPATCH_14_NS_ID_AVX512VL SIMD_INSN_ID_AVX512VL
+#else
+#define SIMD_DISPATCH_14_NS_ID_AVX512VL
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON
+#define SIMD_DISPATCH_14_NS_ID_NEON SIMD_INSN_ID_NEON
+#else
+#define SIMD_DISPATCH_14_NS_ID_NEON
+#endif
+
+#if SIMD_ARCH_NS_USE_NEON_FLT_SP
+#define SIMD_DISPATCH_14_NS_ID_NEON_FLT_SP SIMD_INSN_ID_NEON_FLT_SP
+#else
+#define SIMD_DISPATCH_14_NS_ID_NEON_FLT_SP
+#endif
+
+#if SIMD_ARCH_NS_USE_MSA
+#define SIMD_DISPATCH_14_NS_ID_MSA SIMD_INSN_ID_MSA
+#else
+#define SIMD_DISPATCH_14_NS_ID_MSA
+#endif
+
+#if SIMD_ARCH_NS_USE_ALTIVEC
+#define SIMD_DISPATCH_14_NS_ID_ALTIVEC SIMD_INSN_ID_ALTIVEC
+#else
+#define SIMD_DISPATCH_14_NS_ID_ALTIVEC
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_206
+#define SIMD_DISPATCH_14_NS_ID_VSX_206 SIMD_INSN_ID_VSX_206
+#else
+#define SIMD_DISPATCH_14_NS_ID_VSX_206
+#endif
+
+#if SIMD_ARCH_NS_USE_VSX_207
+#define SIMD_DISPATCH_14_NS_ID_VSX_207 SIMD_INSN_ID_VSX_207
+#else
+#define SIMD_DISPATCH_14_NS_ID_VSX_207
+#endif
+
+#define SIMD_DISPATCH_14_NAMESPACE                   \
+    SIMD_PASTE24(arch,                               \
+                 SIMD_DISPATCH_14_NS_ID_NULL,        \
+                 SIMD_DISPATCH_14_NS_ID_SSE2,        \
+                 SIMD_DISPATCH_14_NS_ID_SSE3,        \
+                 SIMD_DISPATCH_14_NS_ID_SSSE3,       \
+                 SIMD_DISPATCH_14_NS_ID_SSE4_1,      \
+                 SIMD_DISPATCH_14_NS_ID_SSE4_2,      \
+                 SIMD_DISPATCH_14_NS_ID_SSE4A,       \
+                 SIMD_DISPATCH_14_NS_ID_POPCNT_INSN, \
+                 SIMD_DISPATCH_14_NS_ID_AVX,         \
+                 SIMD_DISPATCH_14_NS_ID_AVX2,        \
+                 SIMD_DISPATCH_14_NS_ID_AVX512F,     \
+                 SIMD_DISPATCH_14_NS_ID_AVX512BW,    \
+                 SIMD_DISPATCH_14_NS_ID_AVX512DQ,    \
+                 SIMD_DISPATCH_14_NS_ID_AVX512VL,    \
+                 SIMD_DISPATCH_14_NS_ID_FMA3,        \
+                 SIMD_DISPATCH_14_NS_ID_FMA4,        \
+                 SIMD_DISPATCH_14_NS_ID_XOP,         \
+                 SIMD_DISPATCH_14_NS_ID_NEON,        \
+                 SIMD_DISPATCH_14_NS_ID_NEON_FLT_SP, \
+                 SIMD_DISPATCH_14_NS_ID_MSA,         \
+                 SIMD_DISPATCH_14_NS_ID_ALTIVEC,     \
+                 SIMD_DISPATCH_14_NS_ID_VSX_206,     \
+                 SIMD_DISPATCH_14_NS_ID_VSX_207)
+
+#define SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE SIMD_DISPATCH_14_NAMESPACE
+#define SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH 1
+#include <bigmath/simd/dispatch/preprocess_single_compile_arch.h>
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_FOR_DISPATCH
+#undef SIMD_ARCH_THIS_COMPILE_ARCH_NAMESPACE
+
+#define SIMD_DISPATCH_14_FN_REGISTER(ARRAY, NAME, FUN_TYPE)                                     \
+    { /* the following will fail if the overload is not available */                            \
+        FUN_TYPE fun_ptr = &SIMD_DISPATCH_14_NAMESPACE::SIMD_REMOVE_PARENS(NAME);               \
+        ARRAY[14 - 1] = ::simd::SIMD_DISPATCH_14_NAMESPACE::detail::create_fn_version(fun_ptr); \
+    }
+
+#define SIMD_DISPATCH_14_FN_DECLARE(SIGNATURE) \
+    namespace SIMD_DISPATCH_14_NAMESPACE {     \
+        SIMD_REMOVE_PARENS(SIGNATURE);         \
+    }
+#undef SIMD_ARCH_LIST
+#else
+#define SIMD_DISPATCH_14_FN_REGISTER(ARRAY, NAME, FUN_TYPE)
+#define SIMD_DISPATCH_14_FN_DECLARE(SIGNATURE)
+#endif
+
+
+#define SIMD_DISPATCH_DECLARE_FUNCTIONS(SIGNATURE) \
+    SIMD_DISPATCH_0_FN_DECLARE(SIGNATURE)          \
+    SIMD_DISPATCH_1_FN_DECLARE(SIGNATURE)          \
+    SIMD_DISPATCH_2_FN_DECLARE(SIGNATURE)          \
+    SIMD_DISPATCH_3_FN_DECLARE(SIGNATURE)          \
+    SIMD_DISPATCH_4_FN_DECLARE(SIGNATURE)          \
+    SIMD_DISPATCH_5_FN_DECLARE(SIGNATURE)          \
+    SIMD_DISPATCH_6_FN_DECLARE(SIGNATURE)          \
+    SIMD_DISPATCH_7_FN_DECLARE(SIGNATURE)          \
+    SIMD_DISPATCH_8_FN_DECLARE(SIGNATURE)          \
+    SIMD_DISPATCH_9_FN_DECLARE(SIGNATURE)          \
+    SIMD_DISPATCH_10_FN_DECLARE(SIGNATURE)         \
+    SIMD_DISPATCH_11_FN_DECLARE(SIGNATURE)         \
+    SIMD_DISPATCH_12_FN_DECLARE(SIGNATURE)         \
+    SIMD_DISPATCH_13_FN_DECLARE(SIGNATURE)         \
+    SIMD_DISPATCH_14_FN_DECLARE(SIGNATURE)
+
+
+#define SIMD_DISPATCH_COLLECT_FUNCTIONS(ARRAY, NAME, FUN_TYPE) \
+    SIMD_DISPATCH_0_FN_REGISTER(ARRAY, NAME, FUN_TYPE)         \
+    SIMD_DISPATCH_1_FN_REGISTER(ARRAY, NAME, FUN_TYPE)         \
+    SIMD_DISPATCH_2_FN_REGISTER(ARRAY, NAME, FUN_TYPE)         \
+    SIMD_DISPATCH_3_FN_REGISTER(ARRAY, NAME, FUN_TYPE)         \
+    SIMD_DISPATCH_4_FN_REGISTER(ARRAY, NAME, FUN_TYPE)         \
+    SIMD_DISPATCH_5_FN_REGISTER(ARRAY, NAME, FUN_TYPE)         \
+    SIMD_DISPATCH_6_FN_REGISTER(ARRAY, NAME, FUN_TYPE)         \
+    SIMD_DISPATCH_7_FN_REGISTER(ARRAY, NAME, FUN_TYPE)         \
+    SIMD_DISPATCH_8_FN_REGISTER(ARRAY, NAME, FUN_TYPE)         \
+    SIMD_DISPATCH_9_FN_REGISTER(ARRAY, NAME, FUN_TYPE)         \
+    SIMD_DISPATCH_10_FN_REGISTER(ARRAY, NAME, FUN_TYPE)        \
+    SIMD_DISPATCH_11_FN_REGISTER(ARRAY, NAME, FUN_TYPE)        \
+    SIMD_DISPATCH_12_FN_REGISTER(ARRAY, NAME, FUN_TYPE)        \
+    SIMD_DISPATCH_13_FN_REGISTER(ARRAY, NAME, FUN_TYPE)        \
+    SIMD_DISPATCH_14_FN_REGISTER(ARRAY, NAME, FUN_TYPE)
+
+
+#endif // SIMD_EMIT_DISPATCHER
+#endif

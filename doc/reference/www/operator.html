@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Operators - simd-docs</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<meta name="generator" content="MediaWiki 1.23.15">
+
+
+
+
+
+
+<link rel="stylesheet" href="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.skinning.interface%257Cmediawiki.ui.button%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-css:7:09491d659b7f9960acfc4bbdea311b1b */</style>
+<script src="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"operator","wgTitle":"operator","wgCurRevisionId":1200,"wgRevisionId":1200,"wgArticleId":97,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"operator","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"editsection":0,"showtoc":0,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-js:7:04bcd510e6b27e2a36e3a47925b35066 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-operator skin-cppreference2 action-view vector-animateLayout cpp-navbar">
+		
+		<div id="cpp-content-base">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				<div id="mw-js-message" style="display:none;"></div>
+								<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Operators</span></h1>
+								<div id="bodyContent">
+										<div id="siteSub">From simd-docs</div>
+										<div id="contentSub"></div>
+															<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="index.html" title="Main Page"> simd</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="types.html" title="types"> Types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cap.html" title="cap"> Capabilities</a> </td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Operations </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="conv.html" title="conv"> Conversions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="bitwise.html" title="bitwise"> Bitwise operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="fp.html" title="fp"> Floating-point operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="int.html" title="int"> Integer operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="mem.html" title="mem"> Memory access operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="shuffle.html" title="shuffle"> Shuffle operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="misc.html" title="misc"> Miscellaneous operations</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>The library provides the following operators that behave equivalently to the respective free functions.
+</p>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div>operator+</div></div>
+</td>
+<td>   performs addition, wraps <a href="fp/add.html" title="fp/add"><tt>add<span style="font-size:0.7em; line-height:130%">(floating-point)</span></tt></a> and <a href="int/add.html" title="int/add"><tt>add<span style="font-size:0.7em; line-height:130%">(integer)</span></tt></a>  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div>operator-</div></div>
+</td>
+<td>   performs subtraction, wraps <a href="fp/sub.html" title="fp/sub"><tt>sub<span style="font-size:0.7em; line-height:130%">(floating-point)</span></tt></a> and <a href="int/sub.html" title="int/sub"><tt>sub<span style="font-size:0.7em; line-height:130%">(integer)</span></tt></a>  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div>operator*</div></div>
+</td>
+<td>   performs multiplication, wraps <a href="fp/mul.html" title="fp/mul"><tt>mul<span style="font-size:0.7em; line-height:130%">(floating-point)</span></tt></a> and <a href="int/mul_lo.html" title="int/mul lo"><tt>mul_lo<span style="font-size:0.7em; line-height:130%">(integer)</span></tt></a>  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div>operator/</div></div>
+</td>
+<td>   performs division, wraps <a href="fp/div.html" title="fp/div"><tt>div<span style="font-size:0.7em; line-height:130%">(floating-point)</span></tt></a>  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div>operator&gt;&gt;</div></div>
+</td>
+<td>   performs shift right, wraps <a href="int/shift_r.html" title="int/shift r"><tt>shift_r<span style="font-size:0.7em; line-height:130%">(integer)</span></tt></a>  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div>operator&lt;&lt;</div></div>
+</td>
+<td>   performs shift left, wraps  <a href="int/shift_l.html" title="int/shift l"><tt>shift_l<span style="font-size:0.7em; line-height:130%">(integer)</span></tt></a>  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div>operator&amp;</div></div>
+</td>
+<td>   performs bitwise AND, wraps <a href="bitwise/bit_and.html" title="bitwise/bit and"><tt>bit_and</tt></a>  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div>operator|</div></div>
+</td>
+<td>   performs bitwise OR, wraps <a href="bitwise/bit_or.html" title="bitwise/bit or"><tt>bit_or</tt></a>  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div>operator^</div></div>
+</td>
+<td>   performs bitwise XOR, wraps <a href="bitwise/bit_xor.html" title="bitwise/bit xor"><tt>bit_xor</tt></a>  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div>operator~</div></div>
+</td>
+<td>   performs bitwise NOT, wraps <a href="bitwise/bit_not.html" title="bitwise/bit not"><tt>bit_not</tt></a>  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div>operator==</div></div>
+</td>
+<td>   performs comparison for equality, wraps <a href="fp/cmp_eq.html" title="fp/cmp eq"><tt>cmp_eq<span style="font-size:0.7em; line-height:130%">(floating-point)</span></tt></a> and <a href="int/cmp_eq.html" title="int/cmp eq"><tt>cmp_eq<span style="font-size:0.7em; line-height:130%">(integer)</span></tt></a>  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div>operator!=</div></div>
+</td>
+<td>   performs comparison for inequality, wraps <a href="fp/cmp_neq.html" title="fp/cmp neq"><tt>cmp_neq<span style="font-size:0.7em; line-height:130%">(floating-point)</span></tt></a> and <a href="int/cmp_neq.html" title="int/cmp neq"><tt>cmp_neq<span style="font-size:0.7em; line-height:130%">(integer)</span></tt></a>  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div>operator&gt;</div></div>
+</td>
+<td>   performs comparison for greater than, wraps <a href="fp/cmp_gt.html" title="fp/cmp gt"><tt>cmp_gt<span style="font-size:0.7em; line-height:130%">(floating-point)</span></tt></a> and <a href="int/cmp_gt.html" title="int/cmp gt"><tt>cmp_gt<span style="font-size:0.7em; line-height:130%">(integer)</span></tt></a>  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div>operator&gt;=</div></div>
+</td>
+<td>   performs comparison for greater than or equal, wraps <a href="fp/cmp_ge.html" title="fp/cmp ge"><tt>cmp_ge<span style="font-size:0.7em; line-height:130%">(floating-point)</span></tt></a>   <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div>operator&lt;</div></div>
+</td>
+<td>   performs comparison for less than, wraps <a href="fp/cmp_lt.html" title="fp/cmp lt"><tt>cmp_lt<span style="font-size:0.7em; line-height:130%">(floating-point)</span></tt></a> and <a href="int/cmp_lt.html" title="int/cmp lt"><tt>cmp_lt<span style="font-size:0.7em; line-height:130%">(integer)</span></tt></a>  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div>operator&lt;=</div></div>
+</td>
+<td>   performs comparison for less than or equal, wraps <a href="fp/cmp_le.html" title="fp/cmp le"><tt>cmp_le<span style="font-size:0.7em; line-height:130%">(floating-point)</span></tt></a>   <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+</table>
+
+
+
+
+</div>										
+															<div id="catlinks" class="catlinks catlinks-allhidden"></div>															<div class="visualClear"></div>
+									</div>
+			</div>
+		</div>
+		
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script src="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+
+	</body>
+
+</html>

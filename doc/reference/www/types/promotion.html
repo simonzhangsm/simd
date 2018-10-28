@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Vector type promotion - simd-docs</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<meta name="generator" content="MediaWiki 1.23.15">
+
+
+
+
+
+
+<link rel="stylesheet" href="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.skinning.interface%257Cmediawiki.ui.button%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-css:7:09491d659b7f9960acfc4bbdea311b1b */</style>
+<script src="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"types/promotion","wgTitle":"types/promotion","wgCurRevisionId":1557,"wgRevisionId":1557,"wgArticleId":122,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"types/promotion","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"editsection":0,"showtoc":0,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-js:7:04bcd510e6b27e2a36e3a47925b35066 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-types_promotion skin-cppreference2 action-view vector-animateLayout cpp-navbar">
+		
+		<div id="cpp-content-base">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				<div id="mw-js-message" style="display:none;"></div>
+								<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Vector type promotion</span></h1>
+								<div id="bodyContent">
+										<div id="siteSub">From simd-docs</div>
+										<div id="contentSub"><span class="subpages">&lt; <a href="../types.html" title="types">types</a></span></div>
+															<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../index.html" title="Main Page"> simd</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../types.html" title="types"> Types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cap.html" title="cap"> Capabilities</a> </td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Operations </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../conv.html" title="conv"> Conversions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../bitwise.html" title="bitwise"> Bitwise operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../fp.html" title="fp"> Floating-point operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../int.html" title="int"> Integer operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../mem.html" title="mem"> Memory access operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../shuffle.html" title="shuffle"> Shuffle operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../misc.html" title="misc"> Miscellaneous operations</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../types.html" title="types">Types</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="overview.html" title="types/overview">Overview</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">Vector type promotion</strong>
+</td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p><i>Vector type promotion</i> refers to a common set of rules that specify the return type of library-provided binary functions that accept multiple vector types as their parameters. Like the type promotion rules in C, they describe what happens when a generic operation is applied to different vector types. Effectively this is description of what vector types do library functions return for certain arguments.
+</p>
+<p>The rules are intuitive and resemble the C type promotion rules. The rules are as follows:
+</p>
+<ul>
+<li> The rules only apply to vectors of the same size
+</li>
+</ul>
+<ul>
+<li> The element data type of the result vector is defined as follows:
+</li>
+</ul>
+<dl>
+<dd>
+<ul>
+<li> if either of the vectors is <code>float</code>, the result is also <code>float</code>
+</li>
+<li> otherwise, if either of the vectors is <code>uint</code>, the result is also <code>uint</code>
+</li>
+<li> otherwise, if either of the vectors is <code>int</code>, the result is also <code>int</code>
+</li>
+<li> otherwise, if either of the vectors is <code>mask_float</code>, the result is also <code>mask_float</code>
+</li>
+<li> otherwise, the result is <code>mask_int</code>
+</li>
+</ul>
+</dd>
+</dl>
+<ul>
+<li> The number of bits per element in the result vector is the maximum of the argument vectors. For example, operation on <code>int32x4</code> and <code>int64x2</code> results in <code>int64x2</code>.
+</li>
+</ul>
+<p>Examples:
+</p>
+<table class="wikitable">
+
+<tr>
+<th>  First type
+</th>
+<th>  Second type
+</th>
+<th>  Result type
+</th>
+</tr>
+<tr>
+<td>  <code>int32x4</code>
+</td>
+<td>  <code>int16x8</code>
+</td>
+<td>  <code>int32x4</code>
+</td>
+</tr>
+<tr>
+<td>  <code>uint32x4</code>
+</td>
+<td>  <code>mask_float64x2</code>
+</td>
+<td>  <code>uint64x2</code>
+</td>
+</tr>
+<tr>
+<td>  <code>float64x2</code>
+</td>
+<td>  <code>uint8x16</code>
+</td>
+<td>  <code>float64x2</code>
+</td>
+</tr>
+<tr>
+<td>  <code>mask_int8x16</code>
+</td>
+<td>  <code>mask_float64x2</code>
+</td>
+<td>  <code>mask_float64x2</code>
+</td>
+</tr>
+</table>
+<p><br>
+</p>
+<p>The following tables illustrate the promotion rules in more detail:
+</p>
+<p>If the arguments have the same element size <code>XX</code>, then:
+</p>
+<table class="wikitable">
+
+<tr>
+<th>  First type
+</th>
+<th>  Second type
+</th>
+<th>  Result type
+</th>
+</tr>
+<tr>
+<td>  <code>int<i>XX</i></code>
+</td>
+<td>  <code>int<i>XX</i></code>
+</td>
+<td>  <code>int<i>XX</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>int<i>XX</i></code>
+</td>
+<td>  <code>uint<i>XX</i></code>
+</td>
+<td>  <code>uint<i>XX</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>uint<i>XX</i></code>
+</td>
+<td>  <code>uint<i>XX</i></code>
+</td>
+<td>  <code>uint<i>XX</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>float<i>XX</i></code>
+</td>
+<td>  <code>int<i>XX</i></code>
+</td>
+<td>  <code>float<i>XX</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>float<i>XX</i></code>
+</td>
+<td>  <code>uint<i>XX</i></code>
+</td>
+<td>  <code>float<i>XX</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>float<i>XX</i></code>
+</td>
+<td>  <code>float<i>XX</i></code>
+</td>
+<td>  <code>float<i>XX</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>mask_int<i>XX</i></code>
+</td>
+<td>  <code>int<i>XX</i></code>
+</td>
+<td>  <code>int<i>XX</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>mask_int<i>XX</i></code>
+</td>
+<td>  <code>uint<i>XX</i></code>
+</td>
+<td>  <code>uint<i>XX</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>mask_int<i>XX</i></code>
+</td>
+<td>  <code>mask_int<i>XX</i></code>
+</td>
+<td>  <code>mask_int<i>XX</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>mask_int<i>XX</i></code>
+</td>
+<td>  <code>float<i>XX</i></code>
+</td>
+<td>  <code>float<i>XX</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>mask_int<i>XX</i></code>
+</td>
+<td>  <code>mask_float<i>XX</i></code>
+</td>
+<td>  <code>mask_float<i>XX</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>mask_float<i>XX</i></code>
+</td>
+<td>  <code>float<i>XX</i></code>
+</td>
+<td>  <code>float<i>XX</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>mask_float<i>XX</i></code>
+</td>
+<td>  <code>mask_float<i>XX</i></code>
+</td>
+<td>  <code>mask_float<i>XX</i></code>
+</td>
+</tr>
+</table>
+<p>If the arguments have different element sizes <code>XX</code> and <code>YY</code>, then:
+</p>
+<table class="wikitable">
+
+<tr>
+<th>  First type
+</th>
+<th>  Second type
+</th>
+<th>  Result type
+</th>
+</tr>
+<tr>
+<td>  <code>int<i>XX</i></code>
+</td>
+<td>  <code>int<i>YY</i></code>
+</td>
+<td>  <code>int<i>{ max(XX, YY) }</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>int<i>XX</i></code>
+</td>
+<td>  <code>uint<i>YY</i></code>
+</td>
+<td>  <code>uint<i>{ max(XX, YY) }</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>uint<i>XX</i></code>
+</td>
+<td>  <code>uint<i>YY</i></code>
+</td>
+<td>  <code>uint<i>{ max(XX, YY) }</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>float<i>XX</i></code>
+</td>
+<td>  <code>int<i>YY</i></code>
+</td>
+<td>  <code>float<i>{ max(XX, YY) }</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>float<i>XX</i></code>
+</td>
+<td>  <code>uint<i>YY</i></code>
+</td>
+<td>  <code>float<i>{ max(XX, YY) }</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>float<i>XX</i></code>
+</td>
+<td>  <code>float<i>YY</i></code>
+</td>
+<td>  <code>float<i>{ max(XX, YY) }</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>mask_int<i>XX</i></code>
+</td>
+<td>  <code>int<i>YY</i></code>
+</td>
+<td>  <code>int<i>{ max(XX, YY) }</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>mask_int<i>XX</i></code>
+</td>
+<td>  <code>uint<i>YY</i></code>
+</td>
+<td>  <code>uint<i>{ max(XX, YY) }</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>mask_int<i>XX</i></code>
+</td>
+<td>  <code>mask_int<i>YY</i></code>
+</td>
+<td>  <code>uint<i>{ max(XX, YY) }</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>mask_int<i>XX</i></code>
+</td>
+<td>  <code>float<i>YY</i></code>
+</td>
+<td>  <code>float<i>{ max(XX, YY) }</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>mask_int<i>XX</i></code>
+</td>
+<td>  <code>mask_float<i>YY</i></code>
+</td>
+<td>  <code>uint<i>{ max(XX, YY) }</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>mask_float<i>XX</i></code>
+</td>
+<td>  <code>float<i>YY</i></code>
+</td>
+<td>  <code>float<i>{ max(XX, YY) }</i></code>
+</td>
+</tr>
+<tr>
+<td>  <code>mask_float<i>XX</i></code>
+</td>
+<td>  <code>mask_float<i>YY</i></code>
+</td>
+<td>  <code>uint<i>{ max(XX, YY) }</i></code>
+</td>
+</tr>
+</table>
+
+
+
+
+</div>										
+															<div id="catlinks" class="catlinks catlinks-allhidden"></div>															<div class="visualClear"></div>
+									</div>
+			</div>
+		</div>
+		
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script src="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+
+	</body>
+
+</html>

@@ -1,0 +1,17 @@
+{{title|SIMD_HAS_FLOAT64_TO_UINT32_CONVERSION}}
+{{cap/navbar}}
+{{dcl begin}}
+{{dcl |
+#define SIMD_HAS_FLOAT64_TO_UINT32_CONVERSION /* 1 if present, 0 otherwise */
+}}
+{{dcl end}}
+
+Indicates support of efficient conversion of {{c|float64}} to {{c|uint32}} (see {{ltf|conv/to_uint32}}). The macro evaluates to {{c|1}} if this operation is supported in the SIMD unit, {{c|0}} otherwise.
+
+Currently, the macro is defined to {{c|1}} on the following instruction sets:
+
+* {{c|SIMD_USE_NULL}}
+* {{c|SIMD_USE_AVX512F}}
+* {{c|SIMD_USE_NEON && SIMD_64_BITS}}
+* {{c|SIMD_USE_VSX_206}}
+* {{c|SIMD_USE_MSA}}

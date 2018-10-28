@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Memory access operations - simd-docs</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<meta name="generator" content="MediaWiki 1.23.15">
+
+
+
+
+
+
+<link rel="stylesheet" href="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.skinning.interface%257Cmediawiki.ui.button%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-css:7:09491d659b7f9960acfc4bbdea311b1b */</style>
+<script src="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"mem","wgTitle":"mem","wgCurRevisionId":145,"wgRevisionId":145,"wgArticleId":72,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"mem","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"editsection":0,"showtoc":0,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-js:7:04bcd510e6b27e2a36e3a47925b35066 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-mem skin-cppreference2 action-view vector-animateLayout cpp-navbar">
+		
+		<div id="cpp-content-base">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				<div id="mw-js-message" style="display:none;"></div>
+								<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Memory access operations</span></h1>
+								<div id="bodyContent">
+										<div id="siteSub">From simd-docs</div>
+										<div id="contentSub"></div>
+															<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="index.html" title="Main Page"> simd</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="types.html" title="types"> Types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cap.html" title="cap"> Capabilities</a> </td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Operations </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="conv.html" title="conv"> Conversions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="bitwise.html" title="bitwise"> Bitwise operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="fp.html" title="fp"> Floating-point operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="int.html" title="int"> Integer operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> Memory access operations</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="shuffle.html" title="shuffle"> Shuffle operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="misc.html" title="misc"> Miscellaneous operations</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<strong class="selflink"> Memory access operations</strong><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> Load</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="mem/load.html" title="mem/load"><span class="t-lines"><span>load</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="mem/load_u.html" title="mem/load u"><span class="t-lines"><span>load_u</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="mem/load_splat.html" title="mem/load splat"><span class="t-lines"><span>load_splat</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="mem/load_packed2.html" title="mem/load packed2"><span class="t-lines"><span>load_packed2</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="mem/load_packed3.html" title="mem/load packed3"><span class="t-lines"><span>load_packed3</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="mem/load_packed4.html" title="mem/load packed4"><span class="t-lines"><span>load_packed4</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Store</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="mem/store.html" title="mem/store"><span class="t-lines"><span>store</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="mem/stream.html" title="mem/stream"><span class="t-lines"><span>stream</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="mem/store_first.html" title="mem/store first"><span class="t-lines"><span>store_first</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="mem/store_last.html" title="mem/store last"><span class="t-lines"><span>store_last</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="mem/store_packed2.html" title="mem/store packed2"><span class="t-lines"><span>store_packed2</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="mem/store_packed3.html" title="mem/store packed3"><span class="t-lines"><span>store_packed3</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="mem/store_packed4.html" title="mem/store packed4"><span class="t-lines"><span>store_packed4</span></span></a></div></div></td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>The following memory access operations are provided.
+</p>
+<table class="t-dsc-begin">
+
+<tr>
+<td colspan="2"> <h3><span class="mw-headline" id="Load">Load</span></h3>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="mem/load.html" title="mem/load"> <span class="t-lines"><span>load</span></span></a></div></div>
+</td>
+<td>   loads vector from aligned location  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="mem/load_u.html" title="mem/load u"> <span class="t-lines"><span>load_u</span></span></a></div></div>
+</td>
+<td>   loads vector from unaligned location  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="mem/load_splat.html" title="mem/load splat"> <span class="t-lines"><span>load_splat</span></span></a></div></div>
+</td>
+<td>   loads a value to all elements of a vector  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="mem/load_packed2.html" title="mem/load packed2"> <span class="t-lines"><span>load_packed2</span></span></a></div></div>
+</td>
+<td>   loads element pairs and deinterleaves into two vectors  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="mem/load_packed3.html" title="mem/load packed3"> <span class="t-lines"><span>load_packed3</span></span></a></div></div>
+</td>
+<td>   loads element triplets and deinterleaves into three vectors  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="mem/load_packed4.html" title="mem/load packed4"> <span class="t-lines"><span>load_packed4</span></span></a></div></div>
+</td>
+<td>   loads element quadruplets and deinterleaves into four vectors  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="2"> <h3><span class="mw-headline" id="Store">Store</span></h3>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="mem/store.html" title="mem/store"> <span class="t-lines"><span>store</span></span></a></div></div>
+</td>
+<td>   stores vector to aligned location  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="mem/stream.html" title="mem/stream"> <span class="t-lines"><span>stream</span></span></a></div></div>
+</td>
+<td>   stores vector to aligned location without touching the caches  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="mem/store_first.html" title="mem/store first"> <span class="t-lines"><span>store_first</span></span></a></div></div>
+</td>
+<td>   stores first N elements of a vector to aligned location  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="mem/store_last.html" title="mem/store last"> <span class="t-lines"><span>store_last</span></span></a></div></div>
+</td>
+<td>   stores last N elements of a vector to aligned location  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="mem/store_packed2.html" title="mem/store packed2"> <span class="t-lines"><span>store_packed2</span></span></a></div></div>
+</td>
+<td>   interleaves two vectors and stores resulting element pairs  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="mem/store_packed3.html" title="mem/store packed3"> <span class="t-lines"><span>store_packed3</span></span></a></div></div>
+</td>
+<td>   interleaves three vectors and stores resulting element triplets  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="mem/store_packed4.html" title="mem/store packed4"> <span class="t-lines"><span>store_packed4</span></span></a></div></div>
+</td>
+<td>   interleaves four vectors and stores resulting element quadruplets  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+</table>
+
+
+
+
+</div>										
+															<div id="catlinks" class="catlinks catlinks-allhidden"></div>															<div class="visualClear"></div>
+									</div>
+			</div>
+		</div>
+		
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script src="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+
+	</body>
+
+</html>

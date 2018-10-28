@@ -1,0 +1,1018 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Vector types - simd-docs</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<meta name="generator" content="MediaWiki 1.23.15">
+
+
+
+
+
+
+<link rel="stylesheet" href="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.skinning.interface%257Cmediawiki.ui.button%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-css:7:09491d659b7f9960acfc4bbdea311b1b */</style>
+<script src="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"types","wgTitle":"types","wgCurRevisionId":1651,"wgRevisionId":1651,"wgArticleId":117,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"types","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"editsection":0,"showtoc":0,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-js:7:04bcd510e6b27e2a36e3a47925b35066 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-types skin-cppreference2 action-view vector-animateLayout cpp-navbar">
+		
+		<div id="cpp-content-base">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				<div id="mw-js-message" style="display:none;"></div>
+								<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Vector types</span></h1>
+								<div id="bodyContent">
+										<div id="siteSub">From simd-docs</div>
+										<div id="contentSub"></div>
+															<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="index.html" title="Main Page"> simd</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> Types</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cap.html" title="cap"> Capabilities</a> </td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Operations </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="conv.html" title="conv"> Conversions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="bitwise.html" title="bitwise"> Bitwise operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="fp.html" title="fp"> Floating-point operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="int.html" title="int"> Integer operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="mem.html" title="mem"> Memory access operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="shuffle.html" title="shuffle"> Shuffle operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="misc.html" title="misc"> Miscellaneous operations</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<strong class="selflink">Types</strong><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="types/overview.html" title="types/overview">Overview</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="types/promotion.html" title="types/promotion">Vector type promotion</a>
+</td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>This page outlines the available vector types in the library. Several higher-level descriptions are available in the following pages:
+</p>
+<ul>
+<li>
+<span style="font-size:1.2em;"><a href="types/overview.html" title="types/overview">Overview</a></span>
+</li>
+</ul>
+<ul>
+<li>
+<span style="font-size:1.2em;"><a href="types/promotion.html" title="types/promotion">Vector type promotion</a></span>
+</li>
+</ul>
+<div id="toc" class="toc">
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="types.html#Regular_vector_types"><span class="tocnumber">1</span> <span class="toctext">Regular vector types</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="types.html#Vector_expressions"><span class="tocnumber">2</span> <span class="toctext">Vector expressions</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="types.html#Categorization_types"><span class="tocnumber">3</span> <span class="toctext">Categorization types</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="types.html#Helper_typedefs"><span class="tocnumber">4</span> <span class="toctext">Helper typedefs</span></a></li>
+</ul>
+</div>
+
+<h3>
+<span class="mw-headline" id="Regular_vector_types">Regular vector types</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=types&amp;action=edit&amp;section=1" title="Edit section: Regular vector types">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<p>Regular vector types are any vector type with <code>void</code> <code>Expr</code> template parameter. Vector types correspond to one or more physical SIMD registers.
+</p>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/uint8_void.html" title="types/uint8 void"> <span class="t-lines"><span>uint8<span style="font-size:0.7em; line-height:130%">&lt;N,void&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing unsigned 8-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/int8_void.html" title="types/int8 void"> <span class="t-lines"><span>int8<span style="font-size:0.7em; line-height:130%">&lt;N,void&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing signed 8-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/mask_int8_void.html" title="types/mask int8 void"> <span class="t-lines"><span>mask_int8<span style="font-size:0.7em; line-height:130%">&lt;N,void&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing masks for 8-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/uint16_void.html" title="types/uint16 void"> <span class="t-lines"><span>uint16<span style="font-size:0.7em; line-height:130%">&lt;N,void&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing unsigned 16-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/int16_void.html" title="types/int16 void"> <span class="t-lines"><span>int16<span style="font-size:0.7em; line-height:130%">&lt;N,void&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing signed 16-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/mask_int16_void.html" title="types/mask int16 void"> <span class="t-lines"><span>mask_int16<span style="font-size:0.7em; line-height:130%">&lt;N,void&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing masks for 16-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/uint32_void.html" title="types/uint32 void"> <span class="t-lines"><span>uint32<span style="font-size:0.7em; line-height:130%">&lt;N,void&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing unsigned 32-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/int32_void.html" title="types/int32 void"> <span class="t-lines"><span>int32<span style="font-size:0.7em; line-height:130%">&lt;N,void&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing signed 32-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/mask_int32_void.html" title="types/mask int32 void"> <span class="t-lines"><span>mask_int32<span style="font-size:0.7em; line-height:130%">&lt;N,void&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing masks for 32-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/uint64_void.html" title="types/uint64 void"> <span class="t-lines"><span>uint64<span style="font-size:0.7em; line-height:130%">&lt;N,void&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing unsigned 64-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/int64_void.html" title="types/int64 void"> <span class="t-lines"><span>int64<span style="font-size:0.7em; line-height:130%">&lt;N,void&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing signed 64-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/mask_int64_void.html" title="types/mask int64 void"> <span class="t-lines"><span>mask_int64<span style="font-size:0.7em; line-height:130%">&lt;N,void&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing masks for 64-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/float32_void.html" title="types/float32 void"> <span class="t-lines"><span>float32<span style="font-size:0.7em; line-height:130%">&lt;N,void&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing 32-bit floating-point numbers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/mask_float32_void.html" title="types/mask float32 void"> <span class="t-lines"><span>mask_float32<span style="font-size:0.7em; line-height:130%">&lt;N,void&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing masks for 32-bit floating-point numbers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/float64_void.html" title="types/float64 void"> <span class="t-lines"><span>float64<span style="font-size:0.7em; line-height:130%">&lt;N,void&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing 64-bit floating-point numbers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/mask_float64_void.html" title="types/mask float64 void"> <span class="t-lines"><span>mask_float64<span style="font-size:0.7em; line-height:130%">&lt;N,void&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing masks for 64-bit floating-point numbers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+</table>
+<p><span id="expr"></span>
+</p>
+<h3>
+<span class="mw-headline" id="Vector_expressions">Vector expressions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=types&amp;action=edit&amp;section=2" title="Edit section: Vector expressions">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<p>Vector expressions are any vector type with non-<code>void</code> <code>Expr</code> template parameter. Vector expression stores information needed to evaluate a certain expression.
+</p>
+<p>Vector expressions are not meant to be created by the library user. The user may only evaluate them to a regular vector type.
+</p>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/uint8_expr.html" title="types/uint8 expr"> <span class="t-lines"><span>uint8<span style="font-size:0.7em; line-height:130%">&lt;N,E&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing unsigned 8-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/int8_expr.html" title="types/int8 expr"> <span class="t-lines"><span>int8<span style="font-size:0.7em; line-height:130%">&lt;N,E&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing signed 8-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/mask_int8_expr.html" title="types/mask int8 expr"> <span class="t-lines"><span>mask_int8<span style="font-size:0.7em; line-height:130%">&lt;N,E&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing masks for 8-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/uint16_expr.html" title="types/uint16 expr"> <span class="t-lines"><span>uint16<span style="font-size:0.7em; line-height:130%">&lt;N,E&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing unsigned 16-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/int16_expr.html" title="types/int16 expr"> <span class="t-lines"><span>int16<span style="font-size:0.7em; line-height:130%">&lt;N,E&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing signed 16-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/mask_int16_expr.html" title="types/mask int16 expr"> <span class="t-lines"><span>mask_int16<span style="font-size:0.7em; line-height:130%">&lt;N,E&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing masks for 16-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/uint32_expr.html" title="types/uint32 expr"> <span class="t-lines"><span>uint32<span style="font-size:0.7em; line-height:130%">&lt;N,E&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing unsigned 32-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/int32_expr.html" title="types/int32 expr"> <span class="t-lines"><span>int32<span style="font-size:0.7em; line-height:130%">&lt;N,E&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing signed 32-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/mask_int32_expr.html" title="types/mask int32 expr"> <span class="t-lines"><span>mask_int32<span style="font-size:0.7em; line-height:130%">&lt;N,E&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing masks for 32-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/uint64_expr.html" title="types/uint64 expr"> <span class="t-lines"><span>uint64<span style="font-size:0.7em; line-height:130%">&lt;N,E&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing unsigned 64-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/int64_expr.html" title="types/int64 expr"> <span class="t-lines"><span>int64<span style="font-size:0.7em; line-height:130%">&lt;N,E&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing signed 64-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/mask_int64_expr.html" title="types/mask int64 expr"> <span class="t-lines"><span>mask_int64<span style="font-size:0.7em; line-height:130%">&lt;N,E&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing masks for 64-bit integers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/float32_expr.html" title="types/float32 expr"> <span class="t-lines"><span>float32<span style="font-size:0.7em; line-height:130%">&lt;N,E&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing 32-bit floating-point numbers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/mask_float32_expr.html" title="types/mask float32 expr"> <span class="t-lines"><span>mask_float32<span style="font-size:0.7em; line-height:130%">&lt;N,E&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing masks for 32-bit floating-point numbers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/float64_expr.html" title="types/float64 expr"> <span class="t-lines"><span>float64<span style="font-size:0.7em; line-height:130%">&lt;N,E&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing 64-bit floating-point numbers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/mask_float64_expr.html" title="types/mask float64 expr"> <span class="t-lines"><span>mask_float64<span style="font-size:0.7em; line-height:130%">&lt;N,E&gt;</span></span></span></a></div></div>
+</td>
+<td>   vector containing masks for 64-bit floating-point numbers <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+</table>
+<h3>
+<span class="mw-headline" id="Categorization_types">Categorization types</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=types&amp;action=edit&amp;section=3" title="Edit section: Categorization types">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/any_int8.html" title="types/any int8"> <span class="t-lines"><span>any_int8</span></span></a></div></div>
+</td>
+<td>   represents either of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int8</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint8</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int8</span></span> <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/any_int16.html" title="types/any int16"> <span class="t-lines"><span>any_int16</span></span></a></div></div>
+</td>
+<td>   represents either of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int16</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint16</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int16</span></span> <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/any_int32.html" title="types/any int32"> <span class="t-lines"><span>any_int32</span></span></a></div></div>
+</td>
+<td>   represents either of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int32</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint32</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int32</span></span> <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/any_int64.html" title="types/any int64"> <span class="t-lines"><span>any_int64</span></span></a></div></div>
+</td>
+<td>   represents either of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int64</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint64</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int64</span></span> <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/any_float32.html" title="types/any float32"> <span class="t-lines"><span>any_float32</span></span></a></div></div>
+</td>
+<td>   represents either of <span class="t-c"><span class="mw-geshi cpp source-cpp">float32</span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float32</span></span> <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/any_float64.html" title="types/any float64"> <span class="t-lines"><span>any_float64</span></span></a></div></div>
+</td>
+<td>   represents either of <span class="t-c"><span class="mw-geshi cpp source-cpp">float64</span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float64</span></span> <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/any_vec8.html" title="types/any vec8"> <span class="t-lines"><span>any_vec8</span></span></a></div></div>
+</td>
+<td>   represents <span class="t-c"><span class="mw-geshi cpp source-cpp">any_int8</span></span>  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/any_vec16.html" title="types/any vec16"> <span class="t-lines"><span>any_vec16</span></span></a></div></div>
+</td>
+<td>   represents <span class="t-c"><span class="mw-geshi cpp source-cpp">any_int16</span></span> <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/any_vec32.html" title="types/any vec32"> <span class="t-lines"><span>any_vec32</span></span></a></div></div>
+</td>
+<td>   represents either <span class="t-c"><span class="mw-geshi cpp source-cpp">any_int32</span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">any_float32</span></span> <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/any_vec64.html" title="types/any vec64"> <span class="t-lines"><span>any_vec64</span></span></a></div></div>
+</td>
+<td>   represents either <span class="t-c"><span class="mw-geshi cpp source-cpp">any_int64</span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">any_float64</span></span> <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="types/any_vec.html" title="types/any vec"> <span class="t-lines"><span>any_vec</span></span></a></div></div>
+</td>
+<td>   represents any vector  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+</table>
+<h3>
+<span class="mw-headline" id="Helper_typedefs">Helper typedefs</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=types&amp;action=edit&amp;section=4" title="Edit section: Helper typedefs">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<p>The following helper typedefs are provided:
+</p>
+<table class="wikitable">
+
+<tr>
+<th> <code> Type </code>
+</th>
+<th> <code> Definition</code>
+</th>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int8x16</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int8</span><span class="sy1">&lt;</span><span class="nu0">16</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int8x32</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int8</span><span class="sy1">&lt;</span><span class="nu0">32</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint8x16</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint8</span><span class="sy1">&lt;</span><span class="nu0">16</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint8x32</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint8</span><span class="sy1">&lt;</span><span class="nu0">32</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int8x16</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int8<span class="sy1">&lt;</span><span class="nu0">16</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int8x32</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int8<span class="sy1">&lt;</span><span class="nu0">32</span><span class="sy1">&gt;</span></span></span>
+<p><br>
+</p>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int16x8</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int16</span><span class="sy1">&lt;</span><span class="nu0">8</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int16x16</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int16</span><span class="sy1">&lt;</span><span class="nu0">16</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint16x8</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint16</span><span class="sy1">&lt;</span><span class="nu0">8</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint16x16</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint16</span><span class="sy1">&lt;</span><span class="nu0">16</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int16x8</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int16<span class="sy1">&lt;</span><span class="nu0">8</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int16x16</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int16<span class="sy1">&lt;</span><span class="nu0">16</span><span class="sy1">&gt;</span></span></span>
+<p><br>
+</p>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int32x4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int32</span><span class="sy1">&lt;</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int32x8</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int32</span><span class="sy1">&lt;</span><span class="nu0">8</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint32x4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint32</span><span class="sy1">&lt;</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint32x8</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint32</span><span class="sy1">&lt;</span><span class="nu0">8</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int32x4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int32<span class="sy1">&lt;</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int32x8</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int32<span class="sy1">&lt;</span><span class="nu0">8</span><span class="sy1">&gt;</span></span></span>
+<p><br>
+</p>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int64x2</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int64</span><span class="sy1">&lt;</span><span class="nu0">2</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int64x4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int64</span><span class="sy1">&lt;</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint64x2</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint64</span><span class="sy1">&lt;</span><span class="nu0">2</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint64x4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint64</span><span class="sy1">&lt;</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int64x2</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int64<span class="sy1">&lt;</span><span class="nu0">2</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int64x4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int64<span class="sy1">&lt;</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+<p><br>
+</p>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float32v</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float32<span class="sy1">&lt;</span>SIMD_FAST_FLOAT32_SIZE<span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float32v</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float32<span class="sy1">&lt;</span>SIMD_FAST_FLOAT32_SIZE<span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float64v</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float64<span class="sy1">&lt;</span>SIMD_FAST_FLOAT64_SIZE<span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float64v</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float64<span class="sy1">&lt;</span>SIMD_FAST_FLOAT64_SIZE<span class="sy1">&gt;</span></span></span>
+<p><br>
+</p>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int8v</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int8</span><span class="sy1">&lt;</span>SIMD_FAST_INT8_SIZE<span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint8v</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint8</span><span class="sy1">&lt;</span>SIMD_FAST_INT8_SIZE<span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int8v</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int8<span class="sy1">&lt;</span>SIMD_FAST_INT8_SIZE<span class="sy1">&gt;</span></span></span>
+<p><br>
+</p>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int16v</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int16</span><span class="sy1">&lt;</span>SIMD_FAST_INT16_SIZE<span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint16v</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint16</span><span class="sy1">&lt;</span>SIMD_FAST_INT16_SIZE<span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int16v</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int16<span class="sy1">&lt;</span>SIMD_FAST_INT16_SIZE<span class="sy1">&gt;</span></span></span>
+<p><br>
+</p>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int32v</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int32</span><span class="sy1">&lt;</span>SIMD_FAST_INT32_SIZE<span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint32v</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint32</span><span class="sy1">&lt;</span>SIMD_FAST_INT32_SIZE<span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int32v</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int32<span class="sy1">&lt;</span>SIMD_FAST_INT32_SIZE<span class="sy1">&gt;</span></span></span>
+<p><br>
+</p>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int64v</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int64</span><span class="sy1">&lt;</span>SIMD_FAST_INT64_SIZE<span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint64v</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint64</span><span class="sy1">&lt;</span>SIMD_FAST_INT64_SIZE<span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int64v</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int64<span class="sy1">&lt;</span>SIMD_FAST_INT64_SIZE<span class="sy1">&gt;</span></span></span>
+<p><br>
+</p>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float32v2</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float32<span class="sy1">&lt;</span>SIMD_FAST_FLOAT32_SIZE<span class="sy2">*</span><span class="nu0">2</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float64v2</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float64<span class="sy1">&lt;</span>SIMD_FAST_FLOAT64_SIZE<span class="sy2">*</span><span class="nu0">2</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float64v2</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float64<span class="sy1">&lt;</span>SIMD_FAST_FLOAT64_SIZE<span class="sy2">*</span><span class="nu0">2</span><span class="sy1">&gt;</span></span></span>
+<p><br>
+</p>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int8v2</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int8</span><span class="sy1">&lt;</span>SIMD_FAST_INT8_SIZE<span class="sy2">*</span><span class="nu0">2</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint8v2</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint8</span><span class="sy1">&lt;</span>SIMD_FAST_INT8_SIZE<span class="sy2">*</span><span class="nu0">2</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int8v2</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int8<span class="sy1">&lt;</span>SIMD_FAST_INT8_SIZE<span class="sy2">*</span><span class="nu0">2</span><span class="sy1">&gt;</span></span></span>
+<p><br>
+</p>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int16v2</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int16</span><span class="sy1">&lt;</span>SIMD_FAST_INT16_SIZE<span class="sy2">*</span><span class="nu0">2</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint16v2</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint16</span><span class="sy1">&lt;</span>SIMD_FAST_INT16_SIZE<span class="sy2">*</span><span class="nu0">2</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int16v2</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int16<span class="sy1">&lt;</span>SIMD_FAST_INT16_SIZE<span class="sy2">*</span><span class="nu0">2</span><span class="sy1">&gt;</span></span></span>
+<p><br>
+</p>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int32v2</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int32</span><span class="sy1">&lt;</span>SIMD_FAST_INT32_SIZE<span class="sy2">*</span><span class="nu0">2</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint32v2</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint32</span><span class="sy1">&lt;</span>SIMD_FAST_INT32_SIZE<span class="sy2">*</span><span class="nu0">2</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int32v2</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int32<span class="sy1">&lt;</span>SIMD_FAST_INT32_SIZE<span class="sy2">*</span><span class="nu0">2</span><span class="sy1">&gt;</span></span></span>
+<p><br>
+</p>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int64v2</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int64</span><span class="sy1">&lt;</span>SIMD_FAST_INT64_SIZE<span class="sy2">*</span><span class="nu0">2</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint64v2</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint64</span><span class="sy1">&lt;</span>SIMD_FAST_INT64_SIZE<span class="sy2">*</span><span class="nu0">2</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int64v2</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int64<span class="sy1">&lt;</span>SIMD_FAST_INT64_SIZE<span class="sy2">*</span><span class="nu0">2</span><span class="sy1">&gt;</span></span></span>
+<p><br>
+</p>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float32v4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float32<span class="sy1">&lt;</span>SIMD_FAST_FLOAT32_SIZE<span class="sy2">*</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float32v4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float32<span class="sy1">&lt;</span>SIMD_FAST_FLOAT32_SIZE<span class="sy2">*</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float64v4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float64<span class="sy1">&lt;</span>SIMD_FAST_FLOAT64_SIZE<span class="sy2">*</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float64v4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float64<span class="sy1">&lt;</span>SIMD_FAST_FLOAT64_SIZE<span class="sy2">*</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+<p><br>
+</p>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int8v4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int8</span><span class="sy1">&lt;</span>SIMD_FAST_INT8_SIZE<span class="sy2">*</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint8v4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint8</span><span class="sy1">&lt;</span>SIMD_FAST_INT8_SIZE<span class="sy2">*</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int8v4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int8<span class="sy1">&lt;</span>SIMD_FAST_INT8_SIZE<span class="sy2">*</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+<p><br>
+</p>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int16v4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int16</span><span class="sy1">&lt;</span>SIMD_FAST_INT16_SIZE<span class="sy2">*</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint16v4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint16</span><span class="sy1">&lt;</span>SIMD_FAST_INT16_SIZE<span class="sy2">*</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int16v4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int16<span class="sy1">&lt;</span>SIMD_FAST_INT16_SIZE<span class="sy2">*</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+<p><br>
+</p>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int32v4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int32</span><span class="sy1">&lt;</span>SIMD_FAST_INT32_SIZE<span class="sy2">*</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint32v4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint32</span><span class="sy1">&lt;</span>SIMD_FAST_INT32_SIZE<span class="sy2">*</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int32v4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int32<span class="sy1">&lt;</span>SIMD_FAST_INT32_SIZE<span class="sy2">*</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+<p><br>
+</p>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">int64v4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int64</span><span class="sy1">&lt;</span>SIMD_FAST_INT64_SIZE<span class="sy2">*</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">uint64v4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint64</span><span class="sy1">&lt;</span>SIMD_FAST_INT64_SIZE<span class="sy2">*</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int64v4</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_int64<span class="sy1">&lt;</span>SIMD_FAST_INT64_SIZE<span class="sy2">*</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span>
+<p><br>
+</p>
+</td>
+</tr>
+</table>
+
+
+
+
+</div>										
+															<div id="catlinks" class="catlinks catlinks-allhidden"></div>															<div class="visualClear"></div>
+									</div>
+			</div>
+		</div>
+		
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script src="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+
+	</body>
+
+</html>

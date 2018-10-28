@@ -1,0 +1,65 @@
+           SOFTWARE AND SERVICES LICENSE AGREEMENT
+
+			Version 1.18.10.000, 28 November 2016
+			       BIGMATH CORPORATION
+			       license@bigmath.com
+			         www.bigmath.com
+       8/F, Tower 9, Baoneng Science and Technology Park
+    Longhua New District, Shenzhen, Guangdong, China 518101
+
+BIGMATH INSIGHT CONFIDENTIAL
+
+Copyright (C) 2016-2017 BIGMATH CORPORATION, All Rights Reserved.
+
+NOTICE: All information contained herein is, and remains the property of 
+BIGMATH CORPORATION. The intellectual and technical concepts contained 
+herein are proprietary to BIGMATH CORPORATION and may be covered by 
+Chinese, HKSAR, and Foreign Patents, patents in process, and are protected 
+by trade secret or copyright law.
+
+Dissemination of this information or reproduction of this material is strictly 
+forbidden unless prior written permission is obtained from BIGMATH CORPORATION. 
+Access to the source code contained herein is hereby forbidden to anyone except 
+current BIGMATH CORPORATION employees, managers or contractors who have executed. 
+Confidentiality and Non-disclosure agreements explicitly covering such access.
+
+The copyright notice above does not evidence any actual or intended publication 
+or disclosure of this source code, which includes information that is confidential 
+and/or proprietary, and is a trade secret, of BIGMATH CORPORATION.
+
+ANY REPRODUCTION, MODIFICATION, DISTRIBUTION, INSTALLATION, DISILLUSION, ACCESS, 
+PUBLIC PERFORMANCE, OR PUBLIC DISPLAY OF OR THROUGH USE OF THIS SOURCE CODE WITHOUT 
+THE EXPRESS WRITTEN CONSENT OF BIGMATH CORPORATION IS STRICTLY PROHIBITED, AND IN 
+VIOLATION OF APPLICABLE LAWS AND INTERNATIONAL TREATIES. THE RECEIPT OR POSSESSION 
+OF THIS SOURCE CODE AND/OR RELATED INFORMATION DOES NOT CONVEY OR IMPLY ANY RIGHTS 
+TO REPRODUCE, DISCLOSE OR DISTRIBUTE ITS CONTENTS, OR TO MANUFACTURE, USE, OR SELL 
+ANYTHING THAT IT MAY DESCRIBE, IN WHOLE OR IN PART.
+
+Write to LICENSE@BIGMATH.COM for more authorization requirements, or access to an 
+entire license agreement at http://www.bigmath.com/license.
+
+/**********************************************************************
+ * BIGMATH INSIGHT CONFIDENTIAL
+ *
+ * Copyright (C) 2016-2018 BIGMATH CORPORATION, All Rights Reserved.
+ *
+ * @Author: Simon Zhang on 19 Oct 2018
+ * @EMail: simon.zhangsm@hotmail.com
+ * @Version: $SIMD_LIB_VERSION
+ *
+ * These source codes are subject to the terms and conditions defined
+ * in 'LICENSE', which is part of this source code package. Write to
+ * LICENSE@BIGMATH.COM for more authorization requirements, or obtain
+ * an entire copy of license agreement at http://bigmath.com/license.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY
+ * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * **********************************************************************/

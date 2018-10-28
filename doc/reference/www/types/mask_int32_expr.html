@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>simd::mask_int32&lt;N,E&gt; - simd-docs</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<meta name="generator" content="MediaWiki 1.23.15">
+
+
+
+
+
+
+<link rel="stylesheet" href="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.skinning.interface%257Cmediawiki.ui.button%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-css:7:09491d659b7f9960acfc4bbdea311b1b */</style>
+<script src="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"types/mask_int32_expr","wgTitle":"types/mask int32 expr","wgCurRevisionId":1643,"wgRevisionId":1643,"wgArticleId":710,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"types/mask_int32_expr","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"editsection":0,"showtoc":0,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-js:7:04bcd510e6b27e2a36e3a47925b35066 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-types_mask_int32_expr skin-cppreference2 action-view vector-animateLayout cpp-navbar">
+		
+		<div id="cpp-content-base">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				<div id="mw-js-message" style="display:none;"></div>
+								<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto"><span style="font-size:0.7em; line-height:130%">simd::</span>mask_int32<span style="font-size:0.7em; line-height:130%">&lt;N,E&gt;</span></span></h1>
+								<div id="bodyContent">
+										<div id="siteSub">From simd-docs</div>
+										<div id="contentSub"><span class="subpages">&lt; <a href="../types.html" title="types">types</a></span></div>
+															<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../index.html" title="Main Page"> simd</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../types.html" title="types"> Types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cap.html" title="cap"> Capabilities</a> </td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Operations </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../conv.html" title="conv"> Conversions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../bitwise.html" title="bitwise"> Bitwise operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../fp.html" title="fp"> Floating-point operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../int.html" title="int"> Integer operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../mem.html" title="mem"> Memory access operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../shuffle.html" title="shuffle"> Shuffle operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../misc.html" title="misc"> Miscellaneous operations</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../types.html" title="types">Types</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="overview.html" title="types/overview">Overview</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="promotion.html" title="types/promotion">Vector type promotion</a>
+</td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">template</span><span class="sy1">&lt;</span> <span class="kw4">unsigned</span> N, <span class="kw2">class</span> E <span class="sy1">&gt;</span><br>
+<span class="kw2">class</span> mask_int32 <span class="sy4">:</span> <span class="kw2">public</span> any_int32<span class="sy1">&lt;</span>N, mask_int32<span class="sy1">&lt;</span>N,E<span class="sy1">&gt;</span> <span class="sy1">&gt;</span><span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Defines a integer expression type with <code>N</code> elements each having {{{bits}}} bits.
+</p>
+<p>Instances of this type do not correspond to any physical SIMD registers. Instead, the type  contains all information needed to produce one or more SIMD registers with correct information, but the operations have not been executed yet. The expression can be evaluated and its result obtained by calling <code>eval()</code> member function.
+</p>
+<div id="toc" class="toc">
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="mask_int32_expr.html#Member_types"><span class="tocnumber">1</span> <span class="toctext">Member types</span></a></li>
+<li class="toclevel-1"><a href="mask_int32_expr.html#Member_functions"><span class="tocnumber">2</span> <span class="toctext">Member functions</span></a></li>
+<li class="toclevel-1"><a href="mask_int32_expr.html#mask_int32::eval"><span class="tocnumber">3</span> <span class="toctext"><span>mask_int32::</span>eval</span></a></li>
+<li class="toclevel-1">
+<a href="mask_int32_expr.html#mask_int32::operator_mask_int32.3CN.3E"><span class="tocnumber">4</span> <span class="toctext"><span>mask_int32::</span>operator mask_int32&lt;N&gt;</span></a>
+<ul>
+<li class="toclevel-2">
+<a href="mask_int32_expr.html#Inherited_from_simd::any_vec.3CB.2CV.3E"><span class="tocnumber">4.1</span> <span class="toctext">Inherited from   <span>simd::</span>any_vec&lt;B,V&gt;</span></a>
+<ul>
+<li class="toclevel-3"><a href="mask_int32_expr.html#Member_types_2"><span class="tocnumber">4.1.1</span> <span class="toctext">Member types</span></a></li>
+<li class="toclevel-3"><a href="mask_int32_expr.html#Member_constants"><span class="tocnumber">4.1.2</span> <span class="toctext">Member constants</span></a></li>
+<li class="toclevel-3"><a href="mask_int32_expr.html#Member_functions_2"><span class="tocnumber">4.1.3</span> <span class="toctext">Member functions</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="mask_int32_expr.html#simd::any_vec::wrapped"><span class="tocnumber">5</span> <span class="toctext"><span>simd::any_vec::</span>wrapped</span></a></li>
+</ul>
+</div>
+
+<h3>
+<span class="mw-headline" id="Member_types">Member types</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=Template:types/vector_expr_type&amp;action=edit&amp;section=T-1" title="Template:types/vector expr type">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-hitem">
+<td>  Type
+</td>
+<td>  Definition
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>expr_type</code>
+</td>
+<td>  <code>E</code>
+</td>
+</tr>
+
+</table>
+<h3>
+<span class="mw-headline" id="Member_functions">Member functions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=Template:types/vector_expr_type&amp;action=edit&amp;section=T-2" title="Template:types/vector expr type">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<div class="t-member">
+<h1><span class="mw-headline" id="mask_int32::eval"><span style="font-size:0.7em; line-height:130%">mask_int32::</span>eval</span></h1>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp">mask_int32<span class="sy1">&lt;</span>N<span class="sy1">&gt;</span> eval<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Evaluates the expression and returns the result.
+</p>
+</div>
+<div class="t-member">
+<h1><span class="mw-headline" id="mask_int32::operator_mask_int32.3CN.3E"><span style="font-size:0.7em; line-height:130%">mask_int32::</span>operator mask_int32&lt;N&gt;</span></h1>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp">operator mask_int32<span class="sy1">&lt;</span>N<span class="sy1">&gt;</span><span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Returns <span class="t-c"><span class="mw-geshi cpp source-cpp">eval<span class="br0">(</span><span class="br0">)</span></span></span>.
+</p>
+</div>
+<p>{{types/any_{{{kind}}}{{{bits}}}/inherit}}
+{{types/any_vec{{{bits}}}/inherit}}
+</p>
+<div class="t-inherited">
+<h2><span class="mw-headline" id="Inherited_from_simd::any_vec.3CB.2CV.3E">Inherited from  <a href="any_vec.html" title="types/any vec"> <span style="font-size:0.7em; line-height:130%">simd::</span>any_vec&lt;B,V&gt;</a></span></h2>
+<h3><span class="mw-headline" id="Member_types_2">Member types</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-hitem">
+<td>  Member type
+</td>
+<td>  Definition
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>type</code>
+</td>
+<td>  <code>V</code>
+</td>
+</tr>
+
+</table>
+<h3><span class="mw-headline" id="Member_constants">Member constants</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-hitem">
+<td>  Member constant
+</td>
+<td>  Value
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>length_bytes</code>
+</td>
+<td>  <code>B</code>
+</td>
+</tr>
+
+</table>
+<h3><span class="mw-headline" id="Member_functions_2">Member functions</span></h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div>wrapped</div></div>
+</td>
+<td>   returns the wrapped type  <br> <span class="t-mark">(public member function)</span>
+</td>
+</tr>
+
+</table>
+<div class="t-member">
+<h1><span class="mw-headline" id="simd::any_vec::wrapped"><span style="font-size:0.7em; line-height:130%">simd::any_vec::</span>wrapped</span></h1>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp">V<span class="sy3">&amp;</span> wrapped<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> V<span class="sy3">&amp;</span> wrapped<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Returns the wrapped type. Effectively the same as <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">static_cast</span><span class="sy1">&lt;</span>V<span class="sy3">&amp;</span><span class="sy1">&gt;</span><span class="br0">(</span><span class="sy2">*</span><span class="kw3">this</span><span class="br0">)</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">static_cast</span><span class="sy1">&lt;</span><span class="kw4">const</span> V<span class="sy3">&amp;</span><span class="sy1">&gt;</span><span class="br0">(</span><span class="sy2">*</span><span class="kw3">this</span><span class="br0">)</span></span></span> respectively.
+</p>
+</div>
+</div>
+
+
+
+
+</div>										
+															<div id="catlinks" class="catlinks catlinks-allhidden"></div>															<div class="visualClear"></div>
+									</div>
+			</div>
+		</div>
+		
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script src="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+
+	</body>
+
+</html>

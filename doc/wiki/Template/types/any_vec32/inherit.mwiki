@@ -1,0 +1,7 @@
+{{inherited | [[types/any_vec32 | {{small|simd::}}any_vec32<N,V>]] |
+===Member constants===
+{{dsc begin}}
+{{dsc hitem | Member constant | Value}}
+{{dsc | {{tt|size_tag}} | {{tt|SIMD_TAG_SIZE32}} }}
+{{dsc end}}
+}}

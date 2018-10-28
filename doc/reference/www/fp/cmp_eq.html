@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>simd::cmp_eq(floating-point) - simd-docs</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<meta name="generator" content="MediaWiki 1.23.15">
+
+
+
+
+
+
+<link rel="stylesheet" href="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.skinning.interface%257Cmediawiki.ui.button%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-css:7:09491d659b7f9960acfc4bbdea311b1b */</style>
+<script src="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"fp/cmp_eq","wgTitle":"fp/cmp eq","wgCurRevisionId":1672,"wgRevisionId":1672,"wgArticleId":17,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo without reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"fp/cmp_eq","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"editsection":0,"showtoc":0,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-js:7:04bcd510e6b27e2a36e3a47925b35066 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-fp_cmp_eq skin-cppreference2 action-view vector-animateLayout cpp-navbar">
+		
+		<div id="cpp-content-base">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				<div id="mw-js-message" style="display:none;"></div>
+								<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto"><span style="font-size:0.7em; line-height:130%">simd::</span>cmp_eq<span style="font-size:0.7em; line-height:130%">(floating-point)</span></span></h1>
+								<div id="bodyContent">
+										<div id="siteSub">From simd-docs</div>
+										<div id="contentSub"><span class="subpages">&lt; <a href="../fp.html" title="fp">fp</a></span></div>
+															<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../index.html" title="Main Page"> simd</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../types.html" title="types"> Types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cap.html" title="cap"> Capabilities</a> </td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Operations </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../conv.html" title="conv"> Conversions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../bitwise.html" title="bitwise"> Bitwise operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../fp.html" title="fp"> Floating-point operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../int.html" title="int"> Integer operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../mem.html" title="mem"> Memory access operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../shuffle.html" title="shuffle"> Shuffle operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../misc.html" title="misc"> Miscellaneous operations</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../fp.html" title="fp"> Floating-point operations</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> Elementary operations</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="add.html" title="fp/add"><span class="t-lines"><span>add</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="sub.html" title="fp/sub"><span class="t-lines"><span>sub</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="mul.html" title="fp/mul"><span class="t-lines"><span>mul</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="div.html" title="fp/div"><span class="t-lines"><span>div</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fmadd.html" title="fp/fmadd"><span class="t-lines"><span>fmadd</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fmsub.html" title="fp/fmsub"><span class="t-lines"><span>fmsub</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="neg.html" title="fp/neg"><span class="t-lines"><span>neg</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Rounding</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="round.html" title="fp/round"><span class="t-lines"><span>round</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ceil.html" title="fp/ceil"><span class="t-lines"><span>ceil</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="floor.html" title="fp/floor"><span class="t-lines"><span>floor</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="trunc.html" title="fp/trunc"><span class="t-lines"><span>trunc</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Comparisons</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>cmp_eq</span></span></strong></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="cmp_neq.html" title="fp/cmp neq"><span class="t-lines"><span>cmp_neq</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="cmp_lt.html" title="fp/cmp lt"><span class="t-lines"><span>cmp_lt</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="cmp_le.html" title="fp/cmp le"><span class="t-lines"><span>cmp_le</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="cmp_gt.html" title="fp/cmp gt"><span class="t-lines"><span>cmp_gt</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="cmp_ge.html" title="fp/cmp ge"><span class="t-lines"><span>cmp_ge</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Reduction</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="reduce_add.html" title="fp/reduce add"><span class="t-lines"><span>reduce_add</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="reduce_min.html" title="fp/reduce min"><span class="t-lines"><span>reduce_min</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="reduce_mul.html" title="fp/reduce mul"><span class="t-lines"><span>reduce_mul</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="reduce_max.html" title="fp/reduce max"><span class="t-lines"><span>reduce_max</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Miscellaneous</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="abs.html" title="fp/abs"><span class="t-lines"><span>abs</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="sign.html" title="fp/sign"><span class="t-lines"><span>sign</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="min.html" title="fp/min"><span class="t-lines"><span>min</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="max.html" title="fp/max"><span class="t-lines"><span>max</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isnan.html" title="fp/isnan"><span class="t-lines"><span>isnan</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="isnan2.html" title="fp/isnan2"><span class="t-lines"><span>isnan2</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Square root and reciprocal</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="sqrt.html" title="fp/sqrt"><span class="t-lines"><span>sqrt</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="rcp_e.html" title="fp/rcp e"><span class="t-lines"><span>rcp_e</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="rcp_rh.html" title="fp/rcp rh"><span class="t-lines"><span>rcp_rh</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="rsqrt_e.html" title="fp/rsqrt e"><span class="t-lines"><span>rsqrt_e</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="rsqrt_rh.html" title="fp/rsqrt rh"><span class="t-lines"><span>rsqrt_rh</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> N, <span class="kw2">class</span> E1, <span class="kw2">class</span> E2<span class="sy1">&gt;</span><br>
+Ret<span class="sy1">&lt;</span>N, _DETAIL_<span class="sy1">&gt;</span> cmp_eq<span class="br0">(</span> Vec1<span class="sy1">&lt;</span>N,E1<span class="sy1">&gt;</span> a, Vec2<span class="sy1">&lt;</span>N,E2<span class="sy1">&gt;</span> b <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Compares values in two floating-point vectors. The implementation behaves as if the following set of overloads is provided:
+</p>
+<table class="wikitable">
+
+<tr>
+<th> <code> Ret </code>
+</th>
+<th> <code> Vec1 </code>
+</th>
+<th> <code> Vec2</code>
+</th>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float32</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float32</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float32</span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float32</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float32</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float32</span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float32</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float32</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float32</span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float32</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float32</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float32</span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float64</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float64</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float64</span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float64</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float64</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float64</span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float64</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float64</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float64</span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float64</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float64</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">mask_float64</span></span>
+</td>
+</tr>
+</table>
+<p>The return type is a <a href="../types.html#expr" title="types">vector expression</a>.
+</p>
+<div id="toc" class="toc">
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="cmp_eq.html#Scalar_arguments"><span class="tocnumber">1</span> <span class="toctext">Scalar arguments</span></a></li>
+<li class="toclevel-1 tocsection-1"><a href="cmp_eq.html#Parameters"><span class="tocnumber">2</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="cmp_eq.html#Return_value"><span class="tocnumber">3</span> <span class="toctext">Return value</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="cmp_eq.html#Equivalent_operation"><span class="tocnumber">4</span> <span class="toctext">Equivalent operation</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="cmp_eq.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h4>
+<span class="mw-headline" id="Scalar_arguments">Scalar arguments</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=Template:scalar_note&amp;action=edit&amp;section=T-1" title="Template:scalar note">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h4>
+<p>Several additional overloads are provided to implement implicit conversions from scalar types. Values of the following types are accepted as the first or the second argument: <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int32_t</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int64_t</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint32_t</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint64_t</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span>. Each element of the expanded vector is set to the source value, converting it using standard conversions if needed.
+</p>
+<p>The return type is a vector expression. The vector type is the same as the vector argument except that masks are unmasked to respective non-mask vector types.
+</p>
+<h3>
+<span class="mw-headline" id="Parameters">Parameters</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=fp/cmp_eq&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  a, b
+</td>
+<td> -
+</td>
+<td>  floating-point vectors
+</td>
+</tr>
+</table>
+<h3>
+<span class="mw-headline" id="Return_value">Return value</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=fp/cmp_eq&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<p>A <a href="../types.html#expr" title="types">vector expression</a> evaluating to <code>a == b</code>.
+</p>
+<h3>
+<span class="mw-headline" id="Equivalent_operation">Equivalent operation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=fp/cmp_eq&amp;action=edit&amp;section=3" title="Edit section: Equivalent operation">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp source-cpp"><pre class="de1">r0 <span class="sy1">=</span> a0 <span class="sy1">==</span> b0 <span class="sy4">?</span> <span class="nu12">0xff</span>...<span class="me1">ff</span> <span class="sy4">:</span> <span class="nu0">0</span>
+...
+<span class="me1">rN</span> <span class="sy1">=</span> aN <span class="sy1">==</span> bN <span class="sy4">?</span> <span class="nu12">0xff</span>...<span class="me1">ff</span> <span class="sy4">:</span> <span class="nu0">0</span></pre></div></div>
+<h3>
+<span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=fp/cmp_eq&amp;action=edit&amp;section=4" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete </td>
+</tr></table>
+
+
+
+
+</div>										
+																														<div class="visualClear"></div>
+									</div>
+			</div>
+		</div>
+		
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script src="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+
+	</body>
+
+</html>

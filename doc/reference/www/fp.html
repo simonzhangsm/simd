@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Floating-point operations - simd-docs</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<meta name="generator" content="MediaWiki 1.23.15">
+
+
+
+
+
+
+<link rel="stylesheet" href="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.skinning.interface%257Cmediawiki.ui.button%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-css:7:09491d659b7f9960acfc4bbdea311b1b */</style>
+<script src="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"fp","wgTitle":"fp","wgCurRevisionId":27,"wgRevisionId":27,"wgArticleId":13,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"fp","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"editsection":0,"showtoc":0,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-js:7:04bcd510e6b27e2a36e3a47925b35066 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-fp skin-cppreference2 action-view vector-animateLayout cpp-navbar">
+		
+		<div id="cpp-content-base">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				<div id="mw-js-message" style="display:none;"></div>
+								<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Floating-point operations</span></h1>
+								<div id="bodyContent">
+										<div id="siteSub">From simd-docs</div>
+										<div id="contentSub"></div>
+															<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="index.html" title="Main Page"> simd</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="types.html" title="types"> Types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cap.html" title="cap"> Capabilities</a> </td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Operations </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="conv.html" title="conv"> Conversions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="bitwise.html" title="bitwise"> Bitwise operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> Floating-point operations</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="int.html" title="int"> Integer operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="mem.html" title="mem"> Memory access operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="shuffle.html" title="shuffle"> Shuffle operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="misc.html" title="misc"> Miscellaneous operations</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<strong class="selflink"> Floating-point operations</strong><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> Elementary operations</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/add.html" title="fp/add"><span class="t-lines"><span>add</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/sub.html" title="fp/sub"><span class="t-lines"><span>sub</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/mul.html" title="fp/mul"><span class="t-lines"><span>mul</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/div.html" title="fp/div"><span class="t-lines"><span>div</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/fmadd.html" title="fp/fmadd"><span class="t-lines"><span>fmadd</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/fmsub.html" title="fp/fmsub"><span class="t-lines"><span>fmsub</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/neg.html" title="fp/neg"><span class="t-lines"><span>neg</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Rounding</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/round.html" title="fp/round"><span class="t-lines"><span>round</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/ceil.html" title="fp/ceil"><span class="t-lines"><span>ceil</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/floor.html" title="fp/floor"><span class="t-lines"><span>floor</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/trunc.html" title="fp/trunc"><span class="t-lines"><span>trunc</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Comparisons</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/cmp_eq.html" title="fp/cmp eq"><span class="t-lines"><span>cmp_eq</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/cmp_neq.html" title="fp/cmp neq"><span class="t-lines"><span>cmp_neq</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/cmp_lt.html" title="fp/cmp lt"><span class="t-lines"><span>cmp_lt</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/cmp_le.html" title="fp/cmp le"><span class="t-lines"><span>cmp_le</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/cmp_gt.html" title="fp/cmp gt"><span class="t-lines"><span>cmp_gt</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/cmp_ge.html" title="fp/cmp ge"><span class="t-lines"><span>cmp_ge</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Reduction</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/reduce_add.html" title="fp/reduce add"><span class="t-lines"><span>reduce_add</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/reduce_min.html" title="fp/reduce min"><span class="t-lines"><span>reduce_min</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/reduce_mul.html" title="fp/reduce mul"><span class="t-lines"><span>reduce_mul</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/reduce_max.html" title="fp/reduce max"><span class="t-lines"><span>reduce_max</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Miscellaneous</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/abs.html" title="fp/abs"><span class="t-lines"><span>abs</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/sign.html" title="fp/sign"><span class="t-lines"><span>sign</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/min.html" title="fp/min"><span class="t-lines"><span>min</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/max.html" title="fp/max"><span class="t-lines"><span>max</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/isnan.html" title="fp/isnan"><span class="t-lines"><span>isnan</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/isnan2.html" title="fp/isnan2"><span class="t-lines"><span>isnan2</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Square root and reciprocal</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/sqrt.html" title="fp/sqrt"><span class="t-lines"><span>sqrt</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/rcp_e.html" title="fp/rcp e"><span class="t-lines"><span>rcp_e</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/rcp_rh.html" title="fp/rcp rh"><span class="t-lines"><span>rcp_rh</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/rsqrt_e.html" title="fp/rsqrt e"><span class="t-lines"><span>rsqrt_e</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fp/rsqrt_rh.html" title="fp/rsqrt rh"><span class="t-lines"><span>rsqrt_rh</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>The following simple operations for floating-point computations are provided.
+</p>
+<table class="t-dsc-begin">
+
+<tr>
+<td colspan="2"> <div id="toc" class="toc">
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="fp.html#Elementary_operations"><span class="tocnumber">1</span> <span class="toctext">Elementary operations</span></a></li>
+<li class="toclevel-1"><a href="fp.html#Rounding"><span class="tocnumber">2</span> <span class="toctext">Rounding</span></a></li>
+<li class="toclevel-1"><a href="fp.html#Comparisons"><span class="tocnumber">3</span> <span class="toctext">Comparisons</span></a></li>
+<li class="toclevel-1"><a href="fp.html#Miscellaneous"><span class="tocnumber">4</span> <span class="toctext">Miscellaneous</span></a></li>
+<li class="toclevel-1"><a href="fp.html#Square_root_and_reciprocal"><span class="tocnumber">5</span> <span class="toctext">Square root and reciprocal</span></a></li>
+<li class="toclevel-1"><a href="fp.html#Reduction"><span class="tocnumber">6</span> <span class="toctext">Reduction</span></a></li>
+</ul>
+</div>
+
+<h3><span class="mw-headline" id="Elementary_operations">Elementary operations</span></h3>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/add.html" title="fp/add"> <span class="t-lines"><span>add</span></span></a></div></div>
+</td>
+<td>   performs addition  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/sub.html" title="fp/sub"> <span class="t-lines"><span>sub</span></span></a></div></div>
+</td>
+<td>   performs subtraction  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/mul.html" title="fp/mul"> <span class="t-lines"><span>mul</span></span></a></div></div>
+</td>
+<td>   performs multiplication  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/fmadd.html" title="fp/fmadd"> <span class="t-lines"><span>fmadd</span></span></a></div></div>
+</td>
+<td>   performs fused multiply-add  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/fmsub.html" title="fp/fmsub"> <span class="t-lines"><span>fmsub</span></span></a></div></div>
+</td>
+<td>   performs fused multiply-subtract  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/div.html" title="fp/div"> <span class="t-lines"><span>div</span></span></a></div></div>
+</td>
+<td>   performs division  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="2"> <h3><span class="mw-headline" id="Rounding">Rounding</span></h3>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/round.html" title="fp/round"> <span class="t-lines"><span>round</span></span></a></div></div>
+</td>
+<td>   rounds values towards nearest integer  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/ceil.html" title="fp/ceil"> <span class="t-lines"><span>ceil</span></span></a></div></div>
+</td>
+<td>   rounds values towards positive infinity  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/floor.html" title="fp/floor"> <span class="t-lines"><span>floor</span></span></a></div></div>
+</td>
+<td>   rounds values towards negative infinity  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/trunc.html" title="fp/trunc"> <span class="t-lines"><span>trunc</span></span></a></div></div>
+</td>
+<td>   rounds values towards zero  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="2"> <h3><span class="mw-headline" id="Comparisons">Comparisons</span></h3>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/cmp_eq.html" title="fp/cmp eq"> <span class="t-lines"><span>cmp_eq</span></span></a></div></div>
+</td>
+<td>   compares vector elements for equality  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/cmp_neq.html" title="fp/cmp neq"> <span class="t-lines"><span>cmp_neq</span></span></a></div></div>
+</td>
+<td>   compares vector elements for inequality  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/cmp_lt.html" title="fp/cmp lt"> <span class="t-lines"><span>cmp_lt</span></span></a></div></div>
+</td>
+<td>   compares vector elements for less than  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/cmp_le.html" title="fp/cmp le"> <span class="t-lines"><span>cmp_le</span></span></a></div></div>
+</td>
+<td>   compares vector elements for less than or equal  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/cmp_gt.html" title="fp/cmp gt"> <span class="t-lines"><span>cmp_gt</span></span></a></div></div>
+</td>
+<td>   compares vector elements for greater than  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/cmp_ge.html" title="fp/cmp ge"> <span class="t-lines"><span>cmp_ge</span></span></a></div></div>
+</td>
+<td>   compares vector elements for greater than or equal  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="2"> <h3><span class="mw-headline" id="Miscellaneous">Miscellaneous</span></h3>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/abs.html" title="fp/abs"> <span class="t-lines"><span>abs</span></span></a></div></div>
+</td>
+<td>   computes absolute value  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/sign.html" title="fp/sign"> <span class="t-lines"><span>sign</span></span></a></div></div>
+</td>
+<td>   extracts sign bit  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/min.html" title="fp/min"> <span class="t-lines"><span>min</span></span></a></div></div>
+</td>
+<td>   selects minimum values  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/max.html" title="fp/max"> <span class="t-lines"><span>max</span></span></a></div></div>
+</td>
+<td>   selects maximum values  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/isnan.html" title="fp/isnan"> <span class="t-lines"><span>isnan</span></span></a></div></div>
+</td>
+<td>   checks if elements are NaN  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/isnan2.html" title="fp/isnan2"> <span class="t-lines"><span>isnan2</span></span></a></div></div>
+</td>
+<td>   checks if elements in two vectors are NaN  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="2"> <h3><span class="mw-headline" id="Square_root_and_reciprocal">Square root and reciprocal</span></h3>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/sqrt.html" title="fp/sqrt"> <span class="t-lines"><span>sqrt</span></span></a></div></div>
+</td>
+<td>   computes square root  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/rcp_e.html" title="fp/rcp e"> <span class="t-lines"><span>rcp_e</span></span></a></div></div>
+</td>
+<td>   estimates reciprocal  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/rcp_rh.html" title="fp/rcp rh"> <span class="t-lines"><span>rcp_rh</span></span></a></div></div>
+</td>
+<td>   performs a single Newton-Rhapson iteration improving<br> reciprocal estimate  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/rsqrt_e.html" title="fp/rsqrt e"> <span class="t-lines"><span>rsqrt_e</span></span></a></div></div>
+</td>
+<td>   estimates reciprocal square root  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/rsqrt_rh.html" title="fp/rsqrt rh"> <span class="t-lines"><span>rsqrt_rh</span></span></a></div></div>
+</td>
+<td>   performs a single Newton-Rhapson iteration improving<br> reciprocal square root estimate  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="2"> <h3><span class="mw-headline" id="Reduction">Reduction</span></h3>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/reduce_add.html" title="fp/reduce add"> <span class="t-lines"><span>reduce_add</span></span></a></div></div>
+</td>
+<td>   computes the sum of all elements in the vector  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/reduce_mul.html" title="fp/reduce mul"> <span class="t-lines"><span>reduce_mul</span></span></a></div></div>
+</td>
+<td>   computes the product of all elements in the vector  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/reduce_min.html" title="fp/reduce min"> <span class="t-lines"><span>reduce_min</span></span></a></div></div>
+</td>
+<td>   computes the minimum of all elements in the vector  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="fp/reduce_max.html" title="fp/reduce max"> <span class="t-lines"><span>reduce_max</span></span></a></div></div>
+</td>
+<td>   computes the maximum of all elements in the vector  <br> <span class="t-mark">(function template)</span>
+</td>
+</tr>
+
+</table>
+
+
+
+
+</div>										
+															<div id="catlinks" class="catlinks catlinks-allhidden"></div>															<div class="visualClear"></div>
+									</div>
+			</div>
+		</div>
+		
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script src="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+
+	</body>
+
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>simd-docs</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<meta name="generator" content="MediaWiki 1.23.15">
+
+
+
+
+
+
+<link rel="stylesheet" href="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.skinning.interface%257Cmediawiki.ui.button%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-css:7:09491d659b7f9960acfc4bbdea311b1b */</style>
+<script src="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Main_Page","wgTitle":"Main Page","wgCurRevisionId":1859,"wgRevisionId":1859,"wgArticleId":1,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Main_Page","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgIsMainPage":true});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"editsection":0,"showtoc":0,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-js:7:04bcd510e6b27e2a36e3a47925b35066 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Main_Page skin-cppreference2 action-view vector-animateLayout">
+		
+		<div id="cpp-content-base">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				<div id="mw-js-message" style="display:none;"></div>
+								<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">SIMD reference</span></h1>
+								<div id="bodyContent">
+										<div id="siteSub">From simd-docs</div>
+										<div id="contentSub"></div>
+															<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<table class="mainpagetable" cellspacing="0" style="width:100%; white-space:nowrap;">
+
+<tr class="row rowtop">
+<td colspan="4"> <span style="font-size: 2em;">SIMD documentation</span>
+</td>
+</tr>
+<tr class="row">
+<td colspan="4">
+<div style="white-space:normal;">
+<p>simd is a portable header-only zero-overhead C++ wrapper around
+single-instruction multiple-data (SIMD) intrinsics found in many compilers. The
+library presents a single interface over several instruction sets in such a way
+that the same source code may be compiled for different instruction sets. The
+resulting object files then may be hooked into internal dynamic dispatch
+mechanism.
+</p>
+<p><br>
+The library resolves differences between instruction sets by implementing the
+missing functionality as a combination of several intrinsics. Moreover, the
+library supplies a lot of additional, commonly used functionality, such as
+various variants of matrix transpositions, interleaving loads/stores, optimized
+compile-time shuffling instructions, etc. Each of these are implemented in the
+most efficient manner for the target instruction set. Finally, it's possible
+to fall back to native intrinsics when necessary, without compromising
+maintanability.
+</p>
+<p><br>
+The library sits somewhere in the middle between programming directly in
+intrinsics and even higher-level SIMD libraries. As much control as possible
+is given to the developer, so that it's possible to exactly predict what code
+the compiler will generate.
+</p>
+</div>
+</td>
+</tr>
+<tr class="row">
+<td>
+<p><b>Instruction sets</b>
+</p>
+<div class="mainpagediv">
+<p><a href="arch/selection.html" title="arch/selection">Instruction set selection</a><br>
+<a href="arch/dispatch.html" title="arch/dispatch">Dynamic dispatch</a><br>
+</p>
+</div>
+<p><b><a href="depr.html" title="depr">Deprecations</a></b>
+</p>
+<p><b><a href="types.html" title="types">Types</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="types/overview.html" title="types/overview">Overview</a><br>
+<a href="types/promotion.html" title="types/promotion">Vector type promotion</a><br>
+</p>
+</div>
+<p><b><a href="cap.html" title="cap">Capabilities</a></b>
+</p>
+<p><b><a href="util.html" title="util"> Utilities</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="util.html#zzz" title="util"><tt>SIMDALIGN</tt></a><br>
+<a href="util/aligned_allocator.html" title="util/aligned allocator"><tt>aligned_allocator</tt></a><br>
+<a href="util.html#Vector_size_macros" title="util">Vector size macros</a><br>
+<a href="util.html#Enabled_instruction_set" title="util"> Enabled instruction set</a>
+</p>
+</div>
+<p><b><a href="conv.html" title="conv"> Conversions</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="conv/to_int8.html" title="conv/to int8"><tt>to_int8</tt></a>  <a href="conv/to_uint8.html" title="conv/to uint8"><tt>to_uint8</tt></a><br>
+<a href="conv/to_int16.html" title="conv/to int16"><tt>to_int16</tt></a>  <a href="conv/to_uint16.html" title="conv/to uint16"><tt>to_uint16</tt></a><br>
+<a href="conv/to_int32.html" title="conv/to int32"><tt>to_int32</tt></a>  <a href="conv/to_uint32.html" title="conv/to uint32"><tt>to_uint32</tt></a><br>
+<a href="conv/to_int64.html" title="conv/to int64"><tt>to_int64</tt></a>  <a href="conv/to_uint64.html" title="conv/to uint64"><tt>to_uint64</tt></a><br>
+<a href="conv/to_float32.html" title="conv/to float32"><tt>to_float32</tt></a>  <a href="conv/to_float64.html" title="conv/to float64"><tt>to_float64</tt></a><br>
+<a href="conv/to_mask.html" title="conv/to mask"><tt>to_mask</tt></a>
+</p>
+</div>
+</td>
+<td>
+<p><b><a href="bitwise.html" title="bitwise"> Bitwise operations</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="bitwise/bit_and.html" title="bitwise/bit and"><tt>bit_and</tt></a>  <a href="bitwise/bit_andnot.html" title="bitwise/bit andnot"><tt>bit_andnot</tt></a> <br>
+<a href="bitwise/bit_or.html" title="bitwise/bit or"><tt>bit_or</tt></a>  <a href="bitwise/bit_xor.html" title="bitwise/bit xor"><tt>bit_xor</tt></a> <br>
+<a href="bitwise/bit_not.html" title="bitwise/bit not"><tt>bit_not</tt></a> <br>
+</p>
+</div>
+<p><b><a href="fp.html" title="fp"> Floating-point operations</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="fp/add.html" title="fp/add"><tt>add</tt></a>  <a href="fp/sub.html" title="fp/sub"><tt>sub</tt></a> <br>
+<a href="fp/mul.html" title="fp/mul"><tt>mul</tt></a>  <a href="fp/div.html" title="fp/div"><tt>div</tt></a> <br>
+<a href="fp/fmadd.html" title="fp/fmadd"><tt>fmadd</tt></a>  <a href="fp/fmsub.html" title="fp/fmsub"><tt>fmsub</tt></a> <br>
+<a href="fp/neg.html" title="fp/neg"><tt>neg</tt></a> <br>
+<a href="fp/round.html" title="fp/round"><tt>round</tt></a>  <a href="fp/trunc.html" title="fp/trunc"><tt>trunc</tt></a> <br>
+<a href="fp/floor.html" title="fp/floor"><tt>floor</tt></a>  <a href="fp/ceil.html" title="fp/ceil"><tt>ceil</tt></a> <br>
+<a href="fp/cmp_eq.html" title="fp/cmp eq"><tt>cmp_eq</tt></a>  <a href="fp/cmp_neq.html" title="fp/cmp neq"><tt>cmp_neq</tt></a> <br>
+<a href="fp/cmp_lt.html" title="fp/cmp lt"><tt>cmp_lt</tt></a>  <a href="fp/cmp_gt.html" title="fp/cmp gt"><tt>cmp_gt</tt></a> <br>
+<a href="fp/cmp_le.html" title="fp/cmp le"><tt>cmp_le</tt></a>  <a href="fp/cmp_ge.html" title="fp/cmp ge"><tt>cmp_ge</tt></a> <br>
+<a href="fp/abs.html" title="fp/abs"><tt>abs</tt></a>  <a href="fp/sign.html" title="fp/sign"><tt>sign</tt></a> <br>
+<a href="fp/min.html" title="fp/min"><tt>min</tt></a>  <a href="fp/max.html" title="fp/max"><tt>max</tt></a> <br>
+<a href="fp/isnan.html" title="fp/isnan"><tt>isnan</tt></a>  <a href="fp/isnan2.html" title="fp/isnan2"><tt>isnan2</tt></a> <br>
+<a href="fp/sqrt.html" title="fp/sqrt"><tt>sqrt</tt></a> <br>
+<a href="fp/rcp_e.html" title="fp/rcp e"><tt>rcp_e</tt></a>  <a href="fp/rcp_rh.html" title="fp/rcp rh"><tt>rcp_rh</tt></a> <br>
+<a href="fp/rsqrt_e.html" title="fp/rsqrt e"><tt>rsqrt_e</tt></a>  <a href="fp/rsqrt_rh.html" title="fp/rsqrt rh"><tt>rsqrt_rh</tt></a> <br>
+<a href="fp/reduce_add.html" title="fp/reduce add"><tt>reduce_add</tt></a>  <a href="fp/reduce_mul.html" title="fp/reduce mul"><tt>reduce_mul</tt></a> <br>
+<a href="fp/reduce_min.html" title="fp/reduce min"><tt>reduce_min</tt></a>  <a href="fp/reduce_max.html" title="fp/reduce max"><tt>reduce_max</tt></a> <br>
+</p>
+</div>
+<p><b><a href="operator.html" title="operator"> Operators</a></b>
+</p>
+<div class="mainpagediv">
+<p><code>+</code>  <code>-</code>  
+<code>*</code>  <code>/</code>  
+<code>&lt;&lt;</code>  <code>&gt;&gt;</code><br>
+<code>&amp;</code>  <code>|</code>  
+<code>^</code>  <code>~</code><br>
+<code>==</code>  <code>!=</code>  
+<code>&gt;</code>  <code>&gt;=</code>  
+<code>&lt;</code>  <code>&lt;=</code><br>
+</p>
+</div>
+</td>
+<td>
+<p><b><a href="int.html" title="int"> Integer operations</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="int/add.html" title="int/add"><tt>add</tt></a>  <a href="int/sub.html" title="int/sub"><tt>sub</tt></a> <br>
+<a href="int/add_sat.html" title="int/add sat"><tt>add_sat</tt></a>  <a href="int/sub_sat.html" title="int/sub sat"><tt>sub_sat</tt></a> <br>
+<a href="int/mul_lo.html" title="int/mul lo"><tt>mul_lo</tt></a>  <a href="int/mul_hi.html" title="int/mul hi"><tt>mul_hi</tt></a> <br>
+<a href="int/mull.html" title="int/mull"><tt>mull</tt></a>  <a href="int/neg.html" title="int/neg"><tt>neg</tt></a> <br>
+<a href="int/cmp_eq.html" title="int/cmp eq"><tt>cmp_eq</tt></a>  <a href="int/cmp_neq.html" title="int/cmp neq"><tt>cmp_neq</tt></a> <br>
+<a href="int/cmp_lt.html" title="int/cmp lt"><tt>cmp_lt</tt></a>  <a href="int/cmp_gt.html" title="int/cmp gt"><tt>cmp_gt</tt></a> <br>
+<a href="int/cmp_le.html" title="int/cmp le"><tt>cmp_le</tt></a>  <a href="int/cmp_ge.html" title="int/cmp ge"><tt>cmp_ge</tt></a> <br>
+<a href="int/abs.html" title="int/abs"><tt>abs</tt></a> <br>
+<a href="int/avg.html" title="int/avg"><tt>avg</tt></a>  <a href="int/avg_trunc.html" title="int/avg trunc"><tt>avg_trunc</tt></a> <br>
+<a href="int/min.html" title="int/min"><tt>min</tt></a>  <a href="int/max.html" title="int/max"><tt>max</tt></a> <br>
+<a href="int/shift_l.html" title="int/shift l"><tt>shift_l</tt></a>  <a href="int/shift_r.html" title="int/shift r"><tt>shift_r</tt></a> <br>
+<a href="int/reduce_add.html" title="int/reduce add"><tt>reduce_add</tt></a>  <a href="int/reduce_mul.html" title="int/reduce mul"><tt>reduce_mul</tt></a> <br>
+<a href="int/reduce_min.html" title="int/reduce min"><tt>reduce_min</tt></a>  <a href="int/reduce_max.html" title="int/reduce max"><tt>reduce_max</tt></a> <br>
+<a href="int/reduce_and.html" title="int/reduce and"><tt>reduce_and</tt></a>  <a href="int/reduce_or.html" title="int/reduce or"><tt>reduce_or</tt></a> <br>
+</p>
+</div>
+<p><b><a href="mem.html" title="mem"> Memory access</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="mem/load.html" title="mem/load"><tt>load</tt></a>  <a href="mem/load_u.html" title="mem/load u"><tt>load_u</tt></a> <br>
+<a href="mem/load_splat.html" title="mem/load splat"><tt>load_splat</tt></a> <br>
+<a href="mem/load_packed2.html" title="mem/load packed2"><tt>load_packed2</tt></a><br>
+<a href="mem/load_packed3.html" title="mem/load packed3"><tt>load_packed3</tt></a> <br>
+<a href="mem/load_packed4.html" title="mem/load packed4"><tt>load_packed4</tt></a> <br>
+<a href="mem/store.html" title="mem/store"><tt>store</tt></a>  <a href="mem/stream.html" title="mem/stream"><tt>stream</tt></a> <br>
+<a href="mem/store_first.html" title="mem/store first"><tt>store_first</tt></a>  <a href="mem/store_last.html" title="mem/store last"><tt>store_last</tt></a> <br>
+<a href="mem/store_packed2.html" title="mem/store packed2"><tt>store_packed2</tt></a><br>
+<a href="mem/store_packed3.html" title="mem/store packed3"><tt>store_packed3</tt></a> <br>
+<a href="mem/store_packed4.html" title="mem/store packed4"><tt>store_packed4</tt></a> <br>
+</p>
+</div>
+</td>
+<td>
+<p><b><a href="shuffle.html" title="shuffle"> Shuffle operations</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="shuffle/blend.html" title="shuffle/blend"><tt>blend</tt></a>  <a href="shuffle/splat.html" title="shuffle/splat"><tt>splat</tt></a> <br>
+<a href="shuffle/combine.html" title="shuffle/combine"><tt>combine</tt></a>  <a href="shuffle/split.html" title="shuffle/split"><tt>split</tt></a> <br>
+<a href="shuffle/permute2.html" title="shuffle/permute2"><tt>permute2</tt></a>  <a href="shuffle/permute4.html" title="shuffle/permute4"><tt>permute4</tt></a> <br>
+<a href="shuffle/shuffle2x2.html" title="shuffle/shuffle2x2"><tt>shuffle2x2</tt></a>  <a href="shuffle/shuffle4x2.html" title="shuffle/shuffle4x2"><tt>shuffle4x2</tt></a> <br>
+<a href="shuffle/transpose2.html" title="shuffle/transpose2"><tt>transpose2</tt></a>  <a href="shuffle/transpose4.html" title="shuffle/transpose4"><tt>transpose4</tt></a> <br><br>
+  Shuffles operating on 128-bit blocks <br>
+<a href="shuffle/alignX_128.html" title="shuffle/alignX 128"><tt>align16 align8 align4 align2</tt></a> <br>
+<a href="shuffle/splatX_128.html" title="shuffle/splatX 128"><tt>splat16 splat8 splat4 splat2</tt></a> <br>
+<a href="shuffle/moveX_l_128.html" title="shuffle/moveX l 128"><tt>move16_l move8_l move4_l move2_l</tt></a> <br>
+<a href="shuffle/moveX_r_128.html" title="shuffle/moveX r 128"><tt>move16_r move8_r move4_r move2_r</tt></a> <br>
+<a href="shuffle/zipX_hi_128.html" title="shuffle/zipX hi 128"><tt>zip16_hi zip8_hi zip4_hi zip2_hi</tt></a> <br>
+<a href="shuffle/zipX_lo_128.html" title="shuffle/zipX lo 128"><tt>zip16_lo zip8_lo zip4_lo zip2_lo</tt></a> <br>
+<a href="shuffle/unzipX_hi_128.html" title="shuffle/unzipX hi 128"><tt>unzip16_hi unzip8_hi<br>unzip4_hi unzip2_hi</tt></a> <br>
+<a href="shuffle/unzipX_lo_128.html" title="shuffle/unzipX lo 128"><tt>unzip16_lo unzip8_lo<br>unzip4_lo unzip2_lo</tt></a> <br>
+<a href="shuffle/make_shuffle_bytes16_mask.html" title="shuffle/make shuffle bytes16 mask"><tt>make_shuffle_bytes16_mask</tt></a><br>
+<a href="shuffle/shuffle_bytes16.html" title="shuffle/shuffle bytes16"><tt>shuffle_bytes16</tt></a>  <a href="shuffle/shuffle_zbytes16.html" title="shuffle/shuffle zbytes16"><tt>shuffle_zbytes16</tt></a><br>
+<a href="shuffle/permute_bytes16.html" title="shuffle/permute bytes16"><tt>permute_bytes16</tt></a>  <a href="shuffle/permute_zbytes16.html" title="shuffle/permute zbytes16"><tt>permute_zbytes16</tt></a><br>
+</p>
+</div>
+<p><b><a href="misc.html" title="misc"> Miscellaneous operations</a></b>
+</p>
+<div class="mainpagediv">
+<p><a href="misc/make_int.html" title="misc/make int"><tt>make_int</tt></a>  <a href="misc/make_uint.html" title="misc/make uint"><tt>make_uint</tt></a>  <a href="misc/make_float.html" title="misc/make float"><tt>make_float</tt></a> <br>
+<a href="misc/extract.html" title="misc/extract"><tt>extract</tt></a>  <a href="misc/insert.html" title="misc/insert"><tt>insert</tt></a>  <a href="misc/splat.html" title="misc/splat"><tt>splat<span style="font-size:0.7em; line-height:130%">(scalar)</span></tt></a> <br>
+<a href="misc/for_each.html" title="misc/for each"><tt>for_each</tt></a>  <a href="misc/test_bits_any.html" title="misc/test bits any"><tt>test_bits_any</tt></a><br>
+<a href="misc/bit_cast.html" title="misc/bit cast"><tt>bit_cast</tt></a><br>
+<a href="misc/prefetch_read.html" title="misc/prefetch read"><tt>prefetch_read</tt></a>  <a href="misc/prefetch_write.html" title="misc/prefetch write"><tt>prefetch_write</tt></a>
+</p>
+</div>
+</td>
+</tr>
+<tr class="row rowbottom">
+<td colspan="4">
+</td>
+</tr>
+</table>
+
+
+
+
+</div>										
+															<div id="catlinks" class="catlinks catlinks-allhidden"></div>															<div class="visualClear"></div>
+									</div>
+			</div>
+		</div>
+		
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script src="../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+
+	</body>
+
+</html>

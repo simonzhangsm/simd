@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Overview - simd-docs</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<meta name="generator" content="MediaWiki 1.23.15">
+
+
+
+
+
+
+<link rel="stylesheet" href="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.skinning.interface%257Cmediawiki.ui.button%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-css:7:09491d659b7f9960acfc4bbdea311b1b */</style>
+<script src="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"types/overview","wgTitle":"types/overview","wgCurRevisionId":1808,"wgRevisionId":1808,"wgArticleId":121,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"types/overview","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"editsection":0,"showtoc":0,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-js:7:04bcd510e6b27e2a36e3a47925b35066 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-types_overview skin-cppreference2 action-view vector-animateLayout cpp-navbar">
+		
+		<div id="cpp-content-base">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				<div id="mw-js-message" style="display:none;"></div>
+								<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto">Overview</span></h1>
+								<div id="bodyContent">
+										<div id="siteSub">From simd-docs</div>
+										<div id="contentSub"><span class="subpages">&lt; <a href="../types.html" title="types">types</a></span></div>
+															<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../index.html" title="Main Page"> simd</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../types.html" title="types"> Types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cap.html" title="cap"> Capabilities</a> </td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Operations </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../conv.html" title="conv"> Conversions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../bitwise.html" title="bitwise"> Bitwise operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../fp.html" title="fp"> Floating-point operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../int.html" title="int"> Integer operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../mem.html" title="mem"> Memory access operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../shuffle.html" title="shuffle"> Shuffle operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../misc.html" title="misc"> Miscellaneous operations</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../types.html" title="types">Types</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">Overview</strong>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="promotion.html" title="types/promotion">Vector type promotion</a>
+</td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>The library has a number of types that correspond to various types of data that may be stored within a SIMD registers. The types may be categorized in two dimensions: the type of data stored within a single element (lane) of the wrapped SIMD register and the number of such elements wrapped by the type.
+</p>
+<p>The following element types are supported:
+</p>
+<dl>
+<dd>
+<ul>
+<li> signed integers: 8, 16, 32 and 64-bit wide
+</li>
+<li> unsigned integers: 8, 16, 32 and 64-bit wide
+</li>
+<li> floating-point numbers: 32 and 64-bit wide
+</li>
+<li> <i>integer</i> masks: with elements 8, 16, 32 and 64-bits wide
+</li>
+<li> <i>floating-point</i> masks: with elements 32 and 64-bits wide
+</li>
+</ul>
+</dd>
+</dl>
+<p>Masks are special vector types that store one bit of information per element. They are described below.
+</p>
+<p>The number of elements that may be contained within a vector type may be any power of two, which larger than certain minimum bound that is dependent on element type. Currently the minimum size of a vector is 128 bits, which means that vectors containing 8, 16, 32 and 64-bit elements must have at least 16, 8, 4 and 2 of them respectively.
+</p>
+<p>The actual physical layout of a vector type is undefined. In particular, this means that the user must use the library functions to store or load vectors from memory and also not depend on <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw3">sizeof</span></span></span> operator.
+</p>
+<p>The following class templates are provided for non-mask types:
+</p>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> N, <span class="kw2">class</span> Expr <span class="sy1">=</span> <span class="kw4">void</span><span class="sy1">&gt;</span> <span class="kw2">class</span> <span class="kw4">int8</span><span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> N, <span class="kw2">class</span> Expr <span class="sy1">=</span> <span class="kw4">void</span><span class="sy1">&gt;</span> <span class="kw2">class</span> <span class="kw4">int16</span><span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> N, <span class="kw2">class</span> Expr <span class="sy1">=</span> <span class="kw4">void</span><span class="sy1">&gt;</span> <span class="kw2">class</span> <span class="kw4">int32</span><span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> N, <span class="kw2">class</span> Expr <span class="sy1">=</span> <span class="kw4">void</span><span class="sy1">&gt;</span> <span class="kw2">class</span> <span class="kw4">int64</span><span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> N, <span class="kw2">class</span> Expr <span class="sy1">=</span> <span class="kw4">void</span><span class="sy1">&gt;</span> <span class="kw2">class</span> <span class="kw4">uint8</span><span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> N, <span class="kw2">class</span> Expr <span class="sy1">=</span> <span class="kw4">void</span><span class="sy1">&gt;</span> <span class="kw2">class</span> <span class="kw4">uint16</span><span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> N, <span class="kw2">class</span> Expr <span class="sy1">=</span> <span class="kw4">void</span><span class="sy1">&gt;</span> <span class="kw2">class</span> <span class="kw4">uint32</span><span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> N, <span class="kw2">class</span> Expr <span class="sy1">=</span> <span class="kw4">void</span><span class="sy1">&gt;</span> <span class="kw2">class</span> <span class="kw4">uint64</span><span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> N, <span class="kw2">class</span> Expr <span class="sy1">=</span> <span class="kw4">void</span><span class="sy1">&gt;</span> <span class="kw2">class</span> float32<span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> N, <span class="kw2">class</span> Expr <span class="sy1">=</span> <span class="kw4">void</span><span class="sy1">&gt;</span> <span class="kw2">class</span> float64<span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Here <code>N</code> is the number of elements within vector.
+</p>
+<p>The <code>Expr</code> template parameter is used to support expression templates. Most user code will use the default value <code>void</code>.
+</p>
+<h3>
+<span class="mw-headline" id="Masks">Masks</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=types/overview&amp;action=edit&amp;section=1" title="Edit section: Masks">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<p>Masks are special vector types that are similar to their regular counterparts from user's perspective. The difference is that masks store one bit of information per element: either all bits are ones or zeroes. The physical layout is undefined similarly to the regular vector types. On certain instruction sets such as AVX512 each mask element occupies single physical bit, on others it is effectively a regular vector that stores either ones or zeroes in its elements.
+</p>
+<p>The following class templates are provided for mask types:
+</p>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> N, <span class="kw2">class</span> Expr <span class="sy1">=</span> <span class="kw4">void</span><span class="sy1">&gt;</span> <span class="kw2">class</span> mask_int8<span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> N, <span class="kw2">class</span> Expr <span class="sy1">=</span> <span class="kw4">void</span><span class="sy1">&gt;</span> <span class="kw2">class</span> mask_int16<span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> N, <span class="kw2">class</span> Expr <span class="sy1">=</span> <span class="kw4">void</span><span class="sy1">&gt;</span> <span class="kw2">class</span> mask_int32<span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> N, <span class="kw2">class</span> Expr <span class="sy1">=</span> <span class="kw4">void</span><span class="sy1">&gt;</span> <span class="kw2">class</span> mask_int64<span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> N, <span class="kw2">class</span> Expr <span class="sy1">=</span> <span class="kw4">void</span><span class="sy1">&gt;</span> <span class="kw2">class</span> mask_float32<span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">template</span><span class="sy1">&lt;</span><span class="kw4">unsigned</span> N, <span class="kw2">class</span> Expr <span class="sy1">=</span> <span class="kw4">void</span><span class="sy1">&gt;</span> <span class="kw2">class</span> mask_float64<span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Here <code>N</code> is the number of elements within mask vector and <code>Expr</code> is used to implement expression templates.
+</p>
+<p>Different types are used for floating-point and integer masks not without a reason: on certain architectures integer and floating point operations are implemented in different processor "domains" with extra latency to pass data between them. Separate types are used to select instructions that operate in correct domain to avoid that extra latency.
+</p>
+<h3>
+<span class="mw-headline" id="Vector_width">Vector width</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=types/overview&amp;action=edit&amp;section=2" title="Edit section: Vector width">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<p>As described above the number of elements in a vector type can be any power of two such that the vector size is not less than 128 bits. Vector types map to as many native SIMD registers as is needed to support the specified number of elements. For example, an instance of <span class="t-c"><span class="mw-geshi cpp source-cpp">int32x8</span></span> type maps to two instances of <code>__m128i</code> type on SSE2, but to a single instance of <code>__m256i</code> on AVX2.
+</p>
+<p>This flexibility allows to use widest native vector widths even in cases when mixed floating-point - integer algorithms are implemented on non-uniform SIMD architectures. Consider a simple example:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span><span class="sy2">*</span> src<span class="sy4">;</span> <span class="kw4">float</span><span class="sy2">*</span> dst<span class="sy4">;</span>
+...
+<span class="kw1">for</span> <span class="br0">(</span><span class="kw4">unsigned</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> size<span class="sy4">;</span> <span class="sy2">++</span>i<span class="br0">)</span> <span class="br0">{</span>
+     <span class="sy2">*</span>dst<span class="sy2">++</span> <span class="sy1">=</span> <span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span> <span class="br0">(</span><span class="sy2">*</span>src<span class="sy2">++</span><span class="br0">)</span> <span class="sy2">*</span> <span class="nu17">3.14f</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>The vectorized version of this code should use <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int32</span><span class="sy1">&lt;</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">float32<span class="sy1">&lt;</span><span class="nu0">4</span><span class="sy1">&gt;</span></span></span> types on SSE2 and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int32</span><span class="sy1">&lt;</span><span class="nu0">8</span><span class="sy1">&gt;</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">float32<span class="sy1">&lt;</span><span class="nu0">8</span><span class="sy1">&gt;</span></span></span> on AVX2. The former instruction set supports 128-bit SIMD instructions for both integer and floating-point operations whereas the latter supports 256-bit SIMD instructions. Effectively utilizing non-uniform instruction set such as AVX is more complex: for floating-point operations 256-bit instructions are available, wheres integer SIMD instructions still support only 128 bits. With simd the user can simply use <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int32</span><span class="sy1">&lt;</span><span class="nu0">8</span><span class="sy1">&gt;</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">float32<span class="sy1">&lt;</span><span class="nu0">8</span><span class="sy1">&gt;</span></span></span> types and floating-point operations would be done using 256-bit SIMD instructions, whereas integer operations would employ twice as many 128-bit instructions.
+</p>
+<p>Using vector types wider than available SIMD instructions increases register pressure. Users should query the most efficient vector widths from the library via <a href="../util.html#Vector_size_macros" title="util">vector size macros</a> and use it to size vectors for their algorithms.
+</p>
+<h3>
+<span class="mw-headline" id="Type_hierarchy">Type hierarchy</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=types/overview&amp;action=edit&amp;section=3" title="Edit section: Type hierarchy">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<p>The vector types form type hierarchy by inheriting from empty class template using <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern">curriously recurring template pattern</a>. This allows to write function templates accepting a certain category of vector types as parameters without needing to create excessive number of overloads. For example, it's possible to write a single function template that accepts any two integer vectors with 32-bit elements.
+</p>
+<p>The type hierarchy is shown below:
+</p>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp source-cpp"><pre class="de1">any_vec
+┣━ any_vec8
+┃   ┗━ any_int8
+┃        ┣━ <span class="kw4">int8</span>
+┃        ┣━ <span class="kw4">uint8</span>
+┃        ┗━ mask_int8
+┣━ any_vec16
+┃   ┗━ any_int16
+┃        ┣━ <span class="kw4">int16</span>
+┃        ┣━ <span class="kw4">uint16</span>
+┃        ┗━ mask_int16
+┣━ any_vec32
+┃   ┣━ any_int32
+┃   ┃    ┣━ <span class="kw4">int32</span>
+┃   ┃    ┣━ <span class="kw4">uint32</span>
+┃   ┃    ┗━ mask_int32
+┃   ┗━ any_float32
+┃        ┣━ float32
+┃        ┗━ mask_float32
+┗━ any_vec64
+    ┣━ any_int64
+    ┃    ┣━ <span class="kw4">int64</span>
+    ┃    ┣━ <span class="kw4">uint64</span>
+    ┃    ┗━ mask_int64
+    ┗━ any_float64
+         ┣━ float64
+         ┗━ mask_float64</pre></div></div>
+<p>The categorization types are only useful as parameters in functions that a certain vector category. They are never used in other contexts.
+</p>
+
+
+
+</div>										
+															<div id="catlinks" class="catlinks catlinks-allhidden"></div>															<div class="visualClear"></div>
+									</div>
+			</div>
+		</div>
+		
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script src="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+
+	</body>
+
+</html>

@@ -1,0 +1,1 @@
+{{dsc macro const | cap/SIMD_HAS_FLOAT32_SIMD | indicates support of 32-bit floats in SIMD unit }}

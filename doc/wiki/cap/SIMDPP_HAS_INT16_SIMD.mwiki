@@ -1,0 +1,16 @@
+{{title|SIMD_HAS_INT16_SIMD}}
+{{cap/navbar}}
+{{dcl begin}}
+{{dcl |
+#define SIMD_HAS_INT16_SIMD /* 1 if present, 0 otherwise */
+}}
+{{dcl end}}
+
+Indicates support of 16-bit integers in the SIMD unit. The library provides API for 16-bit integers even if this macro is defined to {{c|0}} and uses scalar implementation in that case.
+
+Currently, the macro is defined to {{c|1}} on the following instruction sets:
+
+* {{c|SIMD_USE_SSE2}}
+* {{c|SIMD_USE_NEON}}
+* {{c|SIMD_USE_ALTIVEC}}
+* {{c|SIMD_USE_MSA}}

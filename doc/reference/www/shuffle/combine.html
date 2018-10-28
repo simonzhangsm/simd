@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>simd::combine - simd-docs</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+<meta name="generator" content="MediaWiki 1.23.15">
+
+
+
+
+
+
+<link rel="stylesheet" href="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.skinning.interface%257Cmediawiki.ui.button%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;*.css">
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-css:7:09491d659b7f9960acfc4bbdea311b1b */</style>
+<script src="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"shuffle/combine","wgTitle":"shuffle/combine","wgCurRevisionId":1533,"wgRevisionId":1533,"wgArticleId":101,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo without reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"shuffle/combine","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"editfont":"default","editondblclick":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":1,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nickname":"","norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rows":25,"showhiddencats":0,"shownumberswatching":1,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":1,"watchdefault":1,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,
+"useeditwarning":1,"prefershttps":1,"editsection":0,"showtoc":0,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: mediawiki-mwiki_simd_:resourceloader:filter:minify-js:7:04bcd510e6b27e2a36e3a47925b35066 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;font-family: monospace, monospace;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000ff;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #666666;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #000099; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #660099; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #006699; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #FF0000;}
+.cpp.source-cpp .nu0 {color: #0000dd;}
+.cpp.source-cpp .nu6 {color: #208080;}
+.cpp.source-cpp .nu8 {color: #208080;}
+.cpp.source-cpp .nu12 {color: #208080;}
+.cpp.source-cpp .nu16 {color:#800080;}
+.cpp.source-cpp .nu17 {color:#800080;}
+.cpp.source-cpp .nu18 {color:#800080;}
+.cpp.source-cpp .nu19 {color:#800080;}
+.cpp.source-cpp .me1 {color: #007788;}
+.cpp.source-cpp .me2 {color: #007788;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-shuffle_combine skin-cppreference2 action-view vector-animateLayout cpp-navbar">
+		
+		<div id="cpp-content-base">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				<div id="mw-js-message" style="display:none;"></div>
+								<h1 id="firstHeading" class="firstHeading" lang="en"><span dir="auto"><span style="font-size:0.7em; line-height:130%">simd::</span>combine</span></h1>
+								<div id="bodyContent">
+										<div id="siteSub">From simd-docs</div>
+										<div id="contentSub"><span class="subpages">&lt; <a href="../shuffle.html" title="shuffle">shuffle</a></span></div>
+															<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../index.html" title="Main Page"> simd</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../types.html" title="types"> Types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cap.html" title="cap"> Capabilities</a> </td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Operations </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../conv.html" title="conv"> Conversions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../bitwise.html" title="bitwise"> Bitwise operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../fp.html" title="fp"> Floating-point operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../int.html" title="int"> Integer operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../mem.html" title="mem"> Memory access operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../shuffle.html" title="shuffle"> Shuffle operations</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../misc.html" title="misc"> Miscellaneous operations</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../shuffle.html" title="shuffle"> Shuffling operations</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="blend.html" title="shuffle/blend"><span class="t-lines"><span>blend</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="splat.html" title="shuffle/splat"><span class="t-lines"><span>splat</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>combine</span></span></strong></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="split.html" title="shuffle/split"><span class="t-lines"><span>split</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="permute2.html" title="shuffle/permute2"><span class="t-lines"><span>permute2</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="permute4.html" title="shuffle/permute4"><span class="t-lines"><span>permute4</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="shuffle2x2.html" title="shuffle/shuffle2x2"><span class="t-lines"><span>shuffle2x2</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="shuffle4x2.html" title="shuffle/shuffle4x2"><span class="t-lines"><span>shuffle4x2</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="transpose2.html" title="shuffle/transpose2"><span class="t-lines"><span>transpose2</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="transpose4.html" title="shuffle/transpose4"><span class="t-lines"><span>transpose4</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Shuffles operating on 128-bit blocks</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="alignX_128.html" title="shuffle/alignX 128"><span class="t-lines"><span>align16 align8 align4 align2</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="moveX_l_128.html" title="shuffle/moveX l 128"><span class="t-lines"><span>move16_l move8_l move4_l move2_l</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="splatX_128.html" title="shuffle/splatX 128"><span class="t-lines"><span>splat16 splat8 splat4 splat2</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="moveX_r_128.html" title="shuffle/moveX r 128"><span class="t-lines"><span>move16_r move8_r move4_r move2_r</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="zipX_hi_128.html" title="shuffle/zipX hi 128"><span class="t-lines"><span>zip16_hi zip8_hi zip4_hi zip2_hi</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="zipX_lo_128.html" title="shuffle/zipX lo 128"><span class="t-lines"><span>zip16_lo zip8_lo zip4_lo zip2_lo</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="unzipX_hi_128.html" title="shuffle/unzipX hi 128"><span class="t-lines"><span>unzip16_hi unzip8_hi unzip4_hi unzip2_hi</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="unzipX_lo_128.html" title="shuffle/unzipX lo 128"><span class="t-lines"><span>unzip16_lo unzip8_lo unzip4_lo unzip2_lo</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="make_shuffle_bytes16_mask.html" title="shuffle/make shuffle bytes16 mask"><span class="t-lines"><span>make_shuffle_bytes16_mask</span></span></a></div></div></td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="shuffle_bytes16.html" title="shuffle/shuffle bytes16"><span class="t-lines"><span>shuffle_bytes16</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="shuffle_zbytes16.html" title="shuffle/shuffle zbytes16"><span class="t-lines"><span>shuffle_zbytes16</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="permute_bytes16.html" title="shuffle/permute bytes16"><span class="t-lines"><span>permute_bytes16</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="permute_zbytes16.html" title="shuffle/permute zbytes16"><span class="t-lines"><span>permute_zbytes16</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">template</span><span class="sy1">&lt;</span> <span class="kw4">unsigned</span> N, <span class="kw2">class</span> E1, <span class="kw2">class</span> E2 <span class="sy1">&gt;</span><br>
+Ret<span class="sy1">&lt;</span>N<span class="sy2">*</span><span class="nu0">2</span><span class="sy1">&gt;</span> combine<span class="br0">(</span> <span class="kw4">const</span> Vec1<span class="sy1">&lt;</span>N,E1<span class="sy1">&gt;</span><span class="sy3">&amp;</span> a, <span class="kw4">const</span> Vec2<span class="sy1">&lt;</span>N,E2<span class="sy1">&gt;</span><span class="sy3">&amp;</span> b <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Combines two vectors into one vector twice as wide. The implementation behaves as if the following set of overloads is provided:
+</p>
+<table class="wikitable">
+
+<tr>
+<th> <code> Ret </code>
+</th>
+<th> <code> Vec1 </code>
+</th>
+<th> <code> Vec2</code>
+</th>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int8</span></span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int8</span></span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int8</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint8</span></span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint8</span></span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int8</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int16</span></span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int16</span></span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int16</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint16</span></span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint16</span></span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint16</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int32</span></span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int32</span></span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int32</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint32</span></span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint32</span></span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint32</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int64</span></span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int64</span></span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int64</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint64</span></span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint64</span></span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">uint64</span></span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float32</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float32</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float32</span></span>
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float64</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float64</span></span>
+</td>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">float64</span></span>
+</td>
+</tr>
+</table>
+<div id="toc" class="toc">
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="combine.html#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="combine.html#Return_value"><span class="tocnumber">2</span> <span class="toctext">Return value</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="combine.html#Equivalent_operation"><span class="tocnumber">3</span> <span class="toctext">Equivalent operation</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="combine.html#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h3>
+<span class="mw-headline" id="Parameters">Parameters</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=shuffle/combine&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  a, b
+</td>
+<td> -
+</td>
+<td>  vectors to combine
+</td>
+</tr>
+</table>
+<h3>
+<span class="mw-headline" id="Return_value">Return value</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=shuffle/combine&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<p>A twice as wide vector
+</p>
+<h3>
+<span class="mw-headline" id="Equivalent_operation">Equivalent operation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=shuffle/combine&amp;action=edit&amp;section=3" title="Edit section: Equivalent operation">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<div dir="ltr" class="mw-geshi mw-code mw-content-ltr"><div class="cpp source-cpp"><pre class="de1">r0 <span class="sy1">=</span> a0
+...
+<span class="me1">rM</span> <span class="sy1">=</span> aM
+r<span class="br0">{</span>M<span class="sy2">+</span><span class="nu0">1</span><span class="br0">}</span> <span class="sy1">=</span> b0
+...
+<span class="me1">r</span><span class="br0">{</span>M<span class="sy2">+</span>M<span class="br0">}</span> <span class="sy1">=</span> bM</pre></div></div>
+<h3>
+<span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="http://doc.radix.lt:9013/simd/mwiki/index.php?title=shuffle/combine&amp;action=edit&amp;section=4" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span>
+</h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete </td>
+</tr></table>
+
+
+
+
+</div>										
+																														<div class="visualClear"></div>
+									</div>
+			</div>
+		</div>
+		
+		<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script src="../../mwiki/load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;*"></script>
+
+	</body>
+
+</html>
